@@ -317,14 +317,19 @@ body {
    SCREEN 1: AI ORIENTATION (Ricerca da Zero)
 ═══════════════════════════════════════════════ */
 #screen-orientation {
-  padding-bottom: 100px;
+  padding-bottom: 0;
+  height: 100dvh;
+  overflow: hidden;
 }
 .orientation-content {
   flex: 1;
   max-width: 520px;
   width: 100%;
   margin: 0 auto;
-  padding: 20px 20px 0;
+  padding: 20px 20px 180px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 /* Progress */
@@ -520,8 +525,8 @@ body {
 /* ═══════════════════════════════════════════════
    SCREEN 2: RISULTATO INDIRIZZO
 ═══════════════════════════════════════════════ */
-#screen-result { padding-bottom: 100px; }
-.result-content { max-width: 520px; margin: 0 auto; padding: 0 20px; }
+#screen-result { padding-bottom: 0; height: 100dvh; overflow: hidden; }
+.result-content { max-width: 520px; margin: 0 auto; padding: 0 20px 120px; flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
 
 .result-hero {
   margin: 0 -20px 24px;
@@ -635,11 +640,20 @@ body {
 /* ═══════════════════════════════════════════════
    SCREEN 3: MAPPA SCUOLE
 ═══════════════════════════════════════════════ */
-#screen-map { padding-bottom: 76px; position: relative; }
+#screen-map { padding-bottom: 76px; position: relative; overflow: hidden; height: 100dvh; }
 .map-bg {
-  position: fixed; inset: 0;
+  position: absolute; inset: 0;
   background: #e8edf5;
   z-index: 0;
+  cursor: grab;
+  user-select: none;
+}
+.map-bg:active { cursor: grabbing; }
+.map-bg-inner {
+  width: 200%; height: 200%;
+  position: absolute;
+  top: -50%; left: -50%;
+  transition: none;
 }
 .map-svg-bg {
   width: 100%; height: 100%;
@@ -1052,8 +1066,8 @@ body {
 /* ═══════════════════════════════════════════════
    SCREEN 6: AI TUTOR
 ═══════════════════════════════════════════════ */
-#screen-tutor { padding-bottom: 140px; }
-.tutor-content { max-width: 520px; margin: 0 auto; padding: 0 20px; }
+#screen-tutor { padding-bottom: 0; height: 100dvh; overflow: hidden; display: flex; flex-direction: column; }
+.tutor-content { max-width: 520px; margin: 0 auto; padding: 0 20px 180px; flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
 
 .subject-scroll { display: flex; gap: 10px; padding: 16px 0 4px; overflow-x: auto; scrollbar-width: none; }
 .subject-scroll::-webkit-scrollbar { display: none; }
@@ -1487,8 +1501,10 @@ body {
 
   <div class="result-content">
     <div class="result-hero">
-      <div style="background:linear-gradient(135deg,#040a2f,#0055c5);width:100%;height:100%;display:flex;align-items:flex-end;padding:20px;">
-        <div>
+      <div style="background:linear-gradient(135deg,#040a2f,#0055c5);width:100%;height:100%;display:flex;align-items:flex-end;padding:20px;position:relative;overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;filter:saturate(1.3);" onerror="this.style.display='none'"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,10,47,0.3) 0%,rgba(4,10,47,0.82) 100%);"></div>
+        <div style="position:relative;z-index:1;">
           <div class="result-badge" style="background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);padding:5px 12px;border-radius:999px;color:white;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;display:inline-flex;align-items:center;gap:6px;">
             <span class="material-symbols-rounded" style="font-size:12px;color:white;">verified</span>
             IL TUO PROFILO
@@ -1617,8 +1633,9 @@ body {
      SCREEN 3: MAPPA
 ══════════════════════════════════════ -->
 <div class="screen" id="screen-map">
-  <div class="map-bg">
-    <svg class="map-svg-bg" viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
+  <div class="map-bg" id="map-bg">
+    <div class="map-bg-inner" id="map-pan-layer">
+    <svg class="map-svg-bg" viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
       <rect width="400" height="800" fill="#dce8f0"/>
       <!-- Roads -->
       <rect x="0" y="120" width="400" height="18" fill="#c8d8e8" rx="2"/>
@@ -1638,6 +1655,21 @@ body {
       <ellipse cx="330" cy="200" rx="60" ry="80" fill="#b8d4c0" opacity="0.7"/>
       <ellipse cx="330" cy="500" rx="45" ry="60" fill="#b8d4c0" opacity="0.6"/>
     </svg>
+
+    <!-- Markers inside pan layer -->
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;">
+      <div class="map-marker active" style="top:38%;left:42%;pointer-events:all;" onclick="void(0)">
+        <div class="marker-pin"><span class="material-symbols-rounded fill" style="font-size:18px;">school</span></div>
+        <div class="marker-label">G. MARCONI</div>
+      </div>
+      <div class="map-marker" style="top:56%;left:26%;pointer-events:all;" onclick="void(0)">
+        <div class="marker-pin" style="background:var(--indigo);opacity:0.7"><span class="material-symbols-rounded" style="font-size:18px;color:white;">school</span></div>
+      </div>
+      <div class="map-marker" style="top:48%;left:64%;pointer-events:all;" onclick="void(0)">
+        <div class="marker-pin" style="background:var(--indigo);opacity:0.7"><span class="material-symbols-rounded" style="font-size:18px;color:white;">school</span></div>
+      </div>
+    </div>
+    </div><!-- end map-bg-inner -->
   </div>
 
   <div class="map-ui">
@@ -1655,20 +1687,6 @@ body {
           FILTER <span class="material-symbols-rounded" style="font-size:14px;">tune</span>
         </button>
       </div>
-    </div>
-  </div>
-
-  <!-- Markers -->
-  <div class="map-markers-layer" style="top:110px;">
-    <div class="map-marker active" style="top:38%;left:42%;" onclick="void(0)">
-      <div class="marker-pin"><span class="material-symbols-rounded fill" style="font-size:18px;">school</span></div>
-      <div class="marker-label">G. MARCONI</div>
-    </div>
-    <div class="map-marker" style="top:56%;left:26%;" onclick="void(0)">
-      <div class="marker-pin" style="background:var(--indigo);opacity:0.7"><span class="material-symbols-rounded" style="font-size:18px;color:white;">school</span></div>
-    </div>
-    <div class="map-marker" style="top:48%;left:64%;" onclick="void(0)">
-      <div class="marker-pin" style="background:var(--indigo);opacity:0.7"><span class="material-symbols-rounded" style="font-size:18px;color:white;">school</span></div>
     </div>
   </div>
 
@@ -2526,9 +2544,10 @@ function updateProgress(step) {
 function scrollChat() {
   setTimeout(() => {
     const scroll = document.getElementById('orientation-scroll');
-    if (scroll) scroll.scrollTop = scroll.scrollHeight;
-    window.scrollTo(0, document.body.scrollHeight);
-  }, 100);
+    if (scroll) {
+      scroll.scrollTo({ top: scroll.scrollHeight, behavior: 'smooth' });
+    }
+  }, 120);
 }
 
 // ─── Tutor AI ──────────────────────────────────────
@@ -2611,7 +2630,10 @@ function sendTutorMsg() {
 }
 
 function scrollTutorChat() {
-  setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 100);
+  setTimeout(() => {
+    const el = document.querySelector('#screen-tutor .tutor-content');
+    if (el) el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
+  }, 120);
 }
 
 // ─── Claude API ────────────────────────────────────
@@ -2643,6 +2665,47 @@ async function callClaude(messages, loadingText, callback) {
 // ─── Back button on menu close ─────────────────────
 document.querySelector('#screen-menu .icon-btn[onclick]')
   && (document.querySelector('#screen-menu .menu-header .icon-btn').onclick = () => goScreen('screen-orientation'));
+
+// ─── Map Pan/Drag ──────────────────────────────────
+(function() {
+  let isDragging = false, startX = 0, startY = 0, panX = 0, panY = 0, lastPanX = 0, lastPanY = 0;
+  const MAX_PAN = 120;
+
+  function getLayer() { return document.getElementById('map-pan-layer'); }
+
+  function applyTransform(x, y) {
+    const layer = getLayer();
+    if (!layer) return;
+    panX = Math.max(-MAX_PAN, Math.min(MAX_PAN, x));
+    panY = Math.max(-MAX_PAN, Math.min(MAX_PAN, y));
+    layer.style.transform = `translate(${panX}px, ${panY}px)`;
+  }
+
+  document.addEventListener('mousedown', e => {
+    if (!e.target.closest('#map-bg')) return;
+    isDragging = true; startX = e.clientX; startY = e.clientY;
+    lastPanX = panX; lastPanY = panY;
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    applyTransform(lastPanX + (e.clientX - startX), lastPanY + (e.clientY - startY));
+  });
+  document.addEventListener('mouseup', () => { isDragging = false; });
+
+  document.addEventListener('touchstart', e => {
+    if (!e.target.closest('#map-bg')) return;
+    if (e.touches.length !== 1) return;
+    isDragging = true;
+    startX = e.touches[0].clientX; startY = e.touches[0].clientY;
+    lastPanX = panX; lastPanY = panY;
+  }, { passive: true });
+  document.addEventListener('touchmove', e => {
+    if (!isDragging || e.touches.length !== 1) return;
+    applyTransform(lastPanX + (e.touches[0].clientX - startX), lastPanY + (e.touches[0].clientY - startY));
+  }, { passive: true });
+  document.addEventListener('touchend', () => { isDragging = false; });
+})();
 </script>
 </body>
 </html>
