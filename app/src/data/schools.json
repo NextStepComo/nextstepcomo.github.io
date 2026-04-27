@@ -1,0 +1,322 @@
+[
+  {
+    "id": "marconi-to",
+    "name": "I.T.I.S. G. Marconi",
+    "type": "ITI",
+    "level": "superiori",
+    "address": "Via del Lavoro 12",
+    "city": "Torino",
+    "lat": 45.0703,
+    "lng": 7.6865,
+    "hero": { "color1": "#066CF4", "color2": "#7B5CFF" },
+    "indirizzi": ["Informatica", "Elettronica", "Meccanica", "Telecomunicazioni"],
+    "recommendedIndirizzo": "Informatica",
+    "materiePrincipali": ["Informatica", "Sistemi e Reti", "Matematica", "TPSIT", "Inglese", "Telecomunicazioni"],
+    "pianoStudi": [
+      { "anno": 1, "materie": [
+        { "nome": "Italiano", "ore": 4 },
+        { "nome": "Matematica", "ore": 4 },
+        { "nome": "Tecnologie Informatiche", "ore": 3 },
+        { "nome": "Scienze Integrate", "ore": 3 }
+      ]},
+      { "anno": 3, "materie": [
+        { "nome": "Informatica", "ore": 6 },
+        { "nome": "Sistemi e Reti", "ore": 4 },
+        { "nome": "TPSIT", "ore": 3 },
+        { "nome": "Telecomunicazioni", "ore": 3 }
+      ]},
+      { "anno": 5, "materie": [
+        { "nome": "Informatica", "ore": 6 },
+        { "nome": "Sistemi e Reti", "ore": 4 },
+        { "nome": "Gestione Progetto", "ore": 3 }
+      ]}
+    ],
+    "strutture": ["Laboratori di Informatica (4)", "Lab. Elettronica", "Aula 3D", "Palestra", "Biblioteca digitale"],
+    "opendays": [
+      { "id": "od-marconi-1", "date": "2026-11-15", "ora": "10:00 - 13:00", "descrizione": "Visita laboratori e incontro con docenti." },
+      { "id": "od-marconi-2", "date": "2026-12-13", "ora": "15:00 - 18:00", "descrizione": "Workshop di programmazione per famiglie." }
+    ],
+    "stats": { "placement": 94, "students": 1240, "studentRatio": 12 },
+    "valuesProfile": { "logica": 88, "creativita": 55, "socialita": 45, "praticita": 92, "umanistica": 18 },
+    "description": "Istituto storico di Torino specializzato in informatica e tecnologie industriali. Forte rete di partnership con aziende ICT del territorio."
+  },
+  {
+    "id": "volta-mi",
+    "name": "ITIS A. Volta",
+    "type": "ITI",
+    "level": "superiori",
+    "address": "Via Giuriati 7",
+    "city": "Milano",
+    "lat": 45.4773,
+    "lng": 9.2295,
+    "hero": { "color1": "#7B5CFF", "color2": "#066CF4" },
+    "indirizzi": ["Informatica", "Elettronica", "Automazione"],
+    "recommendedIndirizzo": "Automazione",
+    "materiePrincipali": ["Elettronica", "Sistemi Automatici", "Matematica", "Robotica", "Inglese"],
+    "pianoStudi": [
+      { "anno": 1, "materie": [
+        { "nome": "Italiano", "ore": 4 },
+        { "nome": "Matematica", "ore": 4 },
+        { "nome": "Fisica", "ore": 3 }
+      ]},
+      { "anno": 3, "materie": [
+        { "nome": "Elettronica", "ore": 7 },
+        { "nome": "Sistemi Automatici", "ore": 4 },
+        { "nome": "TPSEE", "ore": 5 }
+      ]}
+    ],
+    "strutture": ["Lab. Robotica", "Lab. Elettronica avanzata", "FabLab", "Auditorium"],
+    "opendays": [
+      { "id": "od-volta-1", "date": "2026-11-22", "ora": "9:30 - 12:30", "descrizione": "Open day con dimostrazioni di robotica." }
+    ],
+    "stats": { "placement": 91, "students": 980, "studentRatio": 14 },
+    "valuesProfile": { "logica": 90, "creativita": 60, "socialita": 40, "praticita": 88, "umanistica": 15 },
+    "description": "Eccellenza milanese per automazione industriale e robotica, con percorsi PCTO presso grandi aziende manifatturiere."
+  },
+  {
+    "id": "galilei-rm",
+    "name": "Liceo Scientifico G. Galilei",
+    "type": "Liceo Scientifico",
+    "level": "superiori",
+    "address": "Via Conte Verde 51",
+    "city": "Roma",
+    "lat": 41.8941,
+    "lng": 12.5045,
+    "hero": { "color1": "#22C55E", "color2": "#066CF4" },
+    "indirizzi": ["Scientifico", "Scienze Applicate", "Sportivo"],
+    "recommendedIndirizzo": "Scienze Applicate",
+    "materiePrincipali": ["Matematica", "Fisica", "Scienze", "Informatica", "Inglese", "Latino"],
+    "pianoStudi": [
+      { "anno": 1, "materie": [
+        { "nome": "Italiano", "ore": 4 },
+        { "nome": "Matematica", "ore": 5 },
+        { "nome": "Fisica", "ore": 2 },
+        { "nome": "Scienze Naturali", "ore": 3 }
+      ]},
+      { "anno": 4, "materie": [
+        { "nome": "Matematica", "ore": 4 },
+        { "nome": "Fisica", "ore": 3 },
+        { "nome": "Filosofia", "ore": 3 }
+      ]}
+    ],
+    "strutture": ["Laboratori scientifici", "Osservatorio astronomico", "Biblioteca", "Palestra"],
+    "opendays": [
+      { "id": "od-galilei-1", "date": "2026-12-06", "ora": "10:00 - 12:30", "descrizione": "Lezioni aperte di fisica e matematica." }
+    ],
+    "stats": { "placement": 87, "students": 1450, "studentRatio": 18 },
+    "valuesProfile": { "logica": 85, "creativita": 65, "socialita": 60, "praticita": 55, "umanistica": 55 },
+    "description": "Liceo scientifico storico romano con tradizione di eccellenza nelle materie STEM e numerosi olimpionici."
+  },
+  {
+    "id": "manzoni-mi",
+    "name": "Liceo Classico A. Manzoni",
+    "type": "Liceo Classico",
+    "level": "superiori",
+    "address": "Via Orazio 3",
+    "city": "Milano",
+    "lat": 45.4706,
+    "lng": 9.1932,
+    "hero": { "color1": "#FFB020", "color2": "#7B5CFF" },
+    "indirizzi": ["Classico", "Cambridge International"],
+    "recommendedIndirizzo": "Classico",
+    "materiePrincipali": ["Latino", "Greco", "Italiano", "Filosofia", "Storia dell'Arte", "Inglese"],
+    "pianoStudi": [
+      { "anno": 1, "materie": [
+        { "nome": "Latino", "ore": 5 },
+        { "nome": "Greco", "ore": 4 },
+        { "nome": "Italiano", "ore": 4 },
+        { "nome": "Storia e Geo", "ore": 3 }
+      ]}
+    ],
+    "strutture": ["Biblioteca antica", "Aula magna", "Sala conferenze"],
+    "opendays": [
+      { "id": "od-manzoni-1", "date": "2026-11-29", "ora": "9:30 - 12:00", "descrizione": "Visita guidata e prove aperte di traduzione." }
+    ],
+    "stats": { "placement": 82, "students": 720, "studentRatio": 11 },
+    "valuesProfile": { "logica": 60, "creativita": 75, "socialita": 70, "praticita": 30, "umanistica": 95 },
+    "description": "Liceo classico simbolo della tradizione umanistica milanese, con forte attenzione alla cultura europea e all'inglese."
+  },
+  {
+    "id": "leonardo-fi",
+    "name": "Liceo Artistico L. da Vinci",
+    "type": "Liceo Artistico",
+    "level": "superiori",
+    "address": "Via San Salvi 3",
+    "city": "Firenze",
+    "lat": 43.7798,
+    "lng": 11.2887,
+    "hero": { "color1": "#EF4444", "color2": "#FFB020" },
+    "indirizzi": ["Arti Figurative", "Design", "Audiovisivo Multimedia", "Architettura"],
+    "recommendedIndirizzo": "Design",
+    "materiePrincipali": ["Discipline Pittoriche", "Storia dell'Arte", "Design", "Italiano", "Filosofia"],
+    "pianoStudi": [
+      { "anno": 1, "materie": [
+        { "nome": "Discipline Grafiche", "ore": 4 },
+        { "nome": "Storia dell'Arte", "ore": 3 },
+        { "nome": "Italiano", "ore": 4 }
+      ]}
+    ],
+    "strutture": ["Atelier pittura", "Lab. fotografia", "Sala posa", "Stamperia"],
+    "opendays": [
+      { "id": "od-leon-1", "date": "2026-12-13", "ora": "10:00 - 13:00", "descrizione": "Esposizione lavori studenti e workshop di disegno." }
+    ],
+    "stats": { "placement": 76, "students": 640, "studentRatio": 10 },
+    "valuesProfile": { "logica": 35, "creativita": 95, "socialita": 65, "praticita": 60, "umanistica": 80 },
+    "description": "Liceo artistico fiorentino con laboratori d'eccellenza, immerso nella tradizione rinascimentale della città."
+  },
+  {
+    "id": "bocconi-mi",
+    "name": "Università Bocconi",
+    "type": "Università",
+    "level": "universita",
+    "address": "Via Sarfatti 25",
+    "city": "Milano",
+    "lat": 45.4493,
+    "lng": 9.1879,
+    "hero": { "color1": "#066CF4", "color2": "#0556C2" },
+    "indirizzi": ["Economia", "Management", "Finanza", "Data Science", "Giurisprudenza"],
+    "recommendedIndirizzo": "Economia e Management",
+    "materiePrincipali": ["Microeconomia", "Statistica", "Diritto", "Inglese", "Programmazione", "Marketing"],
+    "pianoStudi": [
+      { "anno": 1, "materie": [
+        { "nome": "Microeconomia", "ore": 6 },
+        { "nome": "Matematica", "ore": 6 },
+        { "nome": "Diritto Privato", "ore": 6 }
+      ]},
+      { "anno": 2, "materie": [
+        { "nome": "Macroeconomia", "ore": 6 },
+        { "nome": "Statistica", "ore": 6 },
+        { "nome": "Marketing", "ore": 6 }
+      ]}
+    ],
+    "strutture": ["Campus internazionale", "Biblioteca 24/7", "Sport center", "Career service"],
+    "opendays": [
+      { "id": "od-bocc-1", "date": "2026-10-25", "ora": "9:00 - 17:00", "descrizione": "Open day con tour del campus e info sui corsi." }
+    ],
+    "stats": { "placement": 96, "students": 14500, "studentRatio": 22 },
+    "valuesProfile": { "logica": 80, "creativita": 55, "socialita": 78, "praticita": 70, "umanistica": 50 },
+    "description": "Università privata di prestigio internazionale specializzata in economia, management e scienze sociali."
+  },
+  {
+    "id": "polito",
+    "name": "Politecnico di Torino",
+    "type": "Università",
+    "level": "universita",
+    "address": "Corso Duca degli Abruzzi 24",
+    "city": "Torino",
+    "lat": 45.0628,
+    "lng": 7.6618,
+    "hero": { "color1": "#7B5CFF", "color2": "#066CF4" },
+    "indirizzi": ["Ing. Informatica", "Ing. Civile", "Ing. Meccanica", "Architettura", "Design"],
+    "recommendedIndirizzo": "Ing. Informatica",
+    "materiePrincipali": ["Analisi", "Algoritmi", "Fisica", "Programmazione", "Inglese", "Reti"],
+    "pianoStudi": [
+      { "anno": 1, "materie": [
+        { "nome": "Analisi I", "ore": 8 },
+        { "nome": "Algebra Lineare", "ore": 6 },
+        { "nome": "Programmazione", "ore": 8 }
+      ]},
+      { "anno": 2, "materie": [
+        { "nome": "Algoritmi", "ore": 8 },
+        { "nome": "Basi di Dati", "ore": 6 },
+        { "nome": "Reti", "ore": 6 }
+      ]}
+    ],
+    "strutture": ["Campus Cittadella Politecnica", "Laboratori industriali", "FabLab", "Energy Center"],
+    "opendays": [
+      { "id": "od-polito-1", "date": "2026-11-08", "ora": "9:30 - 16:00", "descrizione": "Porte aperte con presentazione corsi e laboratori." }
+    ],
+    "stats": { "placement": 93, "students": 35000, "studentRatio": 28 },
+    "valuesProfile": { "logica": 92, "creativita": 65, "socialita": 55, "praticita": 88, "umanistica": 25 },
+    "description": "Politecnico di rilievo europeo, eccellenza italiana per ingegneria e architettura, forte rete con industria 4.0."
+  },
+  {
+    "id": "lasapienza-rm",
+    "name": "Università La Sapienza",
+    "type": "Università",
+    "level": "universita",
+    "address": "Piazzale Aldo Moro 5",
+    "city": "Roma",
+    "lat": 41.9018,
+    "lng": 12.5167,
+    "hero": { "color1": "#FFB020", "color2": "#EF4444" },
+    "indirizzi": ["Lettere", "Medicina", "Ingegneria", "Psicologia", "Architettura", "Scienze Politiche"],
+    "recommendedIndirizzo": "Psicologia",
+    "materiePrincipali": ["Psicologia Generale", "Statistica", "Neuroscienze", "Inglese", "Sociologia"],
+    "pianoStudi": [
+      { "anno": 1, "materie": [
+        { "nome": "Psicologia Generale", "ore": 6 },
+        { "nome": "Statistica", "ore": 6 },
+        { "nome": "Storia della Psicologia", "ore": 6 }
+      ]}
+    ],
+    "strutture": ["Città universitaria", "Biblioteca Alessandrina", "Cliniche universitarie"],
+    "opendays": [
+      { "id": "od-sap-1", "date": "2026-10-18", "ora": "10:00 - 18:00", "descrizione": "Welcome week con presentazioni di tutte le facoltà." }
+    ],
+    "stats": { "placement": 80, "students": 117000, "studentRatio": 30 },
+    "valuesProfile": { "logica": 60, "creativita": 70, "socialita": 85, "praticita": 50, "umanistica": 80 },
+    "description": "Una delle più grandi università europee, con offerta vastissima e lunga tradizione nelle discipline umanistiche e scientifiche."
+  },
+  {
+    "id": "iulm-mi",
+    "name": "IULM - Comunicazione e Lingue",
+    "type": "Università",
+    "level": "universita",
+    "address": "Via Carlo Bo 1",
+    "city": "Milano",
+    "lat": 45.4444,
+    "lng": 9.1825,
+    "hero": { "color1": "#7B5CFF", "color2": "#FFB020" },
+    "indirizzi": ["Comunicazione", "Marketing", "Arti Visive", "Lingue", "Turismo"],
+    "recommendedIndirizzo": "Comunicazione",
+    "materiePrincipali": ["Semiotica", "Marketing", "Lingue", "Storia dei Media", "Sociologia"],
+    "pianoStudi": [
+      { "anno": 1, "materie": [
+        { "nome": "Semiotica", "ore": 6 },
+        { "nome": "Marketing", "ore": 6 },
+        { "nome": "Inglese", "ore": 6 }
+      ]}
+    ],
+    "strutture": ["Campus IULM", "Studi TV", "Laboratori multimediali"],
+    "opendays": [
+      { "id": "od-iulm-1", "date": "2026-11-15", "ora": "10:00 - 17:00", "descrizione": "Open day campus + lezioni dimostrative." }
+    ],
+    "stats": { "placement": 84, "students": 6500, "studentRatio": 18 },
+    "valuesProfile": { "logica": 45, "creativita": 90, "socialita": 88, "praticita": 50, "umanistica": 85 },
+    "description": "Università specializzata in comunicazione, lingue e arti visive, forte legame con il mondo dei media e della pubblicità."
+  },
+  {
+    "id": "alberghiero-na",
+    "name": "I.P.S.E.O.A. F. De Cecco",
+    "type": "Istituto Alberghiero",
+    "level": "superiori",
+    "address": "Via Padre Mario Vergara 25",
+    "city": "Napoli",
+    "lat": 40.8419,
+    "lng": 14.2476,
+    "hero": { "color1": "#22C55E", "color2": "#FFB020" },
+    "indirizzi": ["Cucina", "Sala-Bar", "Accoglienza Turistica", "Pasticceria"],
+    "recommendedIndirizzo": "Cucina",
+    "materiePrincipali": ["Lab. Cucina", "Scienza degli Alimenti", "Inglese", "Tecnica Servizi", "Diritto"],
+    "pianoStudi": [
+      { "anno": 1, "materie": [
+        { "nome": "Lab. Cucina", "ore": 6 },
+        { "nome": "Lab. Sala", "ore": 4 },
+        { "nome": "Italiano", "ore": 4 }
+      ]},
+      { "anno": 4, "materie": [
+        { "nome": "Lab. Cucina", "ore": 8 },
+        { "nome": "Diritto e Tecnica", "ore": 5 },
+        { "nome": "Inglese", "ore": 3 }
+      ]}
+    ],
+    "strutture": ["Cucine professionali", "Sale ristorante", "Lab. pasticceria", "Reception didattica"],
+    "opendays": [
+      { "id": "od-deecco-1", "date": "2026-12-06", "ora": "10:00 - 13:00", "descrizione": "Show cooking degli studenti e visita laboratori." }
+    ],
+    "stats": { "placement": 89, "students": 950, "studentRatio": 13 },
+    "valuesProfile": { "logica": 40, "creativita": 80, "socialita": 88, "praticita": 95, "umanistica": 35 },
+    "description": "Istituto alberghiero d'eccellenza nel cuore di Napoli, con stage in ristoranti stellati e hotel di prestigio."
+  }
+]
