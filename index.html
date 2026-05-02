@@ -1,0 +1,2692 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Next Step — Il primo passo per il tuo futuro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════════
+   NEXT STEP · Demo grafica v3
+   Palette ufficiale: #066CF4
+═══════════════════════════════════════════════ */
+:root {
+  --ns-blue: #066CF4;
+  --ns-blue-bright: #2F7DF6;
+  --ns-blue-glow: #5B9CFF;
+  --ns-blue-light: #A8C8F0;
+  --ns-blue-pale: #DCE8FF;
+  --ns-blue-50: #F0F5FF;
+  --ns-dark: #1F2937;
+  --ns-darker: #0F1729;
+  --ns-ink: #0B1220;
+
+  --bg: #F4F8FF;
+  --surface: #FFFFFF;
+  --surface-alt: #EEF4FF;
+  --surface-soft: #F7FAFF;
+  --line: rgba(31,41,55,0.08);
+  --line-strong: rgba(31,41,55,0.14);
+
+  --text: #0F1729;
+  --text-soft: #4B5563;
+  --text-mute: #8893A7;
+
+  --green: #10B981;
+  --green-soft: #ECFDF5;
+  --warm: #F59E0B;
+  --warm-soft: #FEF3C7;
+  --pink: #EC4899;
+  --pink-soft: #FCE7F3;
+  --purple: #8B5CF6;
+  --purple-soft: #F3E8FF;
+  --danger: #EF4444;
+
+  --grad-brand: linear-gradient(135deg, #066CF4 0%, #2F7DF6 55%, #5B9CFF 100%);
+  --grad-brand-strong: linear-gradient(135deg, #003BB5 0%, #066CF4 50%, #2F7DF6 100%);
+  --grad-card: linear-gradient(180deg, #FFFFFF 0%, #F7FAFF 100%);
+  --grad-mesh:
+    radial-gradient(at 18% 6%, rgba(6,108,244,0.20) 0%, transparent 55%),
+    radial-gradient(at 82% 22%, rgba(168,200,240,0.50) 0%, transparent 55%),
+    radial-gradient(at 50% 100%, rgba(91,156,255,0.20) 0%, transparent 55%);
+
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-xl: 28px;
+  --r-2xl: 36px;
+  --r-pill: 999px;
+
+  --sh-sm: 0 1px 2px rgba(15,23,41,0.05), 0 2px 8px rgba(15,23,41,0.04);
+  --sh-md: 0 6px 16px rgba(15,23,41,0.08), 0 2px 6px rgba(15,23,41,0.04);
+  --sh-lg: 0 20px 50px rgba(15,23,41,0.12), 0 8px 18px rgba(15,23,41,0.06);
+  --sh-blue: 0 14px 36px rgba(6,108,244,0.34);
+  --sh-blue-soft: 0 8px 22px rgba(6,108,244,0.18);
+
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html, body { height: 100%; }
+body {
+  font-family: var(--font-body);
+  background:
+    radial-gradient(at 20% 10%, rgba(6,108,244,0.20) 0%, transparent 55%),
+    radial-gradient(at 80% 90%, rgba(31,41,55,0.45) 0%, transparent 60%),
+    linear-gradient(160deg, #0B1220 0%, #16223D 50%, #0B1220 100%);
+  color: var(--text);
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+button, input, textarea { font-family: inherit; }
+button { border: none; background: none; cursor: pointer; color: inherit; }
+input, textarea { outline: none; border: none; background: none; color: inherit; }
+a { color: inherit; text-decoration: none; }
+img { display: block; }
+
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+  font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
+  user-select: none;
+  display: inline-block;
+}
+.fill { font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24; }
+
+/* ═══════════════════════════════════════════════
+   PHONE FRAME
+═══════════════════════════════════════════════ */
+.phone-shell {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  border-radius: 48px;
+  background: #0B1220;
+  padding: 12px;
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.04),
+    0 0 0 4px rgba(255,255,255,0.02),
+    0 50px 120px rgba(0,0,0,0.55),
+    0 24px 60px rgba(6,108,244,0.18);
+  flex-shrink: 0;
+}
+.phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 38px;
+  background: var(--bg);
+  overflow: hidden;
+  isolation: isolate;
+}
+.phone-notch {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 124px;
+  height: 32px;
+  background: #0B1220;
+  border-radius: 999px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.status-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  z-index: 50;
+  pointer-events: none;
+  color: var(--ns-ink);
+}
+.status-bar.on-dark { color: white; }
+.status-right { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+.status-right .material-symbols-rounded { font-size: 16px; }
+
+/* ═══════════════════════════════════════════════
+   SCREEN SYSTEM
+═══════════════════════════════════════════════ */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+}
+.screen.active {
+  display: flex;
+  animation: screenIn .42s cubic-bezier(.22,.95,.35,1);
+}
+@keyframes screenIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.screen-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  padding-top: 54px;
+}
+.screen-scroll::-webkit-scrollbar { display: none; }
+.has-tabbar .screen-scroll { padding-bottom: 92px; }
+
+/* ═══════════════════════════════════════════════
+   LOGO — PNG ESTRATTO DAL PDF UFFICIALE
+═══════════════════════════════════════════════ */
+.ns-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 18%;
+  overflow: hidden;
+  position: relative;
+}
+.ns-icon img { width: 100%; height: 100%; display: block; }
+.ns-icon.size-xs { width: 28px; height: 28px; border-radius: 7px; }
+.ns-icon.size-sm { width: 36px; height: 36px; border-radius: 9px; }
+.ns-icon.size-md { width: 52px; height: 52px; border-radius: 13px; }
+.ns-icon.size-lg { width: 96px; height: 96px; border-radius: 22px; }
+.ns-icon.size-xl { width: 124px; height: 124px; border-radius: 28px; }
+.ns-icon.glow { box-shadow: 0 16px 38px rgba(6,108,244,0.32); }
+
+/* Wordmark — NEXT/STEP con X bicromatica come nel logo PDF */
+.ns-wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  display: inline-flex;
+  flex-direction: column;
+  color: var(--ns-darker);
+}
+.ns-wordmark .ns-line { display: inline-flex; align-items: center; }
+.ns-wordmark .ns-line-2 { margin-left: 0.34em; }
+.ns-wordmark.size-xs { font-size: 14px; gap: 1px; }
+.ns-wordmark.size-sm { font-size: 16px; gap: 2px; }
+.ns-wordmark.size-md { font-size: 22px; gap: 2px; }
+.ns-wordmark.size-lg { font-size: 36px; gap: 4px; }
+.ns-wordmark.size-xl { font-size: 50px; gap: 6px; }
+.ns-wordmark .ns-x-svg {
+  display: inline-block;
+  width: 0.78em;
+  height: 0.86em;
+  vertical-align: -0.10em;
+  margin: 0 0.005em;
+  flex-shrink: 0;
+}
+.ns-wordmark.on-dark { color: white; }
+.ns-wordmark.on-dark .ns-x-svg .ns-x-blue { stroke: var(--ns-blue-glow) !important; }
+
+.ns-lockup-stack { display: inline-flex; flex-direction: column; align-items: center; gap: 18px; }
+
+/* ═══════════════════════════════════════════════
+   BOTTONI / COMPONENTI
+═══════════════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .25s, background .25s;
+  white-space: nowrap;
+  min-height: 46px;
+}
+.btn:active { transform: scale(0.97); }
+.btn-primary {
+  background: var(--grad-brand);
+  color: white;
+  box-shadow: var(--sh-blue);
+}
+.btn-primary:hover { box-shadow: 0 18px 44px rgba(6,108,244,0.42); }
+.btn-secondary {
+  background: var(--surface);
+  color: var(--ns-ink);
+  border: 1.5px solid var(--line-strong);
+}
+.btn-dark { background: var(--ns-darker); color: white; }
+.btn-ghost { background: transparent; color: var(--text-soft); font-weight: 600; }
+.btn-block { width: 100%; }
+.btn .material-symbols-rounded { font-size: 20px; }
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--sh-sm);
+  transition: transform .18s ease, background .25s;
+  color: var(--ns-darker);
+  flex-shrink: 0;
+}
+.icon-btn:active { transform: scale(0.92); }
+.icon-btn.glass {
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.icon-btn .material-symbols-rounded { font-size: 22px; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 600;
+  background: var(--surface-alt);
+  color: var(--ns-darker);
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+.chip.solid { background: var(--ns-blue); color: white; border-color: transparent; }
+.chip.green { background: var(--green-soft); color: var(--green); border-color: rgba(16,185,129,0.2); }
+.chip.warm { background: var(--warm-soft); color: #B45309; border-color: rgba(245,158,11,0.25); }
+.chip.purple { background: var(--purple-soft); color: var(--purple); border-color: rgba(139,92,246,0.25); }
+.chip.pink { background: var(--pink-soft); color: var(--pink); border-color: rgba(236,72,153,0.2); }
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ns-ink);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.section-title .material-symbols-rounded { font-size: 18px; color: var(--ns-blue); }
+.section-title .count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-mute);
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════
+   SCREEN 1 · LOGIN
+═══════════════════════════════════════════════ */
+.login { position: relative; background: var(--bg); }
+.login-mesh { position: absolute; inset: 0; background: var(--grad-mesh); pointer-events: none; }
+.login-blob { position: absolute; border-radius: 50%; filter: blur(48px); opacity: 0.55; pointer-events: none; animation: floatBlob 12s ease-in-out infinite; }
+.login-blob.b1 { width: 220px; height: 220px; background: radial-gradient(circle, var(--ns-blue) 0%, transparent 70%); top: -40px; right: -60px; }
+.login-blob.b2 { width: 280px; height: 280px; background: radial-gradient(circle, var(--ns-blue-light) 0%, transparent 70%); bottom: -80px; left: -80px; animation-delay: -6s; }
+@keyframes floatBlob { 0%,100% { transform: translate(0,0); } 50% { transform: translate(20px,-20px); } }
+
+.login-content { position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1; padding: 80px 22px 28px; justify-content: space-evenly; }
+.login-hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 0; gap: 8px; }
+.login-hero .ns-lockup-stack { animation: heroIn .9s cubic-bezier(.22,.95,.35,1); }
+@keyframes heroIn { from { opacity: 0; transform: translateY(20px) scale(0.92); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.login-tagline {
+  margin-top: 0;
+  font-style: italic;
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 500;
+  max-width: 280px;
+}
+
+.login-features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+.feature-pill {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 12px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.85);
+  border-radius: 14px;
+  font-size: 12.5px;
+  color: var(--text);
+  text-align: left;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.feature-pill b { color: var(--ns-ink); font-family: var(--font-display); font-weight: 700; }
+.feature-pill .feat-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--grad-brand);
+  color: white;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: var(--sh-blue-soft);
+}
+.feature-pill .feat-icon .material-symbols-rounded { font-size: 18px; }
+
+.login-actions { display: flex; flex-direction: column; gap: 7px; }
+.btn-social {
+  width: 100%;
+  background: var(--surface);
+  color: var(--ns-ink);
+  border: 1.5px solid var(--line);
+  box-shadow: var(--sh-sm);
+}
+.btn-social.apple { background: #0B1220; color: white; border-color: transparent; }
+.btn-social.email { background: var(--grad-brand); color: white; box-shadow: var(--sh-blue); border: none; }
+.btn-social .social-icon { font-size: 20px; line-height: 1; display: inline-flex; align-items: center; justify-content: center; width: 22px; }
+
+.login-footer { display: flex; justify-content: center; gap: 18px; margin-top: 4px; font-size: 11px; color: var(--text-mute); }
+.login-footer a { transition: color .2s; }
+.login-footer a:hover { color: var(--ns-blue); }
+
+.login-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0;
+  padding: 5px 11px;
+  background: rgba(16,185,129,0.12);
+  color: var(--green);
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+.login-stat .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 4px rgba(16,185,129,0.22);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 4px rgba(16,185,129,0.22); } 50% { box-shadow: 0 0 0 7px rgba(16,185,129,0.06); } }
+
+/* ═══════════════════════════════════════════════
+   SCREEN 2 · ONBOARDING
+═══════════════════════════════════════════════ */
+.onb-head {
+  padding: 58px 24px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.onb-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--ns-blue);
+  text-transform: uppercase;
+}
+.onb-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--ns-ink);
+  letter-spacing: -0.01em;
+}
+.onb-sub { color: var(--text-soft); font-size: 14px; margin-top: 4px; line-height: 1.5; }
+
+.path-cards { padding: 4px 24px 90px; }
+.path-card {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  padding: 13px 14px 14px;
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  box-shadow: var(--sh-sm);
+  border: 2px solid transparent;
+  transition: all .25s ease;
+  cursor: pointer;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.path-card:active { transform: scale(0.98); }
+.path-card.selected {
+  border-color: var(--ns-blue);
+  background: linear-gradient(135deg, var(--ns-blue-50) 0%, white 100%);
+  box-shadow: var(--sh-blue-soft);
+}
+.path-card.selected::before {
+  content: '';
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--ns-blue);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.path-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  background: var(--ns-blue-50);
+  border: 1px solid var(--ns-blue-pale);
+}
+.path-card.selected .path-icon { background: white; }
+.path-text { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.path-name { font-family: var(--font-display); font-weight: 700; font-size: 14.5px; color: var(--ns-ink); }
+.path-desc { font-size: 12px; color: var(--text-soft); line-height: 1.35; }
+.path-meta {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  font-size: 11px;
+  color: var(--text-mute);
+  font-weight: 600;
+}
+.path-meta span { display: inline-flex; align-items: center; gap: 4px; }
+.path-meta .material-symbols-rounded { font-size: 14px; }
+
+.onb-stat {
+  margin: 4px 24px 6px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(6,108,244,0.08) 0%, rgba(168,200,240,0.18) 100%);
+  border: 1px solid rgba(6,108,244,0.12);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.onb-stat .stat-num {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ns-blue);
+  line-height: 1;
+}
+.onb-stat .stat-text { font-size: 12.5px; color: var(--text-soft); line-height: 1.35; }
+.onb-stat .stat-text b { color: var(--ns-ink); font-weight: 700; }
+
+.onb-foot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 18px 24px 28px;
+  background: linear-gradient(180deg, transparent 0%, rgba(244,248,255,0.95) 30%, var(--bg) 100%);
+}
+
+/* ═══════════════════════════════════════════════
+   SCREEN 3 · QUIZ
+═══════════════════════════════════════════════ */
+.quiz-head { padding: 70px 24px 0; display: flex; align-items: center; gap: 14px; }
+.progress-track {
+  flex: 1;
+  height: 6px;
+  background: var(--surface-alt);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--grad-brand);
+  border-radius: 99px;
+  transition: width .5s cubic-bezier(.22,.95,.35,1);
+}
+.progress-step {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-mute);
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+
+.quiz-body { padding: 22px 26px 0; }
+.quiz-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  background: var(--ns-blue-50);
+  color: var(--ns-blue);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+.quiz-eyebrow .material-symbols-rounded { font-size: 12px; }
+.quiz-emoji { font-size: 40px; line-height: 1; margin-bottom: 12px; }
+.quiz-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--ns-ink);
+  letter-spacing: -0.01em;
+}
+.quiz-sub { color: var(--text-soft); font-size: 14px; margin-top: 6px; line-height: 1.5; }
+
+.quiz-options { margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+.q-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 2px solid transparent;
+  box-shadow: var(--sh-sm);
+  cursor: pointer;
+  transition: all .25s;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ns-ink);
+  font-family: var(--font-display);
+  text-align: left;
+}
+.q-option:active { transform: scale(0.98); }
+.q-option.selected {
+  border-color: var(--ns-blue);
+  background: linear-gradient(135deg, var(--ns-blue-50) 0%, white 100%);
+}
+.q-option-emoji {
+  font-size: 22px;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ns-blue-50);
+  flex-shrink: 0;
+}
+.q-option.selected .q-option-emoji { background: white; }
+.q-option .q-check {
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--line-strong);
+  display: grid;
+  place-items: center;
+  transition: all .2s;
+  flex-shrink: 0;
+}
+.q-option.selected .q-check { background: var(--ns-blue); border-color: var(--ns-blue); }
+.q-option .q-check::after {
+  content: '';
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg) translate(1px,-1px);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.q-option.selected .q-check::after { opacity: 1; }
+
+.quiz-foot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 18px 24px 28px;
+  background: linear-gradient(180deg, transparent, rgba(244,248,255,0.95) 30%, var(--bg) 100%);
+}
+
+/* ═══════════════════════════════════════════════
+   SCREEN 4 · RESULT
+═══════════════════════════════════════════════ */
+.result-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: var(--bg);
+  z-index: 5;
+  text-align: center;
+  padding: 0 32px;
+}
+.loader-orb {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 0%, var(--ns-blue) 70%, var(--ns-blue-glow) 100%);
+  position: relative;
+  animation: spin 1.1s linear infinite;
+}
+.loader-orb::before { content: ''; position: absolute; inset: 8px; background: var(--bg); border-radius: 50%; }
+.loader-orb::after {
+  content: '🤖';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 34px;
+  animation: spin 1.1s linear infinite reverse;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loader-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--ns-ink); }
+.loader-sub { color: var(--text-soft); font-size: 13px; line-height: 1.5; max-width: 260px; }
+.loader-steps { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; font-size: 12px; color: var(--text-mute); }
+.loader-step { display: flex; align-items: center; gap: 7px; opacity: 0; transition: opacity .4s; }
+.loader-step.shown { opacity: 1; }
+.loader-step .check { width: 14px; height: 14px; border-radius: 50%; background: var(--green); display: grid; place-items: center; }
+.loader-step .check .material-symbols-rounded { font-size: 10px; color: white; }
+.result-loading.hidden { display: none; }
+
+/* ── HERO ── */
+.result-hero {
+  margin: 14px 16px 0;
+  padding: 22px 20px 20px;
+  border-radius: 28px;
+  background:
+    radial-gradient(at 10% 10%, rgba(255,255,255,0.22) 0%, transparent 55%),
+    radial-gradient(at 90% 90%, rgba(255,255,255,0.12) 0%, transparent 50%),
+    var(--grad-brand);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--sh-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.result-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 100%, rgba(255,255,255,0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+.result-hero-eyebrow {
+  font-size: 10px;
+  opacity: 0.80;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+}
+.result-icon-big {
+  font-size: 52px;
+  display: inline-block;
+  margin: 6px 0 2px;
+  line-height: 1;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.18));
+}
+.result-name {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+.result-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(16,185,129,0.92);
+  color: white;
+  padding: 5px 13px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(16,185,129,0.35);
+}
+
+/* ── SEZIONI ── */
+.result-section {
+  padding: 16px 16px 0;
+}
+
+/* ── MATCH BARS ── */
+.match-bars { display: flex; flex-direction: column; gap: 9px; margin-top: 6px; }
+.match-row { display: flex; align-items: center; gap: 10px; }
+.match-label { width: 76px; font-size: 12px; color: var(--text-soft); font-weight: 600; flex-shrink: 0; }
+.match-track { flex: 1; height: 7px; background: var(--surface-alt); border-radius: 99px; overflow: hidden; }
+.match-fill { height: 100%; border-radius: 99px; transition: width 1s cubic-bezier(.22,.95,.35,1); }
+.match-fill.blue { background: var(--grad-brand); }
+.match-fill.purple { background: linear-gradient(90deg, #A855F7 0%, #8B5CF6 100%); }
+.match-fill.green { background: linear-gradient(90deg, #34D399 0%, #10B981 100%); }
+.match-fill.warm { background: linear-gradient(90deg, #FBBF24 0%, #F59E0B 100%); }
+.match-pct { width: 34px; text-align: right; font-size: 12px; font-weight: 800; color: var(--ns-ink); font-variant-numeric: tabular-nums; }
+
+/* ── DESCRIZIONE ── */
+.result-desc { color: var(--text-soft); font-size: 13px; line-height: 1.55; }
+.result-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+
+/* ── STAT CARDS ── */
+.stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 6px; }
+.stat-card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 14px 8px 12px;
+  text-align: center;
+  box-shadow: var(--sh-sm);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.stat-card .stat-icon { font-size: 20px; color: var(--ns-blue); display: inline-block; }
+.stat-card .stat-num { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--ns-ink); line-height: 1; }
+.stat-card .stat-label { font-size: 10px; color: var(--text-mute); font-weight: 600; line-height: 1.25; }
+
+/* ── ALT LIST ── */
+.alt-list { display: flex; flex-direction: column; gap: 7px; margin-top: 6px; }
+.alt-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 13px;
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow: var(--sh-sm);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: transform .15s;
+}
+.alt-row:active { transform: scale(0.98); }
+.alt-emoji { font-size: 22px; width: 32px; text-align: center; flex-shrink: 0; }
+.alt-info { flex: 1; min-width: 0; }
+.alt-name { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--ns-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.alt-meta { font-size: 11.5px; color: var(--text-soft); }
+.alt-pct {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 800;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: var(--ns-blue-pale);
+  color: var(--ns-blue);
+  flex-shrink: 0;
+}
+
+/* ── ACTIONS ── */
+.result-actions { padding: 18px 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+
+/* ═══════════════════════════════════════════════
+   SCREEN 5 · MAP
+═══════════════════════════════════════════════ */
+.map-screen { background: #E8EDF2; }
+.map-search {
+  position: absolute;
+  top: 64px;
+  left: 14px;
+  right: 14px;
+  z-index: 10;
+  background: white;
+  border-radius: 16px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--sh-md);
+}
+.map-search input { flex: 1; font-size: 13.5px; font-weight: 500; color: var(--ns-ink); }
+.map-search .material-symbols-rounded { color: var(--ns-blue); font-size: 22px; }
+
+.map-filters {
+  position: absolute;
+  top: 116px;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  padding: 0 14px;
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.map-filters::-webkit-scrollbar { display: none; }
+.map-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 12px;
+  background: white;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  color: var(--text-soft);
+  box-shadow: var(--sh-sm);
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all .2s;
+  border: 1.5px solid transparent;
+}
+.map-filter.active { background: var(--ns-darker); color: white; }
+.map-filter:not(.active):hover { border-color: var(--ns-blue-pale); }
+.map-filter .material-symbols-rounded { font-size: 14px; }
+
+.map-canvas { position: absolute; inset: 0; z-index: 1; }
+.map-svg { width: 100%; height: 100%; display: block; }
+
+.map-pin {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transform: translate(-50%, -100%);
+  z-index: 5;
+}
+.map-pin-body {
+  background: white;
+  color: var(--text-soft);
+  padding: 7px 11px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  box-shadow: var(--sh-md);
+  white-space: nowrap;
+}
+.map-pin-body .material-symbols-rounded { font-size: 14px; color: var(--text-mute); }
+.map-pin-tail { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid white; margin-top: -1px; }
+.map-pin.featured { z-index: 6; }
+.map-pin.featured .map-pin-body {
+  background: var(--ns-blue);
+  color: white;
+  padding: 9px 13px;
+  font-size: 12.5px;
+  box-shadow: var(--sh-blue);
+  animation: pinPulse 2.4s ease-in-out infinite;
+}
+.map-pin.featured .map-pin-body .material-symbols-rounded { color: white; }
+.map-pin.featured .map-pin-tail { border-top-color: var(--ns-blue); border-left-width: 7px; border-right-width: 7px; border-top-width: 9px; }
+@keyframes pinPulse { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+.map-results-tag {
+  position: absolute;
+  top: 116px;
+  right: 14px;
+  z-index: 9;
+  padding: 7px 12px;
+  background: var(--ns-darker);
+  color: white;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 700;
+  display: none;
+}
+
+.map-card-stack {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+  z-index: 8;
+  padding: 0 12px;
+}
+.map-card-handle {
+  width: 38px;
+  height: 4px;
+  background: rgba(31,41,55,0.18);
+  border-radius: 99px;
+  margin: 0 auto 8px;
+}
+.map-card-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 4px;
+}
+.map-card-row::-webkit-scrollbar { display: none; }
+.map-card {
+  flex: 0 0 88%;
+  scroll-snap-align: center;
+  background: white;
+  border-radius: var(--r-xl);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--sh-lg);
+  animation: cardUp .6s cubic-bezier(.22,.95,.35,1);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.map-card.featured-card { border-color: var(--ns-blue); }
+@keyframes cardUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.map-card-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--grad-brand);
+  display: grid;
+  place-items: center;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: var(--sh-blue-soft);
+}
+.map-card-thumb.alt { background: linear-gradient(135deg, var(--purple) 0%, #6366F1 100%); }
+.map-card-thumb.alt2 { background: linear-gradient(135deg, var(--ns-dark) 0%, #374151 100%); }
+.map-card-thumb .material-symbols-rounded { font-size: 28px; }
+.map-card-info { flex: 1; min-width: 0; }
+.map-card-name { font-family: var(--font-display); font-size: 14.5px; font-weight: 800; color: var(--ns-ink); }
+.map-card-addr { font-size: 12px; color: var(--text-soft); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.map-card-meta { display: flex; align-items: center; gap: 8px; margin-top: 5px; font-size: 11.5px; color: var(--text-soft); flex-wrap: wrap; }
+.map-card-meta .stars { color: var(--warm); letter-spacing: 1px; font-size: 12px; }
+.map-card-meta .live { color: var(--green); font-weight: 700; display: inline-flex; align-items: center; gap: 3px; }
+.map-card-meta .live::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); display: inline-block; }
+.map-card-cta { width: 36px; height: 36px; border-radius: 11px; background: var(--ns-blue); color: white; display: grid; place-items: center; flex-shrink: 0; box-shadow: var(--sh-blue-soft); }
+
+/* ═══════════════════════════════════════════════
+   SCREEN 6 · SCHOOL DETAIL
+═══════════════════════════════════════════════ */
+.school { padding: 0; background: var(--bg); }
+.school-hero {
+  position: relative;
+  height: 220px;
+  background:
+    radial-gradient(at 30% 0%, rgba(255,255,255,0.25) 0%, transparent 60%),
+    var(--grad-brand);
+  display: grid;
+  place-items: center;
+  color: white;
+  overflow: hidden;
+}
+.school-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(at 80% 100%, rgba(255,255,255,0.18) 0%, transparent 50%);
+}
+.school-hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background-image:
+    radial-gradient(circle at 20% 30%, white 1.5px, transparent 1.5px),
+    radial-gradient(circle at 80% 70%, white 1.5px, transparent 1.5px),
+    radial-gradient(circle at 50% 90%, white 1.5px, transparent 1.5px);
+  background-size: 60px 60px;
+}
+.school-hero-icon { font-size: 86px; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.18)); position: relative; z-index: 1; }
+.school-hero-actions { position: absolute; top: 64px; left: 14px; right: 14px; display: flex; justify-content: space-between; z-index: 5; }
+
+.school-info { padding: 18px 22px 6px; background: var(--bg); }
+.school-name-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.school-name { font-family: var(--font-display); font-size: 24px; font-weight: 800; color: var(--ns-ink); letter-spacing: -0.01em; line-height: 1.1; }
+.school-rating { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 700; color: var(--ns-ink); }
+.school-rating .stars { color: var(--warm); font-size: 13px; }
+.school-rating small { color: var(--text-mute); font-size: 11px; font-weight: 500; }
+.school-loc { font-size: 13px; color: var(--text-soft); margin-top: 4px; display: flex; align-items: center; gap: 4px; }
+
+.school-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin: 14px 22px 0;
+}
+.s-stat {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 9px 4px;
+  text-align: center;
+  box-shadow: var(--sh-sm);
+}
+.s-stat .num { font-family: var(--font-display); font-size: 14.5px; font-weight: 800; color: var(--ns-blue); line-height: 1.1; }
+.s-stat .lbl { font-size: 10px; color: var(--text-mute); font-weight: 600; margin-top: 3px; line-height: 1.2; }
+
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--surface-alt);
+  border-radius: 14px;
+  margin: 16px 22px 0;
+  position: relative;
+}
+.tab-bar button {
+  flex: 1;
+  padding: 9px 0;
+  border-radius: 11px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-soft);
+  transition: all .22s;
+}
+.tab-bar button.active { background: white; color: var(--ns-ink); box-shadow: var(--sh-sm); }
+
+.tab-content { padding: 16px 22px 28px; }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; animation: fadeIn .3s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.school-block { background: var(--surface); border-radius: var(--r-lg); padding: 14px 16px; margin-bottom: 10px; box-shadow: var(--sh-sm); }
+.school-block h4 { font-family: var(--font-display); font-size: 13.5px; font-weight: 700; color: var(--ns-ink); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.school-block h4 .material-symbols-rounded { color: var(--ns-blue); font-size: 17px; }
+.school-block p { color: var(--text-soft); font-size: 13px; line-height: 1.55; }
+.transport-list { display: flex; flex-direction: column; gap: 9px; }
+.transport-row { display: flex; align-items: center; gap: 9px; font-size: 13px; color: var(--text); }
+.transport-row .material-symbols-rounded { color: var(--ns-blue); font-size: 19px; }
+.transport-row .time { margin-left: auto; font-size: 11.5px; color: var(--text-mute); font-weight: 600; }
+
+.openday-card {
+  background: linear-gradient(135deg, var(--ns-blue-50) 0%, white 100%);
+  border: 1px solid var(--ns-blue-pale);
+  border-radius: var(--r-lg);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.openday-card .day-block {
+  width: 50px;
+  height: 54px;
+  border-radius: 12px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--sh-sm);
+  flex-shrink: 0;
+}
+.openday-card .day-block .day-num { font-family: var(--font-display); font-weight: 800; font-size: 19px; color: var(--ns-blue); line-height: 1; }
+.openday-card .day-block .day-mon { font-size: 9.5px; font-weight: 700; color: var(--text-mute); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.06em; }
+.openday-card .od-info { flex: 1; }
+.openday-card .od-info b { font-family: var(--font-display); font-size: 13.5px; color: var(--ns-ink); }
+.openday-card .od-info p { font-size: 12px; color: var(--text-soft); margin-top: 2px; }
+.openday-card button { background: var(--ns-blue); color: white; padding: 8px 13px; border-radius: 10px; font-family: var(--font-display); font-weight: 700; font-size: 12px; flex-shrink: 0; }
+
+.gallery {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin: 0 -22px 12px;
+  padding: 0 22px;
+}
+.gallery::-webkit-scrollbar { display: none; }
+.gallery-item {
+  flex: 0 0 130px;
+  height: 90px;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 30px;
+}
+.gallery-item span { z-index: 1; }
+.gallery-item.g1 { background: linear-gradient(135deg, var(--ns-blue) 0%, var(--ns-blue-glow) 100%); }
+.gallery-item.g2 { background: linear-gradient(135deg, var(--purple) 0%, #6366F1 100%); }
+.gallery-item.g3 { background: linear-gradient(135deg, var(--ns-dark) 0%, #4B5563 100%); }
+.gallery-item.g4 { background: linear-gradient(135deg, var(--green) 0%, #34D399 100%); }
+.gallery-item .gl-label {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(0,0,0,0.32);
+  padding: 3px 7px;
+  border-radius: 99px;
+  z-index: 2;
+}
+
+.review-card {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  box-shadow: var(--sh-sm);
+  display: flex;
+  gap: 11px;
+}
+.review-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--grad-brand);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.review-avatar.alt2 { background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%); }
+.review-avatar.alt3 { background: linear-gradient(135deg, var(--warm) 0%, #F97316 100%); }
+.review-body { flex: 1; }
+.review-head { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
+.review-head b { font-family: var(--font-display); font-size: 12.5px; color: var(--ns-ink); }
+.review-head .stars { color: var(--warm); font-size: 11px; letter-spacing: 1px; }
+.review-text { font-size: 12.5px; color: var(--text-soft); line-height: 1.5; }
+.review-time { font-size: 10.5px; color: var(--text-mute); margin-top: 4px; }
+
+.partner-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin: 0 -22px;
+  padding: 0 22px;
+}
+.partner-row::-webkit-scrollbar { display: none; }
+.partner-card {
+  flex: 0 0 auto;
+  padding: 10px 14px;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--sh-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--ns-ink);
+}
+.partner-card .pc-dot { width: 22px; height: 22px; border-radius: 6px; display: grid; place-items: center; color: white; font-size: 11px; font-weight: 800; }
+
+.subj-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: var(--surface);
+  border-radius: 14px;
+  margin-bottom: 7px;
+  box-shadow: var(--sh-sm);
+  cursor: pointer;
+  transition: transform .15s ease, background .25s;
+  border: 1px solid transparent;
+}
+.subj-row:active { transform: scale(0.98); }
+.subj-row:hover { background: var(--ns-blue-50); border-color: var(--ns-blue-pale); }
+.subj-left { display: flex; align-items: center; gap: 11px; }
+.subj-icon { width: 36px; height: 36px; border-radius: 11px; background: var(--ns-blue-50); color: var(--ns-blue); display: grid; place-items: center; flex-shrink: 0; }
+.subj-icon .material-symbols-rounded { font-size: 19px; }
+.subj-info { display: flex; flex-direction: column; gap: 1px; }
+.subj-name { font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--ns-ink); }
+.subj-hours { font-size: 11px; color: var(--text-mute); }
+.subj-row .material-symbols-rounded.chev { color: var(--text-mute); font-size: 18px; }
+
+.contact-row { display: flex; align-items: center; gap: 11px; padding: 12px 14px; background: var(--surface); border-radius: 14px; margin-bottom: 7px; box-shadow: var(--sh-sm); }
+.contact-icon { width: 36px; height: 36px; border-radius: 50%; background: var(--ns-blue-50); color: var(--ns-blue); display: grid; place-items: center; flex-shrink: 0; }
+.contact-icon .material-symbols-rounded { font-size: 18px; }
+.contact-info { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.contact-info small { font-size: 10.5px; color: var(--text-mute); font-weight: 700; letter-spacing: 0.04em; }
+.contact-info span { font-size: 13px; color: var(--ns-ink); font-weight: 600; }
+.contact-row .copy { color: var(--text-mute); }
+
+.school-foot { position: absolute; bottom: 92px; left: 14px; right: 14px; }
+.school-foot .btn { width: 100%; }
+
+/* ═══════════════════════════════════════════════
+   SCREEN 7 · CHAT AI
+═══════════════════════════════════════════════ */
+.chat { padding: 0; background: var(--bg); }
+.chat-head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 56px 14px 12px;
+  background: rgba(244,248,255,0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  border-bottom: 1px solid var(--line);
+}
+.chat-head-info { display: flex; flex-direction: column; gap: 1px; flex: 1; min-width: 0; }
+.chat-head-name { font-family: var(--font-display); font-weight: 700; font-size: 14.5px; color: var(--ns-ink); display: flex; align-items: center; gap: 5px; }
+.chat-head-name .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px rgba(16,185,129,0.22); display: inline-block; }
+.chat-head-sub { font-size: 11.5px; color: var(--ns-blue); font-weight: 600; }
+
+.chat-body { flex: 1; overflow-y: auto; scrollbar-width: none; padding: 124px 14px 168px; display: flex; flex-direction: column; gap: 10px; }
+.chat-body::-webkit-scrollbar { display: none; }
+.bubble { max-width: 82%; padding: 11px 14px; border-radius: 18px; font-size: 13.5px; line-height: 1.5; animation: msgIn .35s ease; }
+@keyframes msgIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.bubble.ai { background: var(--surface); color: var(--ns-ink); border-top-left-radius: 6px; align-self: flex-start; box-shadow: var(--sh-sm); }
+.bubble.user { background: var(--grad-brand); color: white; border-top-right-radius: 6px; align-self: flex-end; box-shadow: var(--sh-blue-soft); }
+.bubble.ai .ai-tag { display: flex; align-items: center; gap: 5px; font-size: 10.5px; font-weight: 700; color: var(--ns-blue); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
+.bubble.ai .ai-tag .material-symbols-rounded { font-size: 11px; }
+
+.bubble.info-card {
+  align-self: stretch;
+  max-width: 100%;
+  background: linear-gradient(135deg, var(--ns-blue-50) 0%, white 100%);
+  border: 1px solid var(--ns-blue-pale);
+  border-radius: 16px;
+  padding: 14px;
+  font-size: 13px;
+  color: var(--text);
+  box-shadow: var(--sh-sm);
+}
+.info-card-head { display: flex; align-items: center; gap: 7px; margin-bottom: 8px; }
+.info-card-head b { font-family: var(--font-display); font-size: 13px; color: var(--ns-ink); }
+.info-card-head .material-symbols-rounded { color: var(--ns-blue); font-size: 17px; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 6px; }
+.info-cell { padding: 8px 10px; background: white; border-radius: 10px; }
+.info-cell .ic-num { font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--ns-blue); line-height: 1; }
+.info-cell .ic-lbl { font-size: 10.5px; color: var(--text-mute); margin-top: 3px; font-weight: 600; }
+
+.typing { align-self: flex-start; padding: 10px 14px; background: var(--surface); border-radius: 18px; border-top-left-radius: 6px; box-shadow: var(--sh-sm); display: flex; gap: 4px; align-items: center; }
+.typing .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--text-mute); animation: typingDot 1.2s infinite; }
+.typing .dot:nth-child(2) { animation-delay: .15s; }
+.typing .dot:nth-child(3) { animation-delay: .3s; }
+@keyframes typingDot { 0%,60%,100% { opacity: 0.3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
+
+.chat-suggest { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 4px; padding: 0 4px; }
+.chat-suggest .chip { background: white; cursor: pointer; border: 1px solid var(--ns-blue-pale); color: var(--ns-blue); transition: all .2s; }
+.chat-suggest .chip:active { transform: scale(0.96); }
+.chat-suggest .chip:hover { background: var(--ns-blue-50); }
+.chat-suggest .chip.gone { display: none; }
+
+.chat-input-wrap { position: absolute; left: 0; right: 0; bottom: 92px; padding: 10px 14px 10px; background: linear-gradient(180deg, transparent 0%, var(--bg) 50%); }
+.chat-input { background: var(--surface); border-radius: 999px; padding: 8px 8px 8px 16px; display: flex; align-items: center; gap: 8px; box-shadow: var(--sh-md); border: 1px solid var(--line); }
+.chat-input input { flex: 1; font-size: 13.5px; }
+.chat-send { width: 36px; height: 36px; border-radius: 50%; background: var(--grad-brand); color: white; display: grid; place-items: center; flex-shrink: 0; box-shadow: var(--sh-blue-soft); }
+.chat-send .material-symbols-rounded { font-size: 19px; }
+
+/* ═══════════════════════════════════════════════
+   SCREEN 8 · PROFILE
+═══════════════════════════════════════════════ */
+.profile-hero {
+  padding: 70px 22px 26px;
+  background:
+    radial-gradient(at 0% 0%, rgba(255,255,255,0.22) 0%, transparent 60%),
+    var(--grad-brand);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+}
+.profile-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(at 90% 100%, rgba(255,255,255,0.14) 0%, transparent 50%);
+}
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.22);
+  border: 2px solid rgba(255,255,255,0.36);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  color: white;
+  flex-shrink: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1;
+}
+.profile-meta { z-index: 1; flex: 1; }
+.profile-name { font-family: var(--font-display); font-size: 21px; font-weight: 800; letter-spacing: -0.01em; }
+.profile-email { font-size: 12.5px; opacity: 0.9; margin-top: 2px; }
+.profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  padding: 3px 9px;
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.32);
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+.profile-badge .material-symbols-rounded { font-size: 12px; }
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: -22px 22px 0;
+  z-index: 2;
+  position: relative;
+}
+.profile-stats .stat-card { padding: 12px 8px; background: white; border-radius: 14px; }
+.profile-stats .stat-card .stat-num { font-family: var(--font-display); font-size: 19px; font-weight: 800; color: var(--ns-ink); }
+.profile-stats .stat-card .stat-label { font-size: 10.5px; color: var(--text-mute); margin-top: 2px; }
+
+.profile-body { padding: 18px 22px 22px; }
+.profile-section { margin-bottom: 18px; }
+.profile-section h3 { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--text-soft); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.06em; display: flex; align-items: center; gap: 6px; }
+
+.insight-card {
+  padding: 14px 16px;
+  background: linear-gradient(135deg, rgba(139,92,246,0.10) 0%, rgba(6,108,244,0.08) 100%);
+  border: 1px solid rgba(139,92,246,0.18);
+  border-radius: 16px;
+  display: flex;
+  gap: 10px;
+}
+.insight-card .ic-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, var(--purple) 0%, var(--ns-blue) 100%);
+  color: white;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.insight-card .ic-icon .material-symbols-rounded { font-size: 19px; }
+.insight-card p { font-size: 12.5px; line-height: 1.5; color: var(--text); }
+.insight-card p b { color: var(--ns-ink); font-family: var(--font-display); font-weight: 700; }
+
+.pref-card {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--sh-sm);
+}
+.pref-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.pref-card button { width: 34px; height: 34px; border-radius: 10px; background: var(--ns-blue-50); color: var(--ns-blue); display: grid; place-items: center; flex-shrink: 0; }
+
+.fav-card {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  box-shadow: var(--sh-sm);
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+.fav-card:active { transform: scale(0.98); }
+.fav-thumb { width: 44px; height: 44px; border-radius: 12px; background: var(--grad-brand); color: white; display: grid; place-items: center; flex-shrink: 0; }
+.fav-thumb .material-symbols-rounded { font-size: 22px; }
+.fav-info { flex: 1; }
+.fav-name { font-family: var(--font-display); font-weight: 700; font-size: 13.5px; color: var(--ns-ink); }
+.fav-sub { font-size: 11.5px; color: var(--text-soft); margin-top: 2px; }
+.fav-heart { color: #EF4444; font-size: 20px; }
+
+.achievement-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin: 0 -22px;
+  padding: 0 22px;
+}
+.achievement-row::-webkit-scrollbar { display: none; }
+.ach-card {
+  flex: 0 0 88px;
+  text-align: center;
+  padding: 10px 6px;
+  background: var(--surface);
+  border-radius: 14px;
+  box-shadow: var(--sh-sm);
+  border: 1.5px solid transparent;
+}
+.ach-card.unlocked { border-color: var(--warm); }
+.ach-card .ach-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  margin: 0 auto 5px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  background: var(--surface-alt);
+}
+.ach-card.unlocked .ach-icon { background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%); color: white; }
+.ach-card.locked .ach-icon { filter: grayscale(1); opacity: 0.5; }
+.ach-card .ach-name { font-family: var(--font-display); font-size: 10.5px; font-weight: 700; color: var(--ns-ink); line-height: 1.15; }
+.ach-card .ach-pct { font-size: 9.5px; color: var(--text-mute); margin-top: 2px; }
+
+.activity-list { display: flex; flex-direction: column; gap: 0; padding: 4px 0; background: var(--surface); border-radius: 16px; box-shadow: var(--sh-sm); }
+.activity-row { display: flex; align-items: center; gap: 11px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.activity-row:last-child { border-bottom: none; }
+.act-dot { width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0; }
+.act-dot .material-symbols-rounded { font-size: 17px; }
+.act-dot.blue { background: var(--ns-blue-50); color: var(--ns-blue); }
+.act-dot.green { background: var(--green-soft); color: var(--green); }
+.act-dot.purple { background: var(--purple-soft); color: var(--purple); }
+.act-info { flex: 1; min-width: 0; }
+.act-text { font-size: 12.5px; color: var(--text); line-height: 1.35; }
+.act-text b { font-family: var(--font-display); color: var(--ns-ink); font-weight: 700; }
+.act-time { font-size: 10.5px; color: var(--text-mute); margin-top: 2px; }
+
+.settings-list { display: flex; flex-direction: column; gap: 6px; }
+.setting-row { display: flex; align-items: center; gap: 11px; padding: 12px 14px; background: var(--surface); border-radius: 14px; box-shadow: var(--sh-sm); cursor: pointer; transition: background .2s; }
+.setting-row:hover { background: var(--ns-blue-50); }
+.setting-row .material-symbols-rounded.lead { color: var(--ns-blue); font-size: 19px; }
+.setting-row.danger .material-symbols-rounded.lead { color: var(--danger); }
+.setting-row.danger .setting-label { color: var(--danger); }
+.setting-label { flex: 1; font-family: var(--font-display); font-weight: 600; font-size: 13.5px; color: var(--ns-ink); }
+.setting-row .chev { color: var(--text-mute); font-size: 16px; }
+
+/* ═══════════════════════════════════════════════
+   BOTTOM TAB BAR
+═══════════════════════════════════════════════ */
+.tabbar {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(22px) saturate(1.4);
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 22px;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  box-shadow: 0 12px 32px rgba(15,23,41,0.14), 0 4px 10px rgba(15,23,41,0.06);
+  z-index: 60;
+}
+.tab-btn { flex: 1; padding: 9px 6px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; gap: 2px; color: var(--text-mute); transition: all .25s; font-family: var(--font-display); font-size: 10px; font-weight: 700; }
+.tab-btn .material-symbols-rounded { font-size: 21px; }
+.tab-btn.active { background: var(--ns-blue); color: white; box-shadow: var(--sh-blue-soft); }
+.tab-btn:active { transform: scale(0.92); }
+.tab-btn.active .material-symbols-rounded { font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24; }
+
+.hidden { display: none !important; }
+
+/* mobile fullscreen */
+@media (max-width: 460px) {
+  body { padding: 0; background: var(--bg); }
+  .phone-shell { width: 100vw; height: 100dvh; border-radius: 0; padding: 0; box-shadow: none; background: var(--bg); }
+  .phone-screen { border-radius: 0; }
+  .phone-notch { display: none; }
+  .status-bar { padding-top: max(16px, env(safe-area-inset-top)); }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════
+     LOGO ASSET — PNG dal PDF ufficiale (data URI)
+════════════════════════════════════════════════════ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute; width:0; height:0;" aria-hidden="true">
+  <symbol id="ns-x-mark" viewBox="0 0 60 70">
+    <line class="ns-x-dark" x1="6" y1="6" x2="54" y2="64" stroke="currentColor" stroke-width="9.5" stroke-linecap="square"/>
+    <line class="ns-x-blue" x1="6" y1="64" x2="54" y2="6" stroke="var(--ns-blue)" stroke-width="9.5" stroke-linecap="square"/>
+  </symbol>
+</svg>
+
+<!-- ════════════════════════════════════════════════════
+     PHONE FRAME
+════════════════════════════════════════════════════ -->
+<div class="phone-shell">
+  <div class="phone-screen">
+    <div class="phone-notch"></div>
+    <div class="status-bar" id="status-bar">
+      <span>9:41</span>
+      <span class="status-right">
+        <span class="material-symbols-rounded">signal_cellular_alt</span>
+        <span class="material-symbols-rounded">wifi</span>
+        <span class="material-symbols-rounded">battery_full</span>
+      </span>
+    </div>
+
+    <!-- ────── SCREEN 1 · LOGIN ────── -->
+    <div class="screen login active" id="screen-login">
+      <div class="login-mesh"></div>
+      <div class="login-blob b1"></div>
+      <div class="login-blob b2"></div>
+
+      <div class="login-content">
+        <div class="login-hero">
+          <div class="ns-lockup-stack">
+            <div class="ns-icon size-xl">
+              <img src="data:image/png;base64,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" alt="Next Step logo"/>
+            </div>
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAGaArwDASIAAhEBAxEB/8QAHQABAAIDAQEBAQAAAAAAAAAAAAgJBQYHBAIDAf/EAGEQAAECBAIEBA0MDwYEBAcAAAABAgMEBQYHEQgSITE3QVF1CRMUFxgiYXFzlbPS0xUWMjhVVleBlLGytCMkMzU2UmJydJGToaOl1DRCZ8HR5ENTkqIlJ4KDREVjZXbh8P/EABoBAQACAwEAAAAAAAAAAAAAAAAEBQECBgP/xAAtEQEAAQMCAgoCAgMAAAAAAAAAAQIDBBExEhMFFBUhQVFSkaHwgdEiMiNCYf/aAAwDAQACEQMRAD8AmWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcF01cRbuw3sKi1Wz6mynzc1VOp4z3S8ONrQ+lPdlk9qom1qbUA70Cum0dLXFmQuWQm7hrEGr0mHFTquT6gl4SxYa7FycxiKipnmm3eiZ7MywK0rgpV025I3BRJps1T56CkWDETjReJeRU3KnKgGUAAAAAAAABXhiDpNYz0m/bhpUhdUGFKSdUmZeAxaZLO1YbIrmtTNYea5IibVOwaFGMmIWJN71ymXjW4dQlZWmpHgsbJwYKtf01rc84bUVdirvAleDgemviNd+G1kUOp2dVG0+amqksCM90tDjI5nSnOyyiNVE2om4ih2VWOPvug+KpX0YFlYK1Oyqxx990HxVK+jHZVY4++6D4qlfRgWVgrU7KrHH33QfFUr6MdlVjj77oPiqV9GBZWCtTsqscffdB8VSvox2VWOPvug+KpX0YFlYOFaFmIV2YkYcVasXhUmVCdl6u+WhRGy8ODqw0gwnImTGoi7XO279p3GbZFiysWHAjrAivYrWRUajlY5U2OyXYuW/JQP0ByOo3HeNNn40hO1ZzZiCuTtWBCycnE5vabl3p+rein4svK6IcRr/VTpuqqL0uJAho1+XEqo1FRF7i5llT0Xdqp4qZiY+/8Qpz7cTpMS7EDwW/VpatUuFPyq5I7Y9ir20N6b2r3U/fsXcp7yumJpnSUyJiY1gABhkAAAH8cqNarnKiIiZqq8RB7SJ0qrrl8QI9Hwyq0GSpNOVYEWZWVhRlm4qL2zk6Y12TUVFRMss9qrxATiBW1T9J7HuoT0CRkrnZMTMxEbDhQmUmVVz3KuSIidL5SfGEcneknY0l6/602q3BGTp0y5kvDhMgK5EyhNRjWourxqqZqqrxZAbaCJOmnjPiLhviPSaPZ9ch0+SmKQyZiw3SUGNrRFjRWqub2KqbGt2bthwrsqscffdB8VSvowLKwVqdlVjj77oPiqV9GOyqxx990HxVK+jAsrBWp2VWOPvug+KpX0Y7KrHH33QfFUr6MCysFanZVY4++6D4qlfRjsqscffdB8VSvowLKwVqdlVjj77oPiqV9GOyqxx990HxVK+jAsrBBDR70h8Wrtxntm3K9csKapk9NLDmISU+XYr26jly1msRU2om5Sd4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiz0SPgstzntPIRSUxFnokfBZbnPaeQigQNJKaE2NS2RcbbJuKaVLdqsb7BEe7tZOYdsRdu5jty93JeUjWALmE2pmgIy6EONXrxt9tiXHNa1fpkL7UixH5rNy7U7u97Ny8qZLykmgAAAAACo3FjhTu3nud8u8kH0NvhMuXmZPLMI+YscKd289zvl3kg+ht8Jly8zJ5ZgHRuiScGdtc8r5F5BAnf0STgztrnlfIvIIAdepujRjbUqdLVGSsrpsrNQWRoL/VSTbrMciOauSxUVM0VNino7FzHb3jfzaS9MWJYa8HVtc0SvkWmwAVm9i5jt7xv5tJemHYuY7e8b+bSXpizIAVm9i5jt7xv5tJemHYuY7e8b+bSXpizIAcI0J8P7uw6w2q1IvKk+pk7MVh8zChdUwo2tDWDCajs4bnIm1rkyVc9h3cADW77tttckOnSzGJUZdFWA5Vy1044bl5F4l4l27s0Xkao5rnNiMfDe1Va9j0yc1yLkqKnEqLsJAGhYl2101sSvyDFWKxv23CamfTGons0/KRN/KicqIi2vR2Zyp5de0/CBm43HHHTu1W0K9Et+qdP1XPk4+TZqGm1cuJ6J+Mn70zTfll2WDEhxoTI0GI2JDe1HMe1c0ci7UVF40OAoqKiKioqLtRUN0wzuLqKYZQpx32tGd9qvVfub1X7n3nLu7uzjTKT0nh8Uc2jfxeGDk6Ty6vw6YAChWwAc/wAfMTaZhXh/NXBOKyLOxEWDTpVXZLHjqmxPzU3qvJ3wOQ6cWNK2lQHWBbk0ra5U4P27FhuydKy7k3ZptRz0/Uma8ZAUyVz1yp3LcM9XqzMumqhPRnRo8V395y/5JuRORDtOh/grExLu1K3W5ZUtalREdH1kySbiptSCnKnG7ubOMDr+gtgh1DLwcULpk29VRUX1Fl4rc1hsVMljqi7lXajeRNvGS+PmDDhwYLIMGGyHDY1GsYxMmtRNiIiJuQ+gIi6bGDeJGIuJNJq9m256pyUvR2S0WL1bLwdWIkaK5W5RIjVXY5q5omW04P2LmO3vG/m0l6YsyAFZvYuY7e8b+bSXph2LmO3vG/m0l6YsyAFX1xaOmMlvUGertYs7qanSEB8xMxvVOUf0uGxM3O1WxVVckTciKpygtc0ieAe+eYZvyTiqMDomHuCWJ1/0Ba9aNs+qVOSM6B07q+Whdu1EVU1YkRruNNuWRsXYuY7e8b+bSXpiVPQ9+AF/PMz9GGSJArN7FzHb3jfzaS9MOxcx294382kvTFmQAgXo8aPuL1qY02zcVftHqOmSM0sSYj+qMrE1G6jkz1WRVcu1U3IpPQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARZ6JHwWW5z2nkIpKYiz0SPgstzntPIRQIGkj9JvBVaPZVu4nW1J5U6fpko6rwISbJeO6Cz7KifivXfyOXPjI4FtVj02QrODtApVUlYc1JTdBlYMeDETNr2OgNRUUCqe2K5VLauCRr9Em4knUZGM2NLxmb2uT50XcqLsVFVF2KWi4B4n0vFawZe4JNIcCeh5QajKNdmsvGRNqcuqu9FXi7xX1pKYSz+E9+xaejYkWiTirGpk0u3Wh57WOX8Zu5eXYvGefR2xUqOFF/wAvWYKvjUuYVINTlUXZFhZ70/KbvT9XGBacDw29V6dX6HJVqkTUObkJ2C2NAjQ1zR7XJmh7gAAAqNxY4U7t57nfLvJCdDacvXKuZvEtHav8Zn+pHvFjhTu3nud8u8kH0NvhMuXmZPLMA6N0STgztrnlfIvIIE7+iScGdtc8r5F5BAC3jDXg6trmiV8i02A1/DXg6trmiV8i02AAAAAAAAAAAAOU4g20tInFqMlCRKbHd2zWpsgRF4u41y7uRdnG1DVHtRzVa5M0Xed8nJaBOSkWUmoTYsCK1WRGO3OReI4zdVEjW/VVlHq+JLxEV0tGd/fbxoq/jJuXl2Lx5Jf9G5nHHKr38FRm43DPMp2b9h1ci1WUWmzr1WoSzM9d3/Hh7tfvpmiL3cl48k204JKzExJzcGblIqwZiC/XhvTiXupxoqZoqcaKp2a1q3L16lMnIKdLiIupHhKuaw3pvTupxovGioQekMPk1cVP9Z+ErDyebTw1bw9NcqkhRKPN1eqzUOVkZOE6NHjRHZNYxqZqqlYOkfitP4r4gR6s5XwqRK5waZLL/wAOFn7Jfynb1+JOI7Hp1Y1erdTfhpbM5nTZKIi1WPCXZHjJuhIvG1vHlvXvEWaPTZ6sVWVpVMlYs3OzcVsKBBhtzc96rkiIVya2nBnDus4m33J2zSGK1sRdebmVTtJaCnsnr8yJxqqFo9g2pRrItKQtmgyzZeRkoSMaiJ2z3f3nuXjcq7VU0bRmwikMJ7FZJxGQo1enkSLU5pNqq/LZDav4jd2zeuanVgAAAAAAAAND0ieAe+eYZvyTiqMtc0ieAe+eYZvyTiqMCw/oe/AC/nmZ+jDJEkduh78AL+eZn6MMkSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACLPRI+Cy3Oe08hFJTEWeiR8Fluc9p5CKBA0t1wu4M7W5mlPIsKii3XC7gztbmaU8iwDEY44bUjFKwpu26k1kOP8AdZGaVubpaMidq5OPJdypxopVxeNuVe0rmn7drkq6WqEjFWFFYu5ctyovGiptReRS4EjlpqYKpflsuvC3pVi3JSYP2RjG5OnJdNqt2b3N2qmfdTkA4zoOY1+titMw7uWba2jVGL/4dHiuySVjuX2CquxGPX9S98nmU0or4cTNNZj2r3lRULDdC7Gpt/2slp3BNNW5aTBREc9cnTkBNiP7rm7Ed8SgSJAAFRuLHCndvPc75d5IPobfCZcvMyeWYR8xY4U7t57nfLvJB9Db4TLl5mTyzAOjdEk4NLZTL/5yu3/2XkECd/RJODO2ueV8i8ggBa5h/dtvy1hW9LxqhqRYVLlmPb0mIuTkhNRU2NM5687a90v4ETzTh9tfg7TP0SF9BDIHQUdFWaqYnWfj9KerpC5EzGkffy7B687a90v4ETzR687a90v4ETzTj4NuyLPnPx+mO0bvlH38uwevO2vdL+BE80evO2vdL+BE804+B2RZ85+P0do3fKPv5dspNwUiqzLpeQm+nRWsV6t6W9va5ome1E5UMocvwm/COY/RHfTYdQKjNsU2LvBTssca7N23xVAAIiQGPuCkytbpcSRmkVEd2zIjfZQ3puc3up+9FVF2KpkAZiZpnWGJiJjSXB6lJTNNqEaQnWIyPBXJ2S5o5F3OTlRU/wBN6KhiLnqN1U6062tmzbZerTEjEgwlcmaKuWxUTiem3VXiV3IdQxedTekybVYjqprZw1auSthZ9tr8rV4k5d2xHHO466rEX8tqf9yHUY9fW8f/ACRv91UV6nq97+Eq75tI6TUVJrpnVCPd03pmetrZ7c89ueZObQbwQ9b9Nh4kXTJqlVnYSepUvFbkstBXfFVPx3JllyJ3zgtz1bDeU0oJKpVWQiTdvy82z1WZCemo+Omeb0TLa1HaiuTj1XbUzLH6XNSc9TZacp0aFGk40Jr4ESEubHMVNiplxZHM3aOCuadddF3RVxUxV5vQADRuAAAAAAAA0PSJ4B755hm/JOKoy1zSJ4B755hm/JOKowLD+h78AL+eZn6MMkSR26HvwAv55mfowyRIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIs9Ej4LLc57TyEUlMRZ6JHwWW5z2nkIoEDS3XC7gztbmaU8iwqKLdcLuDO1uZpTyLANjAAECNOHBT1q1x+INtSiNolSi/b8GG3JJWYcvskRNiMev6l75Heybmq9n3TIXJQpp0tPyMVIkNybnZb2uTjaqbFTuluFx0am3DQp2h1iVZNSE7BdBjwnpmjmqn/APL3yr3SFwtqWFN/zFEmNeNTY6rGpk0qZJGg57l/KbuX/wDYFjWCeI1IxQsKTuWlvayK5Olzstn20tGT2TF7nGi8aKhu5V9oy4uTuE9+Q5yI+JFoM8qQanLJtzZnsiNT8Zu/ZvTNCzik1CSqtMlqnTZmHNSc1DbFgRoa5texUzRUAqWxY4U7t57nfLvJB9Db4TLl5mTyzCPmLHCndvPc75d5IPobfCZcvMyeWYB0bokif+Wlsr/95XyLyCBO/oknBnbXPK+ReQQAtcw/tK35mwremI1P14sWlyz3u6dETNywmqq7HGc9Zlte5v8AHiecMNeDq2uaJXyLTYD2jJvR/vPvLy5Fv0x7Nf8AWZbXub/HiecPWZbXub/HiecbADPWb3rn3k5Fr0x7Nf8AWZbXub/HiecPWZbXub/HiecbAB1m96595ORa9MezF0m36RSpl0xISnSYrmKxXdMe7tc0XLaq8iGUAPKuuqudap1lvTTFMaUxoAA1bBj7gq0tRaXEn5pVVG9qyG1U1oj13NTu/MiKu5D3RokODBfGjRGw4bGq573LkjUTaqqvEhxm767EuCq9UarocpBzZKw135cb1T8Z37kyTfnnLw8WcivTwjdHyb8WaNfFjqhOTFRn48/NuR0xHdrPyXY3kancRNif65nknrar910Sq0u25hkpUOo3ugzMRO0hxMl6Wnfc5Ms+Lau3LJfRKy8xNzUKUlISxpiM7UhsTjX/ACREzVV4kRVO0WvRoFCpEORgu13568aIqbYkRcs3dzciInEiIhc52TGPb5dG8/EK3Eszer46tlRNfptSo9bnaXWJaNLVCVjOhTMKMio9r0Xbnn8/GSl0H8dfUSdg4a3dPZUuZdlR5qK7ZLRVX7i5V3Mdns/FXZuds6Bpv4IeuekRMQ7Xk1WtSEJVqMvCbms1Aans0RNqvYn607xA1rnMcjmuVrkXNFRclRTm10uXBGrQuxyS+KGyybmmk9cdOhfa8Z7ts7Aam/8APam/lTbyklQAAAAAAAAND0ieAe+eYZvyTiqMtc0ieAe+eYZvyTiqMCw/oe/AC/nmZ+jDJEkduh78AL+eZn6MMkSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACLPRI+Cy3Oe08hFJTEWeiR8Fluc9p5CKBA0t2wvRUw0tZFTJUo0p5FhUSW7YYKrsNLXcu1Vo8oq/sWAbEAABzzSAwvpmK1gTNBmtSDUISLGps0rc1gRkTZ/6Xbl7neOhgCnm56JU7buCeoNZlXytQkYywY8JybWuT/Jd6LyKSl0FMbPUqfhYY3POKkjNxMqPHirshRXL9wz5HL7Hu7OM6Lpv4KevChOv63JXWr9Mg5TkKGzbNy7c1z2b3sT9bdnEhAWG98OI2JDe5j2qitc1clRU3KigbJixwp3bz3O+XeSE6G2i9cu5ly2eoyeWYRcn5uZn56Ynp2M+PMzMV0WNFeubnvcqq5y91VVVJR9DbVeuXczeJaOi/xmAdF6JJwZ21zyvkXkECd/RJODO2ueV8i8ggBbxhrwdW1zRK+RabAa/hrwdW1zRK+RabAAAAAAAAAAANTxEuRaRJJISbvt+aauTkX7izcr+/vRvdzXiVDe3bquVRTTvLSuuKKZqqa/ibcXVkw+hSbvtaC77aiIv3R6f8PvIu/u7OJUXSnKjWq5yoiImaqvEGNRrUa1NiG04d28lYqPV83Da6nyr/YuTZGiptRO83Yq8q5Jt2odNEW8Gx975UkzXlXfvdDZcNLcWQlfViehas5MMyhMdvhQl27uJztiryJknLnuYBzV27VdrmureV3btxbpimByI5FRURUXYqLxlfemrgitj3A69bclVS3KnF+zwmN2Scw7encY5dqci5pyFghjboodLuW356g1qVZNU+egrBjwnJsVq/5pvReVDzbqiLerFSoFck61SJuJKT8lGbGgRoa5OY5F2Fm+jdi7TcWbHhzyOhwK5JokKpyeeSsflse1ONjt6LxbUK/tILC2qYUX7MUOa149OjKsamzatySNBz2Z/lN3KnL3zF4PYhVvDO+JO5qLEVVhu1ZmXcvaTMFfZMd/kvEuSgWzg13De8qJf1nSN0UCYSLJzbM1bn20J6eyhu5HIuw2IAAAAAA0PSJ4B755hm/JOKoy1zSJ4B755hm/JOKowLD+h78AL+eZn6MMkSR26HvwAv55mfowyRIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIs9Ej4LLc57TyEUlMRZ6JHwWW5z2nkIoEDS3XC7gztbmaU8iwqKLdcLuDO1uZpTyLANjAAAAAFRFTJUzRSvrTYwUWx7kdetuyrkt2qxvs8Nje1k5h21U2bmO2qndzTkLBTFXbb9Kuq2563q3KtmqfPQlhRoa8i8aLxKm9F5UAp8JU9Db4TLl5mTyzDieO2GlWwsv6at2oJEiyrs4shNK3JsxAVdjuTNNypxKh2zobfCZcvMyeWYB0boknBnbXPK+ReQQJ39Ek4M7a55XyLyCAEvLa01fUa3KZR+tp0/qGUhS3TfV3V19RiN1sup1yzyzyzUyHZz/wCF38//ANuQzAEzOzn/AMLv5/8A7cdnP/hd/P8A/bkMwBMzs5/8Lv5//tx2c/8Ahd/P/wDbkMwBOewdMj11XzQbY63PUfqtUYEj1R6t9M6V02I1mvq9ITWy1s8s0z5UJYlTuAfDlYn/AORSH1hha9MxoUtLxJiPEbDhQmK973Lsa1EzVV+IDwXNWZehUmJPx2rEVF1IUJFyWI9dzU/UqqvEiKvEcXnJmYnZ2NOzcTpkxHdrRHcXcRORETYiciGQuuuRbgqyzao+HLQ0VktCd/dbxuVPxnZIq8mxOLNcWiPc5rIbHxHucjWMYmbnOVckRE5VXYdJgYkWKOOvefhSZeRzauGnaHsodLmK1VYVOlVVjn9tEiauaQmJvcvzInGqp3TtdNkpenSEGSlIaQ4MFqNYn+a8qrvVeNVMRY9vtoNK1YmTp2YyfMv5F4mJ3G5qndXNeMz5U52V1ivu/rGyxxMflU9+8gAIKUAADn2PeGFKxVsKYoE9qQZ2HnFp02rc1l42WxfzV3KnJ3ir27LfqtrXHPW/W5V0rUJGKsKNDdxKnGnKi70XkUuDI5aaOCTb9tt14W7KsW5aXB+yMamTp2Am1Wd17dqtz7qcgEW9FXGeawpvFIE++LFtmpRGsqEFFz6Uu5IzU5U4040+Ispps7KVKnwKhITEOZlZiGkSDFhrm17VTNFRSnB7XMcrHtVrmrkqKmSopLDQhx19Qp6Bhtdk9lS5qJq0qZjO2S0Vy/clVdzHLuz3KvdAnOAAAAA0PSJ4B755hm/JOKoy1zSJ4B755hm/JOKowLD+h78AL+eZn6MMkSR26HvwAv55mfowyRIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANduu+bMtRqrct00ekuyzRk1OMY93eaq6y/EgGxA4tP6UuB8oqtS8XzLk4oNNmV/esNE/eeaS0r8EZhyJFuWclEXji0uYVE/wChjgO5A0i1sXMMrnidKol80KZjZ5JBdNNhRV7zH5OX4kN3AAAADFXLctuWzLQpm5LgpNFgRn6kKJUJyHLte7LPVRXqiKuW3JDA9djCz4S7M8ey3ngbmDTOuxhZ8JdmePZbzx12MLPhLszx7LeeBuYNM67GFnwl2Z49lvPHXYws+EuzPHst54G5g0zrsYWfCXZnj2W88ddjCz4S7M8ey3ngbmDTOuxhZ8JdmePZbzx12MLPhLszx7LeeBuYNNbivha5yNbiVZqqq5IiVyW2/wDebkqoiZquSIABpnXYws+EuzPHst5467GFnwl2Z49lvPA3MGmddjCz4S7M8ey3njrsYWfCXZnj2W88DcwaZ12MLPhLszx7LeeOuxhZ8JdmePZbzwNzBpnXYws+EuzPHst5566RiNh7WKlBplIvu16hPR11YMtK1eBFixFyzya1r1VVyRV2JxAbQAa5W79sah1KJTa1eluUyehIixJabqkGDFZmiKmbXORUzRUVNm5QNjBp/XTwx+Eaz/Hct5466eGPwjWf47lvPA3AGn9dPDH4RrP8dy3nnrlMQLDnMupL2tqYz3dKqsB2f6nAbKD8JGck5+XSYkZuBNQVXJIkGIj2r8abD9wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGoYrYkWnhlbi1u6qh0iG5VbLy8NNePMvyz1YbONe6uSJxqhkcQrto9jWbUrqrsbpUjIQumPy9lEcq5NY1ONznKjU7qlWuLuIVfxMvSbuSvTDnOiOVsrLI77HKwc+1hsTkTjXeq5qoHTcZNKbEG9ZmZk7fm4trUN6ajYEo/KYiN5Xxk7ZFXkZqpls2nBY8aLMRnx48V8WLEcrnve5XOcq71VV3qZS0Lar13V6XoVt0uYqVRjr2kGC3NcuNyrua1ONVyRCWmGehUj4MGcxDuV8N7k1n0+lImbe46M9FTPlyb3l4wIaAs1o2jFgnTZdsP1mtnHom2LNzkeI53dVNdG/qRD1VHRuwTn4asi2FJw+RYEzHgqnxsegFYBv8AhvjHiRh9FhJbl0TrJOH/APATD1jSqpydLdmje+3Je6SwvfQqs6oOiR7TuWqUSI7a2DNMbNwUXkTa16J3Vc7Lu7iM+L+j/iPhpDiz1UpTajRmL986eqxYTU5YiZI6HxbXIjc1yRVAlVgdpbWtd0eBRb3gQbYq8TtWTPTPtGM7k1nbYS/nKqflZ5ISWaqOajmqioqZoqcZTQWQaEtHxEpOE0NL4nIiyMZWvoslMNVZiWl8l9k5dqNXYrWL7FORFREDS+iTcHVr87v8i4gmWtY04UW1izRpGlXNMVOBAkZhZiEsjGZDcrlardquY7ZkpyvsMMJ/dS7flsH0IFfILBuwwwn91Lt+WwfQjsMMJ/dS7flsH0IFfILBuwwwn91Lt+WwfQkA6xLslKtOSkJXLDgx3w2q5duTXKiZ/qA8oO+6HmDlq4uztywbnmarAbTIcs6B1DGZDVViLER2trMdn7BMssuMkT2GGE/updvy2D6ECvkFg3YYYT+6l2/LYPoR2GGE/updvy2D6ECAEh/bpfwrfnLjo/3CJ+avzEcoWhnhTCisiNql2ZscjkznYPF/7JI2P9wifmr8wFNQBITRAwRtTGCWuWJctQrUotKfLNgep8aEzW6YkXW1teG/P2CZZZcYEewT/wCwqws937z+WS39OOwqws937z+WS39OBAAE/wDsKsLPd+8/lkt/TjsKsLPd+8/lkt/TgQAOraIntj7N/S4nkYhKnsKsLPd+8/lkt/TmwYc6K+HtiXrTLtpFZuiPPU2IsSDDmpmA6E5Vare2RsFqqmTl3KgHeStfTm9spcPgJP6tDLKCtfTm9spcPgJP6tDA4eDfdH2zqXf+MFBtCtRpuDIVB8ZsZ8q9rYqakCJETVVzXIm1ib0XZmTF7C3Cr3avD5ZL+gAr9BYF2FuFXu1eHyyX9AeWb0J8OHNXqW57rhO4lixZd6J+qE0CCVLqdSpU0k1S6hNyMw3dFlozob0+Nqop1rD/AEmcXbRjQ2uuSJXpNq9tLVhFmNZPCKvTE/6su4deurQgnmQnRLWvuWjxMl1YFSk3Qk+OJDV30CP2KeDOIuGqLHui34sOnq5GsqEs5I0s5V3Ir2+wVeJHo1V5AJq4G6UtlX8+BSLhRlr1+IqMbCmIqLLTDlXJEhxVyycq/wB1yIvEiuJAlM5NzQgx4n63NMw0vOodUTTYX/gs5GX7JFRqdtAe7+85Gpm1V2qiORVXtQJeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAh90SK7piBTbbseXerIU059Rm8nKmsjO0htXlTNXr32t5CFcGFEjxmQYLHRIkRyNYxqZq5VXJEROUlP0SSTisxLtmfci9JjUZYLeTWZGerv3RGkarOqMCj3dRqvNQliy8jPwJmLDRM1e1kRrlTLNN6JyoBZho2YSUrCqw5WUSWhvr85CbFqs2qIr3RFTPpaL+IzciceWe9TqZ5aRUZGr0uVqlMmoU3JTcJsaXjwnazIjHJm1yLyKinqAAAAfx7WvYrHtRzXJkqKmaKh/QBxWFoz4ZwsWWX5CprYcFidNbRmsRJNJnPNIqN4k/+n7HPb3DtQAAAAAAAKd7l/COp/pcX6alxBTvcv4R1P8AS4v01Aln0M/763z4CS+lHJqkKuhn/fW+fASX0o5NUAAAB8R/uET81fmPs+I/3CJ+avzAU1E0+hnf2G/PCyHzTBCwmn0M7+w354WQ+aYAmKAAAAAAAAVr6c3tlLh8BJ/VoZZQVr6c3tlLh8BJ/VoYGP0MvbL2f4WZ+qxizgrH0MvbL2f4WZ+qxizgAAAB+E/JylQko0jPysCblY7FhxoEeGj4cRq7Fa5q7FReRT9wBWtpiYSymF2IkF9DhxGW/Wob5mSY7akB6OyiQUXjRusxUz25PRFzyzXj9uVadoFw06u056Q52nTUKbl3KmaJEhuRzVy49qITL6JbHlUoFlSztXqp01NPZyoxGQ0d8Wat/UQlAuHtarwa/bNKrsuxWQalJQZuG1XZ5NiMR6Jmm/YpkTS8CIceDglY8OZdnFbb8jrdz7AzJPiTJDdAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADi2mFhdM4m4WubRpZse4KPF6rp7NzoqZZRYSLyuaiKicbmNTZvK040OJBivhRYbocRjla9jkyVqpsVFTiUuVI8aRmjDQsRpmYuO2I8vQbniZvjK5q9SzruWIjUVWO5XtRc9uaOXagRLwL0gb4wp1KfJxGVe31frPpc25dVma5qsJ++Gq7d2bc1VVaq7SX2HWllhXdDIUCrzcza0+7YsOoMzgqv5MZmbcu6/U7xBTErDK+MO6g+Uuy3pyRh66shTaMV8tG/Mip2q7NuWeaZ7URTTwLjaRU6bWJCHP0moSlQk4iZw48rGbFhv7zmqqKesp6ty4a9bc+k/b9ZqFKmkVF6bJzDoTly5VaqZp3FOz2ZpZ4v0DpUKfqMhcMuxUTUqMqmvq8nTIeo5V7rtb49wFjwIuWBpoWRVXw5a8KHUbdiuyR0xBXquXTlVdVEiJ3kY7v8ALIazbxtW8af1fa1wU6rwERFesrHa90PPcj2+yYvcciKBnQAAAAAAACne5fwjqf6XF+mpcQU73L+EdT/S4v01Aln0M/763z4CS+lHJqkKuhn/AH1vnwEl9KOTVAAAAfEf7hE/NX5j7PiY2y8RM8u0Xb8QFNRNPoZ39hvzwsh80wQsOp4HY13Vg9I1P1s0+izfqvFh9UeqMGK/V6Ui6urqRGZZ9NdnnnuTdxhaKCAHZq4p+4FmfI5n+oHZq4p+4FmfI5n+oAn+CAHZq4p+4FmfI5n+oHZq4p+4FmfI5n+oAn+CAHZq4p+4FmfI5n+oHZq4p+4FmfI5n+oAn+Vr6c3tlLh8BJ/VoZZQVr6c3tlLh8BJ/VoYGP0MvbL2f4WZ+qxizgqGw8u2r2LeNPuuhLASoyDnug9Ph67O2Y5i5pmmexynZ+zDxg/Gt/xevngWJArt7MPGD8a3/F6+efnG0v8AGOImTZmhwu6ynp/m5QLFjC3ndlt2bRYlZuisydKkoaL9kjxERXqiZ6rG73u/JaiqvIVzVrSextqjHw1vJ0nCeipqyklAhKmfI5GayfrOWXDXq3cU+6oV+sT9Vm3b405MOiv72blXZ3AOhaTuK8TFnEZ9WlocSBRpKH1NTIMRqI9Ieebnu/Kc7Ne4mqnFmuh2Vb87dV3Um26cxzpqpTcOWh6rc9XWciK5e4iZqvcRTFy0CPMzEOXloMSNGiuRkOHDarnPcuxERE2qq8hPbQwwCm7FhrfV4wGw6/NQdSSknJm6RhO3ucv/ADHJsyT2KZpvVUQJKUeny1JpEnS5NqslpOAyXgtXiYxqNan6kQ9QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH5TkrLTsrElJyXgzMvFbqxIUViPY9ORUXYqHFr/ANFvCG6+mxpeiRLdnH5r0+kROktReL7EqLDRO81F7u7LtwAgxfOhRdEmr41nXVTqtC3pAn4bpaKiciObrNcvdXV/14bfWDGKFlI99wWZU4MuzPOagMSYgInKsSErmt+NUUtZAFM5krbr1aturwqtQKrOUufgr2kxKxlhvTuZpvRctqLsXjLQsR8FMM7+SLEuC1pPq2JtWelE6nmM+VXsy1t/97NO4RCx00S7ls2Rj12y5yLc1IgtdEjy7oaMnJdibc9VNkVERNqtRF/JyRVA3rR60u+qI0K38WIkOG5ytZL1uDB1W57so7G7E/PaiJyoiZuJiwYkONCZFhRGxIb2o5j2rmjkXaiovGhTSTL0BsY56PPJhVcU506EkB0ShxYrs3s1Nr5fPjTVzc3kRrk3aqIEzQAAAAAp3uX8I6n+lxfpqXEFO9y/hHU/0uL9NQJZ9DP++t8+AkvpRyapCroZ/wB9b58BJfSjk1QAAAHxMLlLxF/IX5j7PiP9wifmr8wFNRsFt2ndV0SL/WzbVarfU0VeqPU6RizHStZE1dbUaurnquyz35LyGvk0+hnf2G/PCyHzTAEX+tPin8Gl5+IpnzB1p8U/g0vPxFM+YWygCprrT4p/BpefiKZ8wdafFP4NLz8RTPmFsoAqa60+KfwaXn4imfMHWnxT+DS8/EUz5hbKABWvpze2UuHwEn9WhllBWvpze2UuHwEn9WhgchtmhVe5a5L0Sg0+NUKlMq5IEtBTN8TVarlyTuI1V+I3jrDYxfB5Xf2Kf6mW0MvbL2f4WZ+qxizgCrHrDYxfB5Xf2Kf6n7S2j5jPMLlDw+qzduX2TUZ9JyFpAArRo+i1jbUIuq+04cgzjiTVQgNRPia9XfuOl2ZoS3JHmUfeF30uRl029LpkN8xEd3M3oxG9/JxOMAcywhwMw7wxymKDSeqqp7pT6tjTLdmSox2SIxN/sUTPPbmdNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKqImarkiGBsy8rXvKVm5m163KVWFJzL5WYdAfn0uI1clRe4u9F3Km1FVAM8AAAAAAACurTtsCm2bi3BqlGgQ5aRuCWWbdAhs1WQ47XasTVTdk7tXd9y8WRyLCisxrexOtitwHuY+TqstFXVXLWakRus3vK3NF7iqdw6ITeEnXsWJC3JJ/TG2/JrDmHIuaJHiqj3NTvNSHn3c04jheGdHj3BiLblEl2OdEnanLwdiKuSOiNRV2cSJmq9xALdgAAAAAp3uX8I6n+lxfpqXEFO9y/hHU/0uL9NQJZ9DP++t8+AkvpRyapCroZ/31vnwEl9KOTVAAAAfEf7hE/NX5j7PiP8AcIn5q/MBTUTT6Gd/Yb88LIfNMELCafQzv7DfnhZD5pgCYoAAAAAAABWvpze2UuHwEn9WhllBWvpze2UuHwEn9WhgY/Qy9svZ/hZn6rGLOCsfQy9svZ/hZn6rGLOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIjadGN89Q+nYX2ysxKTczAa6qzqscxUhPTNIUJePWT2Tk2Zdqi555RLwuxCurDa5YdftWoulo6JqxoL83QZln4kRmeTk/ei7UVF2llWOWEVrYtW4lNrsJ0vPS6KshUoLU6dLOX6TF2ZsXYvFkqIqV5Y0YL3xhXUXMr1PWYpb3qkvVJVFfLxU4s13w3bfYuyXflmm0CamC+lLYF8wIEjX5mFatdcmq6BORcpaK7lhxlybt/FdqrxJnvO9QYkONCZFhRGxIb2o5j2rmjkXaiovGhTSbNZ+IF72fk22LrrFJhZ6ywZabe2E5eVYeeqvxoBbkCtSm6VON0nDSG+64M2iblmKbLqqfGjEVfjP7UNKrG6aY5jLpl5VHJl9gpsuip3lViqgFks3My8nLRJqbmIUvAhprRIsV6NY1OVVXYhFzSK0r6JQpKbt3DWZh1asuRYb6ozJ0rK8SrDX/iv5FTtU2Lm7cQ0vK/r1vJzfXRdNWqzGrmyFMzLnQ2LytZnqp8SGtAfrNzEebmos1NRokePGer4kSI5XOe5VzVVVd6qpK7ofWF83P3NFxOqksjabIMiS1M6Y3bFmHJqviN/JY1XNz/Gds9ippGjbo4XFiPPy1buCXmKRaTVR7o701Is4n4sJF25L+OuzLdmpYbblGplu0KTodFk4clTpKEkGXgQ02ManF3e6q7VXaoHvAAAAACne5fwjqf6XF+mpcQU73L+EdT/S4v01Aln0M/763z4CS+lHJqkKuhn/AH1vnwEl9KOTVAAAAfEf7hE/NX5j7PiYRFl4iKmaKxfmApqJp9DO/sN+eFkPmmCFhl7eui5rcbHbb1xVejpMK1YySM7EgdM1c9XW1FTPLNcs+VQLgQVKdc3En4Qrt8czHnjrm4k/CFdvjmY88C2sFSnXNxJ+EK7fHMx5465uJPwhXb45mPPAtrBUp1zcSfhCu3xzMeeOubiT8IV2+OZjzwLaytfTm9spcPgJP6tDJkaGtVqda0eLeqNYqM5UZ2LEm0iTE3HdFivymYqJm5yqq5IiJ3kIb6c3tlLh8BJ/VoYGP0MvbL2f4WZ+qxizgrH0MvbL2f4WZ+qxizgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfhPycpUJOLJT8rAm5WM3ViwY0NHse3kVq7FTvn7gCPGJeiNhrdEWLO0F01ak9EVV+00SJLZ5f8l25O4xzUOD3PoYYkyDldRKvQazC4k6a+Xi/wDS5qt/7if4ArJn9GPHCUe5HWREjNTc6DPyz0XvIkTP9wkdGLHCbVNWx4kJvLGqEqzL4liZlmwAgHamhfiLUEbEr9bodEhrvY17pmMn/paiN/7yQ2FmixhjZboM5UZOJdFThrrJHqSIsFq/kwU7X/q1l7p3YAfxqI1qNaiIiJkiJxH9AAAAAAABBCraGGI85VJubZclqNbHjviNRY8xmiOcq/8AJ7pO8AR90RsDrmwfnLjj3DVKROpVIcuyCki+I7V6WsRXa2uxv46ZZZ8ZIIAAAAB8xWq6E9rcs1aqJmfQAgP2E+JPvltL9tMehHYT4k++W0v20x6EnwAID9hPiT75bS/bTHoR2E+JPvltL9tMehJ8ACA/YT4k++W0v20x6EdhPiT75bS/bTHoSfAAgP2E+JPvltL9tMehHYT4k++W0v20x6EnwAOe6OtjVPDfCOkWfWJqTmp2SfHdEiyjnLCd0yM+ImSuai7nJxbzhukboxXriTi1VLvo1bt+VkpyHAYyFNxYyREVkJrFzRsNyb2rxktABEHALRavjD7FyhXhVq5bszJU58V0WFKxYyxHa8GJDTVR0NE3vTeqbCXwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//9k=" alt="Next Step" style="max-width:180px; width:100%; display:block; margin:0 auto; background:#F4F8FF; border-radius:14px; padding:6px;"/>
+          </div>
+          <p class="login-tagline">"Il primo passo per il tuo futuro"</p>
+          <div class="login-stat">
+            <span class="dot"></span>
+            +12.430 studenti hanno già scelto la loro strada
+          </div>
+        </div>
+
+        <div class="login-features">
+          <div class="feature-pill">
+            <div class="feat-icon"><span class="material-symbols-rounded">smart_toy</span></div>
+            <span>AI addestrata sui programmi <b>ufficiali</b> delle scuole italiane</span>
+          </div>
+          <div class="feature-pill">
+            <div class="feat-icon"><span class="material-symbols-rounded">explore</span></div>
+            <span>Mappa interattiva con <b>tutte le scuole</b> della tua zona</span>
+          </div>
+          <div class="feature-pill">
+            <div class="feat-icon"><span class="material-symbols-rounded">forum</span></div>
+            <span>Chat AI per <b>ogni materia</b> e indirizzo</span>
+          </div>
+        </div>
+
+        <div class="login-actions">
+          <button class="btn btn-social" onclick="goScreen('screen-onboarding')">
+            <span class="social-icon">
+              <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 16 19 13 24 13c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.2-5.5l-6.6-5.6c-2.1 1.4-4.7 2.1-7.6 2.1-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.5 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.7l6.6 5.6C41.6 36 44 30.5 44 24c0-1.3-.1-2.6-.4-3.5z"/></svg>
+            </span>
+            Continua con Google
+          </button>
+          <button class="btn btn-social apple" onclick="goScreen('screen-onboarding')">
+            <span class="social-icon">
+              <svg width="18" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+            </span>
+            Continua con Apple
+          </button>
+          <button class="btn btn-social email" onclick="goScreen('screen-onboarding')">
+            <span class="material-symbols-rounded" style="font-size: 20px;">mail</span>
+            Continua con Email
+          </button>
+        </div>
+
+        <div class="login-footer">
+          <a href="#">Privacy Policy</a>
+          <span style="color: var(--text-mute);">·</span>
+          <a href="#">Termini di servizio</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ────── SCREEN 2 · ONBOARDING ────── -->
+    <div class="screen" id="screen-onboarding">
+      <div class="screen-scroll">
+        <div class="onb-head">
+          <span class="onb-eyebrow">Step 1 di 3 — il tuo percorso</span>
+          <h1 class="onb-title">Dove sei nel tuo percorso?</h1>
+          <p class="onb-sub">Questo ci aiuta a personalizzare i consigli dell'AI sul tuo livello scolastico attuale.</p>
+        </div>
+
+        <div class="onb-stat">
+          <div class="stat-num">95%</div>
+          <div class="stat-text">degli studenti sceglie con <b>più sicurezza</b> dopo aver usato Next Step</div>
+        </div>
+
+        <div class="path-cards">
+          <div class="path-card" data-path="medie" onclick="selectPath(this)">
+            <div class="path-icon">🎒</div>
+            <div class="path-text">
+              <span class="path-name">Ho finito le medie</span>
+              <span class="path-desc">Stai scegliendo la scuola superiore — ti aiutiamo con licei, tecnici e professionali</span>
+              <div class="path-meta">
+                <span><span class="material-symbols-rounded">groups</span> 8.640 studenti</span>
+                <span><span class="material-symbols-rounded">school</span> ~14 anni</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="path-card" data-path="superiori" onclick="selectPath(this)">
+            <div class="path-icon">🎓</div>
+            <div class="path-text">
+              <span class="path-name">Ho finito le superiori</span>
+              <span class="path-desc">Stai scegliendo università, ITS Academy o un percorso post-diploma</span>
+              <div class="path-meta">
+                <span><span class="material-symbols-rounded">groups</span> 3.790 studenti</span>
+                <span><span class="material-symbols-rounded">school</span> ~19 anni</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="path-card" data-path="cambio" onclick="selectPath(this)">
+            <div class="path-icon">🔄</div>
+            <div class="path-text">
+              <span class="path-name">Voglio cambiare scuola</span>
+              <span class="path-desc">Hai già iniziato un percorso ma vuoi esplorare altre strade più adatte a te</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="onb-foot">
+        <button class="btn btn-primary btn-block" id="onb-next-btn" onclick="goScreen('screen-quiz')" disabled style="opacity: 0.45;">
+          Continua <span class="material-symbols-rounded">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ────── SCREEN 3 · QUIZ AI ────── -->
+    <div class="screen" id="screen-quiz">
+      <div class="screen-scroll">
+        <div class="quiz-head">
+          <button class="icon-btn" onclick="quizPrev()">
+            <span class="material-symbols-rounded">arrow_back</span>
+          </button>
+          <div class="progress-track">
+            <div class="progress-fill" id="quiz-progress" style="width: 20%"></div>
+          </div>
+          <span class="progress-step" id="quiz-step">1 / 5</span>
+        </div>
+
+        <div class="quiz-body">
+          <div class="quiz-eyebrow" id="quiz-eyebrow">
+            <span class="material-symbols-rounded">smart_toy</span>
+            <span id="quiz-eyebrow-text">Parliamo di te</span>
+          </div>
+          <div class="quiz-emoji" id="quiz-emoji">🎯</div>
+          <h2 class="quiz-title" id="quiz-title">Cosa ti piace fare nel tempo libero?</h2>
+          <p class="quiz-sub" id="quiz-sub">Scegli quello che ti rappresenta di più — non c'è una risposta giusta o sbagliata.</p>
+
+          <div class="quiz-options" id="quiz-options"></div>
+        </div>
+      </div>
+      <div class="quiz-foot">
+        <button class="btn btn-primary btn-block" id="quiz-next" onclick="quizNext()" disabled style="opacity: 0.45;">
+          <span id="quiz-next-text">Avanti</span> <span class="material-symbols-rounded">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ────── SCREEN 4 · RISULTATO ────── -->
+    <div class="screen has-tabbar" id="screen-result">
+      <div class="result-loading" id="result-loading">
+        <div class="loader-orb"></div>
+        <div>
+          <div class="loader-title">Sto analizzando le tue risposte</div>
+          <div class="loader-sub">L'AI sta confrontando il tuo profilo con tutti gli indirizzi disponibili in Italia...</div>
+        </div>
+        <div class="loader-steps" id="loader-steps">
+          <div class="loader-step" data-i="0"><span class="check"><span class="material-symbols-rounded">check</span></span> Analisi delle preferenze</div>
+          <div class="loader-step" data-i="1"><span class="check"><span class="material-symbols-rounded">check</span></span> Confronto con 47 indirizzi</div>
+          <div class="loader-step" data-i="2"><span class="check"><span class="material-symbols-rounded">check</span></span> Calcolo compatibilità</div>
+        </div>
+      </div>
+
+      <div class="screen-scroll">
+        <div style="padding-bottom: 8px;">
+
+          <!-- HERO -->
+          <div class="result-hero">
+            <div class="result-hero-eyebrow">Il tuo indirizzo ideale</div>
+            <div class="result-icon-big">💻</div>
+            <div class="result-name">Informatico</div>
+            <div class="result-badge">
+              <span class="material-symbols-rounded fill" style="font-size: 14px;">check_circle</span>
+              95% compatibilità
+            </div>
+          </div>
+
+          <!-- MATCH + DESCRIZIONE affiancati come card -->
+          <div class="result-section">
+            <h3 class="section-title">
+              <span class="material-symbols-rounded">analytics</span>
+              Match con il tuo profilo
+            </h3>
+            <div class="match-bars" id="match-bars">
+              <div class="match-row">
+                <span class="match-label">Logica</span>
+                <div class="match-track"><div class="match-fill blue" data-w="95"></div></div>
+                <span class="match-pct">95%</span>
+              </div>
+              <div class="match-row">
+                <span class="match-label">Pratica</span>
+                <div class="match-track"><div class="match-fill green" data-w="88"></div></div>
+                <span class="match-pct">88%</span>
+              </div>
+              <div class="match-row">
+                <span class="match-label">Creatività</span>
+                <div class="match-track"><div class="match-fill purple" data-w="72"></div></div>
+                <span class="match-pct">72%</span>
+              </div>
+              <div class="match-row">
+                <span class="match-label">Sociale</span>
+                <div class="match-track"><div class="match-fill warm" data-w="48"></div></div>
+                <span class="match-pct">48%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STAT CARDS -->
+          <div class="result-section">
+            <h3 class="section-title">
+              <span class="material-symbols-rounded">trending_up</span>
+              Numeri per il tuo futuro
+            </h3>
+            <div class="stats-row">
+              <div class="stat-card">
+                <span class="stat-icon material-symbols-rounded">work</span>
+                <div class="stat-num">92%</div>
+                <div class="stat-label">Domanda lavoro</div>
+              </div>
+              <div class="stat-card">
+                <span class="stat-icon material-symbols-rounded">euro</span>
+                <div class="stat-num">€38k</div>
+                <div class="stat-label">Stipendio iniziale</div>
+              </div>
+              <div class="stat-card">
+                <span class="stat-icon material-symbols-rounded">school</span>
+                <div class="stat-num">+18%</div>
+                <div class="stat-label">Crescita 2024–29</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PERCHÉ + MATERIE -->
+          <div class="result-section">
+            <h3 class="section-title">
+              <span class="material-symbols-rounded">info</span>
+              Perché questo indirizzo
+            </h3>
+            <p class="result-desc">Ti formerà come tecnico dei sistemi digitali, programmatore e analista. Lavorerai con reti, database e sviluppo software — le competenze più richieste in Italia.</p>
+          </div>
+
+          <div class="result-section">
+            <h3 class="section-title">
+              <span class="material-symbols-rounded">menu_book</span>
+              Materie principali
+              <span class="count">5 materie</span>
+            </h3>
+            <div class="result-chips">
+              <span class="chip">Sistemi e Reti</span>
+              <span class="chip">Informatica</span>
+              <span class="chip">TPSIT</span>
+              <span class="chip">Matematica</span>
+              <span class="chip">Inglese Tecnico</span>
+            </div>
+          </div>
+
+          <!-- SBOCCHI -->
+          <div class="result-section">
+            <h3 class="section-title">
+              <span class="material-symbols-rounded">badge</span>
+              Sbocchi professionali
+            </h3>
+            <div class="result-chips">
+              <span class="chip green">Sviluppatore</span>
+              <span class="chip green">Sistemista</span>
+              <span class="chip green">Cybersecurity</span>
+              <span class="chip green">Data Analyst</span>
+              <span class="chip green">Cloud Engineer</span>
+            </div>
+          </div>
+
+          <!-- ALTRI INDIRIZZI -->
+          <div class="result-section">
+            <h3 class="section-title">
+              <span class="material-symbols-rounded">apps</span>
+              Altri indirizzi compatibili
+            </h3>
+            <div class="alt-list">
+              <div class="alt-row">
+                <span class="alt-emoji">⚡</span>
+                <div class="alt-info">
+                  <div class="alt-name">Elettronica ed Elettrotecnica</div>
+                  <div class="alt-meta">Tecnologico · più hardware</div>
+                </div>
+                <span class="alt-pct">82%</span>
+              </div>
+              <div class="alt-row">
+                <span class="alt-emoji">🎬</span>
+                <div class="alt-info">
+                  <div class="alt-name">Grafica e Comunicazione</div>
+                  <div class="alt-meta">Tecnologico · creativo + digitale</div>
+                </div>
+                <span class="alt-pct">71%</span>
+              </div>
+              <div class="alt-row">
+                <span class="alt-emoji">🔬</span>
+                <div class="alt-info">
+                  <div class="alt-name">Scientifico — Sc. Applicate</div>
+                  <div class="alt-meta">Liceo · matematica + informatica</div>
+                </div>
+                <span class="alt-pct">68%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AZIONI -->
+          <div class="result-actions">
+            <button class="btn btn-primary btn-block" onclick="goScreen('screen-map')">
+              <span class="material-symbols-rounded">map</span>
+              Cerca la scuola perfetta
+            </button>
+            <button class="btn btn-ghost" onclick="restartQuiz()">
+              <span class="material-symbols-rounded">refresh</span>
+              Rifai il quiz
+            </button>
+          </div>
+
+        </div>
+      </div>
+      <nav class="tabbar"></nav>
+    </div>
+
+    <!-- ────── SCREEN 5 · MAP ────── -->
+    <div class="screen has-tabbar map-screen" id="screen-map">
+      <div class="map-canvas">
+        <svg class="map-svg" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-v3" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(31,41,55,0.04)" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect width="400" height="800" fill="#E6EDF4"/>
+          <rect width="400" height="800" fill="url(#grid-v3)"/>
+
+          <ellipse cx="60" cy="180" rx="62" ry="78" fill="#B7D4B0" opacity="0.7"/>
+          <ellipse cx="350" cy="540" rx="52" ry="68" fill="#B7D4B0" opacity="0.7"/>
+          <path d="M -20 380 Q 200 360 420 410 Q 420 446 200 426 Q -20 414 -20 380 Z" fill="#A6C7DA" opacity="0.7"/>
+
+          <rect x="0" y="120" width="400" height="22" fill="#FFFFFF"/>
+          <rect x="0" y="280" width="400" height="14" fill="#FFFFFF"/>
+          <rect x="0" y="490" width="400" height="20" fill="#FFFFFF"/>
+          <rect x="0" y="660" width="400" height="16" fill="#FFFFFF"/>
+          <rect x="80" y="0" width="20" height="800" fill="#FFFFFF"/>
+          <rect x="200" y="0" width="14" height="800" fill="#FFFFFF"/>
+          <rect x="305" y="0" width="22" height="800" fill="#FFFFFF"/>
+
+          <line x1="0" y1="131" x2="400" y2="131" stroke="#FFD27A" stroke-width="1.6" stroke-dasharray="6 6" opacity="0.85"/>
+          <line x1="0" y1="500" x2="400" y2="500" stroke="#FFD27A" stroke-width="1.6" stroke-dasharray="6 6" opacity="0.85"/>
+          <line x1="90" y1="0" x2="90" y2="800" stroke="#FFD27A" stroke-width="1.6" stroke-dasharray="6 6" opacity="0.6"/>
+          <line x1="316" y1="0" x2="316" y2="800" stroke="#FFD27A" stroke-width="1.6" stroke-dasharray="6 6" opacity="0.6"/>
+
+          <rect x="110" y="148" width="80" height="124" fill="#D4DCE8" rx="3"/>
+          <rect x="220" y="148" width="80" height="124" fill="#CBD5E5" rx="3"/>
+          <rect x="110" y="306" width="80" height="172" fill="#D4DCE8" rx="3"/>
+          <rect x="220" y="306" width="80" height="172" fill="#CFD9E8" rx="3"/>
+          <rect x="110" y="528" width="190" height="120" fill="#D4DCE8" rx="3"/>
+          <rect x="110" y="688" width="80" height="100" fill="#CBD5E5" rx="3"/>
+          <rect x="220" y="688" width="80" height="100" fill="#D4DCE8" rx="3"/>
+
+          <rect x="220" y="306" width="80" height="92" fill="#066CF4" opacity="0.18" rx="4"/>
+        </svg>
+
+        <div class="map-pin featured" style="left: 65%; top: 42%;" onclick="goScreen('screen-school')">
+          <div class="map-pin-body">
+            <span class="material-symbols-rounded fill">school</span>
+            Jean Monnet · 15 min ⭐
+          </div>
+          <div class="map-pin-tail"></div>
+        </div>
+        <div class="map-pin" style="left: 28%; top: 22%;">
+          <div class="map-pin-body">
+            <span class="material-symbols-rounded">school</span>
+            A. Volta · 24 min
+          </div>
+          <div class="map-pin-tail"></div>
+        </div>
+        <div class="map-pin" style="left: 78%; top: 70%;">
+          <div class="map-pin-body">
+            <span class="material-symbols-rounded">school</span>
+            G. Galilei · 32 min
+          </div>
+          <div class="map-pin-tail"></div>
+        </div>
+        <div class="map-pin" style="left: 22%; top: 60%;">
+          <div class="map-pin-body">
+            <span class="material-symbols-rounded">school</span>
+            L. Da Vinci
+          </div>
+          <div class="map-pin-tail"></div>
+        </div>
+      </div>
+
+      <div class="map-search">
+        <span class="material-symbols-rounded">search</span>
+        <input type="text" value="Informatica · Mariano Comense" readonly/>
+        <span class="material-symbols-rounded" style="color: var(--text-mute);">tune</span>
+      </div>
+
+      <div class="map-filters">
+        <div class="map-filter active"><span class="material-symbols-rounded">place</span>Vicinanza</div>
+        <div class="map-filter"><span class="material-symbols-rounded">school</span>Indirizzo</div>
+        <div class="map-filter"><span class="material-symbols-rounded">event</span>Open Day</div>
+        <div class="map-filter"><span class="material-symbols-rounded">star</span>Recensioni</div>
+        <div class="map-filter"><span class="material-symbols-rounded">euro</span>Costi</div>
+      </div>
+
+      <div style="position: absolute; right: 14px; top: 174px; display: flex; flex-direction: column; gap: 7px; z-index: 9;">
+        <button class="icon-btn glass"><span class="material-symbols-rounded">my_location</span></button>
+        <button class="icon-btn glass"><span class="material-symbols-rounded">layers</span></button>
+        <button class="icon-btn glass" style="background: var(--ns-blue); color: white;"><span class="material-symbols-rounded">view_list</span></button>
+      </div>
+
+      <div class="map-card-stack">
+        <div class="map-card-handle"></div>
+        <div class="map-card-row">
+          <div class="map-card featured-card" onclick="goScreen('screen-school')">
+            <div class="map-card-thumb"><span class="material-symbols-rounded fill">school</span></div>
+            <div class="map-card-info">
+              <div class="map-card-name">ITI Jean Monnet</div>
+              <div class="map-card-addr">Via Adda 1, Mariano Comense</div>
+              <div class="map-card-meta">
+                <span class="stars">★★★★</span><span style="color:var(--text-mute)">★</span>
+                <span>·</span>
+                <span>15 min</span>
+                <span class="live">Open Day 15 Feb</span>
+              </div>
+            </div>
+            <div class="map-card-cta"><span class="material-symbols-rounded">arrow_forward</span></div>
+          </div>
+          <div class="map-card" onclick="goScreen('screen-school')">
+            <div class="map-card-thumb alt"><span class="material-symbols-rounded fill">school</span></div>
+            <div class="map-card-info">
+              <div class="map-card-name">A. Volta — Como</div>
+              <div class="map-card-addr">Via Cantoni 1, Como</div>
+              <div class="map-card-meta">
+                <span class="stars">★★★★</span><span style="color:var(--text-mute)">★</span>
+                <span>·</span>
+                <span>24 min</span>
+              </div>
+            </div>
+            <div class="map-card-cta"><span class="material-symbols-rounded">arrow_forward</span></div>
+          </div>
+          <div class="map-card" onclick="goScreen('screen-school')">
+            <div class="map-card-thumb alt2"><span class="material-symbols-rounded fill">school</span></div>
+            <div class="map-card-info">
+              <div class="map-card-name">G. Galilei — Erba</div>
+              <div class="map-card-addr">Via Volta 12, Erba</div>
+              <div class="map-card-meta">
+                <span class="stars">★★★</span><span style="color:var(--text-mute)">★★</span>
+                <span>·</span>
+                <span>32 min</span>
+              </div>
+            </div>
+            <div class="map-card-cta"><span class="material-symbols-rounded">arrow_forward</span></div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="tabbar"></nav>
+    </div>
+
+    <!-- ────── SCREEN 6 · SCHOOL ────── -->
+    <div class="screen has-tabbar school" id="screen-school">
+      <div class="screen-scroll" style="padding-top: 0;">
+        <div class="school-hero">
+          <div class="school-hero-pattern"></div>
+          <div class="school-hero-actions">
+            <button class="icon-btn glass" onclick="goScreen('screen-map')" style="background: rgba(255,255,255,0.22); color: white;">
+              <span class="material-symbols-rounded">arrow_back</span>
+            </button>
+            <button class="icon-btn glass" id="fav-btn" onclick="toggleFav(this)" style="background: rgba(255,255,255,0.22); color: white;">
+              <span class="material-symbols-rounded">favorite</span>
+            </button>
+          </div>
+          <span class="school-hero-icon">🏫</span>
+        </div>
+
+        <div class="school-info">
+          <div class="school-name-row">
+            <h1 class="school-name">ITI Jean Monnet</h1>
+            <span class="school-rating"><span class="stars">★</span> 4.6 <small>(218)</small></span>
+          </div>
+          <div class="school-loc">
+            <span class="material-symbols-rounded" style="font-size: 16px; color: var(--ns-blue);">location_on</span>
+            Mariano Comense, CO · Indirizzo Informatico
+          </div>
+        </div>
+
+        <div class="school-stats">
+          <div class="s-stat"><div class="num">1.240</div><div class="lbl">Studenti</div></div>
+          <div class="s-stat"><div class="num">1989</div><div class="lbl">Fondazione</div></div>
+          <div class="s-stat"><div class="num">12</div><div class="lbl">Laboratori</div></div>
+          <div class="s-stat"><div class="num">94%</div><div class="lbl">Diplomati</div></div>
+        </div>
+
+        <div class="tab-bar">
+          <button class="active" data-tab="info" onclick="switchTab(this, 'info')">Info</button>
+          <button data-tab="materie" onclick="switchTab(this, 'materie')">Materie</button>
+          <button data-tab="recensioni" onclick="switchTab(this, 'recensioni')">Recensioni</button>
+          <button data-tab="contatti" onclick="switchTab(this, 'contatti')">Contatti</button>
+        </div>
+
+        <div class="tab-content">
+          <!-- INFO -->
+          <div class="tab-pane active" id="tab-info">
+            <h3 class="section-title" style="margin: 4px 0 8px;"><span class="material-symbols-rounded">photo_library</span>La scuola</h3>
+            <div class="gallery">
+              <div class="gallery-item g1"><span>💻</span><div class="gl-label">Lab Informatica</div></div>
+              <div class="gallery-item g2"><span>🔬</span><div class="gl-label">Lab Fisica</div></div>
+              <div class="gallery-item g3"><span>📚</span><div class="gl-label">Biblioteca</div></div>
+              <div class="gallery-item g4"><span>⚽</span><div class="gl-label">Palestra</div></div>
+            </div>
+
+            <div class="school-block">
+              <h4><span class="material-symbols-rounded">info</span> Descrizione</h4>
+              <p>L'Istituto Tecnico Informatico Jean Monnet è una scuola di eccellenza nell'ambito tecnologico. Offre laboratori all'avanguardia con 250+ postazioni, programmi di stage in aziende del territorio e una solida preparazione per università e mondo del lavoro.</p>
+            </div>
+
+            <div class="school-block">
+              <h4><span class="material-symbols-rounded">directions</span> Come raggiungerci</h4>
+              <div class="transport-list">
+                <div class="transport-row">
+                  <span class="material-symbols-rounded">directions_walk</span>
+                  <span>Dalla stazione FS</span>
+                  <span class="time">15 min</span>
+                </div>
+                <div class="transport-row">
+                  <span class="material-symbols-rounded">directions_bus</span>
+                  <span>Bus 32 — fermata Piazza Municipio</span>
+                  <span class="time">8 min</span>
+                </div>
+                <div class="transport-row">
+                  <span class="material-symbols-rounded">pedal_bike</span>
+                  <span>Pista ciclabile dedicata</span>
+                  <span class="time">12 min</span>
+                </div>
+                <div class="transport-row">
+                  <span class="material-symbols-rounded">accessible</span>
+                  <span>Edificio interamente accessibile</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="school-block">
+              <h4><span class="material-symbols-rounded">event</span> Open Day</h4>
+              <div class="openday-card">
+                <div class="day-block"><span class="day-num">15</span><span class="day-mon">Feb</span></div>
+                <div class="od-info">
+                  <b>Open Day 2026</b>
+                  <p>Ore 15:00 — visita guidata laboratori e auditorium</p>
+                </div>
+                <button>Prenota</button>
+              </div>
+            </div>
+
+            <div class="school-block">
+              <h4><span class="material-symbols-rounded">handshake</span> Stage e partner</h4>
+              <div class="partner-row">
+                <div class="partner-card"><div class="pc-dot" style="background: #066CF4;">A</div>Accenture</div>
+                <div class="partner-card"><div class="pc-dot" style="background: #1F2937;">B</div>Brembo</div>
+                <div class="partner-card"><div class="pc-dot" style="background: #10B981;">P</div>Polimi</div>
+                <div class="partner-card"><div class="pc-dot" style="background: #F59E0B;">A</div>Ariston</div>
+                <div class="partner-card"><div class="pc-dot" style="background: #8B5CF6;">L</div>Leonardo</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MATERIE -->
+          <div class="tab-pane" id="tab-materie">
+            <p style="font-size: 12.5px; color: var(--text-mute); margin-bottom: 10px;">Seleziona una materia per chiedere all'AI di approfondirla.</p>
+            <div class="subj-row" onclick="goScreen('screen-chat')">
+              <div class="subj-left">
+                <div class="subj-icon"><span class="material-symbols-rounded">code</span></div>
+                <div class="subj-info"><span class="subj-name">Informatica</span><span class="subj-hours">6h/sett · 5 anni</span></div>
+              </div>
+              <span class="material-symbols-rounded chev">arrow_forward_ios</span>
+            </div>
+            <div class="subj-row" onclick="goScreen('screen-chat')">
+              <div class="subj-left">
+                <div class="subj-icon"><span class="material-symbols-rounded">lan</span></div>
+                <div class="subj-info"><span class="subj-name">Sistemi e Reti</span><span class="subj-hours">4h/sett · dal 3° anno</span></div>
+              </div>
+              <span class="material-symbols-rounded chev">arrow_forward_ios</span>
+            </div>
+            <div class="subj-row" onclick="goScreen('screen-chat')">
+              <div class="subj-left">
+                <div class="subj-icon"><span class="material-symbols-rounded">memory</span></div>
+                <div class="subj-info"><span class="subj-name">TPSIT</span><span class="subj-hours">3h/sett · dal 3° anno</span></div>
+              </div>
+              <span class="material-symbols-rounded chev">arrow_forward_ios</span>
+            </div>
+            <div class="subj-row" onclick="goScreen('screen-chat')">
+              <div class="subj-left">
+                <div class="subj-icon"><span class="material-symbols-rounded">functions</span></div>
+                <div class="subj-info"><span class="subj-name">Matematica</span><span class="subj-hours">4h/sett · 5 anni</span></div>
+              </div>
+              <span class="material-symbols-rounded chev">arrow_forward_ios</span>
+            </div>
+            <div class="subj-row" onclick="goScreen('screen-chat')">
+              <div class="subj-left">
+                <div class="subj-icon"><span class="material-symbols-rounded">translate</span></div>
+                <div class="subj-info"><span class="subj-name">Inglese Tecnico</span><span class="subj-hours">3h/sett · 5 anni</span></div>
+              </div>
+              <span class="material-symbols-rounded chev">arrow_forward_ios</span>
+            </div>
+            <div class="subj-row" onclick="goScreen('screen-chat')">
+              <div class="subj-left">
+                <div class="subj-icon"><span class="material-symbols-rounded">science</span></div>
+                <div class="subj-info"><span class="subj-name">Fisica</span><span class="subj-hours">3h/sett · biennio</span></div>
+              </div>
+              <span class="material-symbols-rounded chev">arrow_forward_ios</span>
+            </div>
+            <div class="subj-row" onclick="goScreen('screen-chat')">
+              <div class="subj-left">
+                <div class="subj-icon"><span class="material-symbols-rounded">history_edu</span></div>
+                <div class="subj-info"><span class="subj-name">Italiano e Storia</span><span class="subj-hours">5h/sett · 5 anni</span></div>
+              </div>
+              <span class="material-symbols-rounded chev">arrow_forward_ios</span>
+            </div>
+          </div>
+
+          <!-- RECENSIONI -->
+          <div class="tab-pane" id="tab-recensioni">
+            <div style="display: flex; align-items: center; gap: 14px; padding: 14px; background: var(--surface); border-radius: var(--r-lg); box-shadow: var(--sh-sm); margin-bottom: 12px;">
+              <div style="font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--ns-ink);">4.6</div>
+              <div style="flex: 1;">
+                <div style="color: var(--warm); font-size: 14px; letter-spacing: 1px;">★★★★★</div>
+                <div style="font-size: 11.5px; color: var(--text-mute); margin-top: 2px;">218 recensioni · ultimo anno</div>
+              </div>
+              <button style="background: var(--ns-blue); color: white; padding: 8px 12px; border-radius: 10px; font-family: var(--font-display); font-weight: 700; font-size: 12px;">Scrivi</button>
+            </div>
+
+            <div class="review-card">
+              <div class="review-avatar">MR</div>
+              <div class="review-body">
+                <div class="review-head"><b>Marco R.</b> <span class="stars">★★★★★</span></div>
+                <div class="review-text">Laboratori top, professori preparati e stage in aziende vere. Ho trovato lavoro 2 mesi dopo il diploma.</div>
+                <div class="review-time">Diplomato 2024 · 3 mesi fa</div>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-avatar alt2">SC</div>
+              <div class="review-body">
+                <div class="review-head"><b>Sofia C.</b> <span class="stars">★★★★</span><span style="color:var(--text-mute)">★</span></div>
+                <div class="review-text">Bell'ambiente, prof disponibili. Solo la palestra è un po' piccola, ma per il resto consigliata.</div>
+                <div class="review-time">3° anno · 2 settimane fa</div>
+              </div>
+            </div>
+            <div class="review-card">
+              <div class="review-avatar alt3">LB</div>
+              <div class="review-body">
+                <div class="review-head"><b>Luca B.</b> <span class="stars">★★★★★</span></div>
+                <div class="review-text">L'open day mi aveva colpito e dopo 5 anni lo rifarei. Sistemi e Reti è la materia che mi ha cambiato.</div>
+                <div class="review-time">Diplomato 2023 · 1 mese fa</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CONTATTI -->
+          <div class="tab-pane" id="tab-contatti">
+            <div class="contact-row">
+              <div class="contact-icon"><span class="material-symbols-rounded">mail</span></div>
+              <div class="contact-info"><small>EMAIL</small><span>info@itijeanmonnet.edu.it</span></div>
+              <span class="material-symbols-rounded copy">content_copy</span>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon"><span class="material-symbols-rounded">call</span></div>
+              <div class="contact-info"><small>TELEFONO</small><span>+39 031 745 123</span></div>
+              <span class="material-symbols-rounded copy">content_copy</span>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon"><span class="material-symbols-rounded">photo_camera</span></div>
+              <div class="contact-info"><small>INSTAGRAM</small><span>@iti.jeanmonnet</span></div>
+              <span class="material-symbols-rounded copy">arrow_forward_ios</span>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon"><span class="material-symbols-rounded">language</span></div>
+              <div class="contact-info"><small>SITO WEB</small><span>www.itijeanmonnet.edu.it</span></div>
+              <span class="material-symbols-rounded copy">arrow_forward_ios</span>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon"><span class="material-symbols-rounded">location_on</span></div>
+              <div class="contact-info"><small>INDIRIZZO</small><span>Via Adda 1, 22066 Mariano Comense (CO)</span></div>
+              <span class="material-symbols-rounded copy">map</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="school-foot">
+        <button class="btn btn-primary btn-block" onclick="toggleFav(document.getElementById('fav-btn'))">
+          <span class="material-symbols-rounded fill">favorite</span>
+          Salva nei preferiti
+        </button>
+      </div>
+
+      <nav class="tabbar"></nav>
+    </div>
+
+    <!-- ────── SCREEN 7 · CHAT AI ────── -->
+    <div class="screen has-tabbar chat" id="screen-chat">
+      <div class="chat-head">
+        <button class="icon-btn" onclick="goScreen('screen-school')">
+          <span class="material-symbols-rounded">arrow_back</span>
+        </button>
+        <div class="ns-icon size-sm" style="background: var(--grad-brand); display:flex; align-items:center; justify-content:center;">
+          <svg width="22" height="22" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="18" y="25" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="19" fill="white" letter-spacing="-1">NS</text>
+          </svg>
+        </div>
+        <div class="chat-head-info">
+          <span class="chat-head-name">Assistente Next Step <span class="live-dot"></span></span>
+          <span class="chat-head-sub">Sistemi e Reti · ITI Jean Monnet</span>
+        </div>
+        <button class="icon-btn"><span class="material-symbols-rounded">more_horiz</span></button>
+      </div>
+
+      <div class="chat-body" id="chat-body">
+        <div class="bubble ai">
+          <div class="ai-tag"><span class="material-symbols-rounded">smart_toy</span> Assistente AI</div>
+          Ciao Alberto! 👋 Sono il tuo assistente per <b>Sistemi e Reti</b>.<br/><br/>
+          Questa materia tratta le reti informatiche, i protocolli di comunicazione e la gestione dei sistemi operativi. È una delle materie più pratiche dell'indirizzo informatico.
+        </div>
+
+        <div class="bubble info-card">
+          <div class="info-card-head">
+            <span class="material-symbols-rounded">lan</span>
+            <b>Sistemi e Reti — in numeri</b>
+          </div>
+          <div class="info-grid">
+            <div class="info-cell"><div class="ic-num">4h</div><div class="ic-lbl">Ore settimanali</div></div>
+            <div class="info-cell"><div class="ic-num">3</div><div class="ic-lbl">Anni (3°-5°)</div></div>
+            <div class="info-cell"><div class="ic-num">60%</div><div class="ic-lbl">Lab pratico</div></div>
+            <div class="info-cell"><div class="ic-num">CCNA</div><div class="ic-lbl">Certificazione</div></div>
+          </div>
+        </div>
+
+        <div class="bubble ai">
+          <div class="ai-tag"><span class="material-symbols-rounded">smart_toy</span> Assistente AI</div>
+          Cosa vuoi sapere? Posso parlarti del programma, degli sbocchi, delle difficoltà o di qualsiasi altra cosa.
+        </div>
+
+        <div class="chat-suggest" id="chat-suggest">
+          <span class="chip" onclick="askAI(this, 'studi')">📚 Cosa si studia?</span>
+          <span class="chip" onclick="askAI(this, 'dopo')">💼 Cosa si fa dopo?</span>
+          <span class="chip" onclick="askAI(this, 'difficolta')">🤔 È difficile?</span>
+          <span class="chip" onclick="askAI(this, 'pratica')">🛠 Quanta pratica?</span>
+          <span class="chip" onclick="askAI(this, 'certificazioni')">🏆 Certificazioni</span>
+        </div>
+      </div>
+
+      <div class="chat-input-wrap">
+        <div class="chat-input">
+          <button class="icon-btn" style="width:32px; height:32px; box-shadow:none;"><span class="material-symbols-rounded" style="font-size:18px; color: var(--ns-blue);">add</span></button>
+          <input type="text" placeholder="Scrivi una domanda..."/>
+          <button class="chat-send"><span class="material-symbols-rounded">send</span></button>
+        </div>
+      </div>
+
+      <nav class="tabbar"></nav>
+    </div>
+
+    <!-- ────── SCREEN 8 · PROFILE ────── -->
+    <div class="screen has-tabbar profile" id="screen-profile">
+      <div class="screen-scroll" style="padding-top: 0;">
+        <div class="profile-hero">
+          <div class="avatar">AS</div>
+          <div class="profile-meta">
+            <div class="profile-name">Alberto Sambruni</div>
+            <div class="profile-email">alberto@nextstepcomo.it</div>
+            <span class="profile-badge"><span class="material-symbols-rounded fill">verified</span> Profilo completo</span>
+          </div>
+        </div>
+
+        <div class="profile-stats">
+          <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Quiz fatti</div></div>
+          <div class="stat-card"><div class="stat-num">8</div><div class="stat-label">Scuole viste</div></div>
+          <div class="stat-card"><div class="stat-num">12</div><div class="stat-label">Materie</div></div>
+        </div>
+
+        <div class="profile-body">
+          <div class="profile-section">
+            <h3><span class="material-symbols-rounded" style="font-size:14px; color: var(--purple);">auto_awesome</span> Insights AI</h3>
+            <div class="insight-card">
+              <div class="ic-icon"><span class="material-symbols-rounded">psychology</span></div>
+              <p>Sei uno studente <b>logico-pratico</b> con forte attitudine alla risoluzione di problemi. L'AI ti suggerisce di approfondire <b>Cybersecurity</b> e <b>Cloud Computing</b> — due aree con grande crescita.</p>
+            </div>
+          </div>
+
+          <div class="profile-section">
+            <h3><span class="material-symbols-rounded" style="font-size:14px;">tune</span> Le mie preferenze</h3>
+            <div class="pref-card">
+              <div class="pref-tags">
+                <span class="chip">Programmazione</span>
+                <span class="chip">Lavoro autonomo</span>
+                <span class="chip">Matematica</span>
+              </div>
+              <button onclick="goScreen('screen-quiz')"><span class="material-symbols-rounded">edit</span></button>
+            </div>
+          </div>
+
+          <div class="profile-section">
+            <h3><span class="material-symbols-rounded" style="font-size:14px;">military_tech</span> Achievements</h3>
+            <div class="achievement-row">
+              <div class="ach-card unlocked"><div class="ach-icon">🎯</div><div class="ach-name">Primo Quiz</div><div class="ach-pct">Completato</div></div>
+              <div class="ach-card unlocked"><div class="ach-icon">🗺️</div><div class="ach-name">Esploratore</div><div class="ach-pct">5 scuole</div></div>
+              <div class="ach-card unlocked"><div class="ach-icon">💬</div><div class="ach-name">AI Master</div><div class="ach-pct">10 chat</div></div>
+              <div class="ach-card locked"><div class="ach-icon">🏆</div><div class="ach-name">Campione</div><div class="ach-pct">8/15</div></div>
+              <div class="ach-card locked"><div class="ach-icon">⭐</div><div class="ach-name">Top User</div><div class="ach-pct">2/30</div></div>
+            </div>
+          </div>
+
+          <div class="profile-section">
+            <h3><span class="material-symbols-rounded" style="font-size:14px;">favorite</span> Scuole salvate</h3>
+            <div class="fav-card" onclick="goScreen('screen-school')">
+              <div class="fav-thumb"><span class="material-symbols-rounded fill">school</span></div>
+              <div class="fav-info">
+                <div class="fav-name">ITI Jean Monnet</div>
+                <div class="fav-sub">Mariano Comense · 95% match · 15 min</div>
+              </div>
+              <span class="fav-heart">❤</span>
+            </div>
+          </div>
+
+          <div class="profile-section">
+            <h3><span class="material-symbols-rounded" style="font-size:14px;">history</span> Attività recente</h3>
+            <div class="activity-list">
+              <div class="activity-row">
+                <div class="act-dot blue"><span class="material-symbols-rounded">school</span></div>
+                <div class="act-info">
+                  <div class="act-text">Hai visualizzato <b>ITI Jean Monnet</b></div>
+                  <div class="act-time">2 ore fa</div>
+                </div>
+              </div>
+              <div class="activity-row">
+                <div class="act-dot purple"><span class="material-symbols-rounded">smart_toy</span></div>
+                <div class="act-info">
+                  <div class="act-text">Hai chattato con l'AI su <b>Sistemi e Reti</b></div>
+                  <div class="act-time">Ieri · 18:42</div>
+                </div>
+              </div>
+              <div class="activity-row">
+                <div class="act-dot green"><span class="material-symbols-rounded">check_circle</span></div>
+                <div class="act-info">
+                  <div class="act-text">Quiz completato — risultato <b>Informatico (95%)</b></div>
+                  <div class="act-time">3 giorni fa</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-section">
+            <h3><span class="material-symbols-rounded" style="font-size:14px;">settings</span> Impostazioni</h3>
+            <div class="settings-list">
+              <div class="setting-row"><span class="material-symbols-rounded lead">notifications</span><span class="setting-label">Notifiche</span><span class="material-symbols-rounded chev">arrow_forward_ios</span></div>
+              <div class="setting-row"><span class="material-symbols-rounded lead">lock</span><span class="setting-label">Privacy e dati</span><span class="material-symbols-rounded chev">arrow_forward_ios</span></div>
+              <div class="setting-row"><span class="material-symbols-rounded lead">palette</span><span class="setting-label">Aspetto</span><span class="material-symbols-rounded chev">arrow_forward_ios</span></div>
+              <div class="setting-row"><span class="material-symbols-rounded lead">help</span><span class="setting-label">Aiuto e supporto</span><span class="material-symbols-rounded chev">arrow_forward_ios</span></div>
+              <div class="setting-row danger" onclick="goScreen('screen-login')"><span class="material-symbols-rounded lead">logout</span><span class="setting-label">Logout</span></div>
+            </div>
+          </div>
+
+          <div style="text-align: center; padding: 14px 0 4px; color: var(--text-mute); font-size: 11px;">
+            Next Step v3.0 · Made with ❤ a Mariano Comense<br/>
+            <span style="font-size: 10px;">© 2026 IdeaImpresa · Manno Lorenzo · Sambruni Alberto · Tudor David</span>
+          </div>
+        </div>
+      </div>
+      <nav class="tabbar"></nav>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const lightStatusScreens = ['screen-school', 'screen-profile'];
+
+function goScreen(id) {
+  document.querySelectorAll('.screen.active').forEach(s => s.classList.remove('active'));
+  const target = document.getElementById(id);
+  if (!target) return;
+  target.classList.add('active');
+  target.querySelectorAll('.screen-scroll, .chat-body').forEach(el => el.scrollTop = 0);
+
+  document.getElementById('status-bar').classList.toggle('on-dark', lightStatusScreens.includes(id));
+
+  updateTabbar(id);
+
+  if (id === 'screen-result') showResultLoading();
+  if (id === 'screen-result') animateMatchBars();
+}
+
+const tabs = [
+  { id: 'tab-home',   icon: 'home',         label: 'Home',    target: 'screen-result' },
+  { id: 'tab-map',    icon: 'map',          label: 'Mappa',   target: 'screen-map'    },
+  { id: 'tab-ai',     icon: 'smart_toy',    label: 'AI',      target: 'screen-chat'   },
+  { id: 'tab-profile',icon: 'person',       label: 'Profilo', target: 'screen-profile'},
+];
+function renderTabbars() {
+  document.querySelectorAll('.tabbar').forEach(bar => {
+    bar.innerHTML = tabs.map(t =>
+      `<button class="tab-btn" data-target="${t.target}" onclick="goScreen('${t.target}')"><span class="material-symbols-rounded">${t.icon}</span>${t.label}</button>`
+    ).join('');
+  });
+}
+function updateTabbar(currentId) {
+  document.querySelectorAll('.tabbar .tab-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.target === currentId);
+  });
+}
+
+function selectPath(card) {
+  document.querySelectorAll('.path-card').forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+  const btn = document.getElementById('onb-next-btn');
+  btn.disabled = false;
+  btn.style.opacity = '1';
+}
+
+const quizData = [
+  { eyebrow: 'Tempo libero', emoji: '🎯', title: 'Cosa ti piace fare nel tempo libero?', sub: 'Scegli quello che ti rappresenta di più — non c\'è risposta giusta.', options: [
+    { emoji: '💻', text: 'Programmare / giocare con i pc' },
+    { emoji: '🎨', text: 'Disegnare / creare cose' },
+    { emoji: '🤝', text: 'Stare con le persone / aiutare' },
+    { emoji: '⚽', text: 'Fare sport / stare fuori' },
+  ]},
+  { eyebrow: 'Stile di lavoro', emoji: '🧠', title: 'Come lavori meglio?', sub: 'Pensa a come ti trovi di solito a scuola o nei progetti.', options: [
+    { emoji: '🧑‍💻', text: 'Da solo, concentrato sui dettagli' },
+    { emoji: '👥', text: 'In gruppo, scambiando idee' },
+    { emoji: '🎯', text: 'Con scadenze ben precise' },
+    { emoji: '🌊', text: 'Liberamente, senza troppe pressioni' },
+  ]},
+  { eyebrow: 'Materia preferita', emoji: '📚', title: 'Quale materia preferisci a scuola?', sub: 'Quella in cui ti senti più a tuo agio o che studi più volentieri.', options: [
+    { emoji: '🔢', text: 'Matematica e logica' },
+    { emoji: '✍️', text: 'Italiano e lettere' },
+    { emoji: '🧪', text: 'Scienze e laboratorio' },
+    { emoji: '🌍', text: 'Lingue e geografia' },
+  ]},
+  { eyebrow: 'Obiettivi futuri', emoji: '🚀', title: 'Cosa vorresti fare da grande?', sub: 'Anche se non sai ancora bene, una direzione c\'è di solito.', options: [
+    { emoji: '👨‍💼', text: 'Avere una mia azienda' },
+    { emoji: '🔬', text: 'Lavorare nella ricerca / scienza' },
+    { emoji: '🎭', text: 'Un lavoro creativo / artistico' },
+    { emoji: '🏥', text: 'Aiutare le persone (medico, prof...)' },
+  ]},
+  { eyebrow: 'Ambiente ideale', emoji: '🏢', title: 'Dove ti vedi a lavorare?', sub: 'Pensa al posto in cui ti vedresti meglio ogni giorno.', options: [
+    { emoji: '🏢', text: 'Ufficio moderno con team' },
+    { emoji: '🏠', text: 'Da casa, in remoto' },
+    { emoji: '🌍', text: 'In viaggio / sul campo' },
+    { emoji: '🎨', text: 'Studio creativo / laboratorio' },
+  ]},
+];
+
+let quizIdx = 0;
+let quizAnswers = [];
+
+function renderQuiz() {
+  const q = quizData[quizIdx];
+  document.getElementById('quiz-eyebrow-text').textContent = q.eyebrow;
+  document.getElementById('quiz-emoji').textContent = q.emoji;
+  document.getElementById('quiz-title').textContent = q.title;
+  document.getElementById('quiz-sub').textContent = q.sub;
+  document.getElementById('quiz-step').textContent = `${quizIdx+1} / ${quizData.length}`;
+  document.getElementById('quiz-progress').style.width = `${((quizIdx+1)/quizData.length)*100}%`;
+
+  const wrap = document.getElementById('quiz-options');
+  wrap.innerHTML = q.options.map((o, i) =>
+    `<div class="q-option ${quizAnswers[quizIdx]===i?'selected':''}" data-i="${i}" onclick="selectQuiz(this)">
+       <span class="q-option-emoji">${o.emoji}</span>
+       <span style="flex:1;">${o.text}</span>
+       <span class="q-check"></span>
+     </div>`
+  ).join('');
+
+  const btn = document.getElementById('quiz-next');
+  const hasAnswer = quizAnswers[quizIdx] !== undefined;
+  btn.disabled = !hasAnswer;
+  btn.style.opacity = hasAnswer ? '1' : '0.45';
+  document.getElementById('quiz-next-text').textContent = (quizIdx === quizData.length - 1) ? 'Vedi risultato' : 'Avanti';
+}
+
+function selectQuiz(el) {
+  el.parentElement.querySelectorAll('.q-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  quizAnswers[quizIdx] = parseInt(el.dataset.i);
+  const btn = document.getElementById('quiz-next');
+  btn.disabled = false;
+  btn.style.opacity = '1';
+}
+
+function quizNext() {
+  if (quizIdx < quizData.length - 1) {
+    quizIdx++;
+    renderQuiz();
+  } else {
+    goScreen('screen-result');
+  }
+}
+
+function quizPrev() {
+  if (quizIdx > 0) {
+    quizIdx--;
+    renderQuiz();
+  } else {
+    goScreen('screen-onboarding');
+  }
+}
+
+function restartQuiz() {
+  quizIdx = 0;
+  quizAnswers = [];
+  renderQuiz();
+  goScreen('screen-quiz');
+}
+
+let resultShownOnce = false;
+function showResultLoading() {
+  const overlay = document.getElementById('result-loading');
+  overlay.classList.remove('hidden');
+  // animate the 3 steps appearing
+  const steps = document.querySelectorAll('.loader-step');
+  steps.forEach(s => s.classList.remove('shown'));
+  const dur = resultShownOnce ? 350 : 1700;
+  setTimeout(() => steps[0]?.classList.add('shown'), dur*0.18);
+  setTimeout(() => steps[1]?.classList.add('shown'), dur*0.45);
+  setTimeout(() => steps[2]?.classList.add('shown'), dur*0.72);
+  setTimeout(() => overlay.classList.add('hidden'), dur);
+  resultShownOnce = true;
+}
+
+function animateMatchBars() {
+  setTimeout(() => {
+    document.querySelectorAll('#match-bars .match-fill').forEach(b => {
+      b.style.width = '0%';
+      requestAnimationFrame(() => {
+        setTimeout(() => { b.style.width = b.dataset.w + '%'; }, 50);
+      });
+    });
+  }, 100);
+}
+
+function switchTab(btn, name) {
+  btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+}
+
+function toggleFav(btn) {
+  const icon = btn.querySelector('.material-symbols-rounded') || btn;
+  const filled = btn.classList.toggle('faved');
+  if (filled) { icon.style.color = '#EF4444'; icon.classList.add('fill'); }
+  else { icon.style.color = ''; icon.classList.remove('fill'); }
+}
+
+const chatAnswers = {
+  studi: 'In <b>Sistemi e Reti</b> studierai: configurazione di router e switch, protocolli TCP/IP, sicurezza informatica, virtualizzazione, cloud computing e gestione di server Linux/Windows. Tanta pratica in laboratorio (60% del tempo).',
+  dopo: 'Dopo il diploma puoi: lavorare come <b>sistemista</b>, <b>network engineer</b> o nella <b>cybersecurity</b> (mercato in forte crescita). Oppure proseguire con un\'università di <b>Informatica</b> o <b>Ingegneria Informatica</b>. Il 78% dei diplomati Jean Monnet trova lavoro entro 6 mesi.',
+  difficolta: 'È una materia <b>tecnica e logica</b>, non difficile in sé ma richiede metodo. Se ti piace capire come funzionano le cose la troverai stimolante. I primi 6 mesi sono i più impegnativi (devi familiarizzare con la riga di comando), poi diventa un percorso lineare.',
+  pratica: 'La pratica è il cuore della materia: <b>60% del tempo in laboratorio</b>. Configurerai reti vere, simulerai attacchi e difese, gestirai server. La scuola usa simulatori Cisco Packet Tracer e GNS3, oltre a server Linux reali.',
+  certificazioni: 'Durante il quinto anno puoi prepararti per la certificazione <b>CCNA Cisco</b> (riconosciuta a livello mondiale) e <b>CompTIA Network+</b>. La scuola organizza corsi extra gratuiti per gli studenti interessati.'
+};
+
+function askAI(chip, key) {
+  const body = document.getElementById('chat-body');
+  const u = document.createElement('div');
+  u.className = 'bubble user';
+  u.textContent = chip.textContent.replace(/^[\W\s]+/, '');
+  body.appendChild(u);
+  chip.classList.add('gone');
+
+  // typing indicator
+  const typing = document.createElement('div');
+  typing.className = 'typing';
+  typing.innerHTML = '<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
+  body.appendChild(typing);
+  body.scrollTop = body.scrollHeight;
+
+  setTimeout(() => {
+    typing.remove();
+    const a = document.createElement('div');
+    a.className = 'bubble ai';
+    a.innerHTML = `<div class="ai-tag"><span class="material-symbols-rounded">smart_toy</span> Assistente AI</div>${chatAnswers[key]}`;
+    body.appendChild(a);
+    body.scrollTop = body.scrollHeight;
+  }, 900);
+}
+
+renderTabbars();
+renderQuiz();
+updateTabbar('screen-login');
+</script>
+</body>
+</html>
