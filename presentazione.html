@@ -1,0 +1,2222 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Next Step — Il primo passo per il tuo futuro</title>
+<meta name="description" content="Next Step è l'app che, grazie all'intelligenza artificiale, guida studenti delle scuole medie e superiori nella scelta del proprio percorso accademico."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+:root{
+  --blue-900:#040a2f;
+  --blue-800:#0a1a5c;
+  --blue-700:#0e2888;
+  --blue:#0055c5;
+  --blue-500:#2e74e8;
+  --blue-400:#5b90ff;
+  --blue-300:#739eff;
+  --blue-200:#b8ceff;
+  --blue-100:#dce8ff;
+  --blue-50:#f0f5ff;
+  --indigo:#3f52b7;
+  --indigo-deep:#1f2a7a;
+  --tertiary:#8b3b8f;
+  --gold:#f4b942;
+  --surface:#f7f5ff;
+  --surface-low:#f0efff;
+  --surface-mid:#e5e6ff;
+  --surface-high:#dee0ff;
+  --on-surface:#252c51;
+  --on-surface-muted:#535981;
+  --on-surface-soft:#7a80a8;
+  --outline:#a4aad7;
+  --white:#ffffff;
+  --radius-sm:12px;
+  --radius-md:16px;
+  --radius-lg:20px;
+  --radius-xl:28px;
+  --radius-2xl:36px;
+  --radius-full:9999px;
+  --shadow-sm:0 2px 8px rgba(37,44,81,.06),0 1px 2px rgba(37,44,81,.04);
+  --shadow-md:0 8px 24px rgba(37,44,81,.09),0 2px 6px rgba(37,44,81,.05);
+  --shadow-lg:0 20px 48px rgba(37,44,81,.12),0 6px 16px rgba(37,44,81,.06);
+  --shadow-xl:0 36px 80px rgba(37,44,81,.18),0 10px 24px rgba(37,44,81,.08);
+  --shadow-blue:0 12px 40px rgba(0,85,197,.25);
+  --shadow-glow:0 0 80px rgba(91,144,255,.45);
+  --font-display:'DM Serif Display',Georgia,serif;
+  --font-head:'Plus Jakarta Sans',sans-serif;
+  --font-body:'Manrope',sans-serif;
+  --container:1200px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:var(--surface);
+  color:var(--on-surface);
+  min-height:100dvh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.55;
+}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+a{color:inherit;text-decoration:none}
+
+.material-symbols-rounded{
+  font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+  vertical-align:middle;line-height:1;
+}
+.fill{font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 28px}
+
+.gradient-text{
+  background:linear-gradient(135deg,var(--blue) 0%,var(--indigo) 60%,var(--tertiary) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* ═══════════════════ NAV ═══════════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;justify-content:center;
+  padding:18px 20px;
+  pointer-events:none;
+  transition:padding .3s ease;
+}
+.nav.scrolled{padding:12px 20px}
+.nav-inner{
+  pointer-events:all;
+  display:flex;align-items:center;justify-content:space-between;
+  width:100%;max-width:1080px;
+  padding:10px 12px 10px 24px;
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(24px) saturate(1.6);
+  -webkit-backdrop-filter:blur(24px) saturate(1.6);
+  border:1px solid rgba(164,170,215,.22);
+  border-radius:var(--radius-full);
+  box-shadow:var(--shadow-sm);
+  transition:all .3s ease;
+}
+.nav.scrolled .nav-inner{box-shadow:var(--shadow-md);background:rgba(255,255,255,.85)}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--font-head);font-weight:800;font-size:18px;
+  color:var(--blue);letter-spacing:-.4px;
+}
+.nav-logo-mark{
+  width:32px;height:32px;border-radius:10px;
+  background:linear-gradient(135deg,var(--blue) 0%,var(--indigo) 100%);
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-size:18px;
+  box-shadow:0 4px 14px rgba(0,85,197,.35);
+  position:relative;overflow:hidden;
+}
+.nav-logo-mark::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.25),transparent 60%);
+}
+.nav-links{display:flex;gap:6px}
+.nav-link{
+  padding:8px 14px;border-radius:var(--radius-full);
+  font-family:var(--font-head);font-weight:600;font-size:13.5px;
+  color:var(--on-surface-muted);
+  transition:all .18s ease;
+}
+.nav-link:hover{color:var(--blue);background:var(--surface-low)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:10px 18px;border-radius:var(--radius-full);
+  background:linear-gradient(135deg,var(--blue) 0%,var(--indigo) 100%);
+  color:white;font-family:var(--font-head);font-weight:700;font-size:13.5px;
+  box-shadow:0 6px 20px rgba(0,85,197,.32);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,85,197,.42)}
+@media (max-width:760px){.nav-links{display:none}}
+
+/* ═══════════════════ HERO ═══════════════════ */
+.hero{
+  position:relative;
+  padding:160px 0 100px;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(circle at 18% 22%,rgba(91,144,255,.55),transparent 45%),
+    radial-gradient(circle at 82% 18%,rgba(139,59,143,.32),transparent 50%),
+    radial-gradient(circle at 50% 90%,rgba(63,82,183,.40),transparent 55%),
+    linear-gradient(180deg,#f7f5ff 0%,#ecefff 100%);
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:-1;
+  background-image:
+    linear-gradient(rgba(63,82,183,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(63,82,183,.06) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse at center,#000 30%,transparent 75%);
+}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.55;z-index:-1;animation:blobFloat 18s ease-in-out infinite}
+.blob-1{width:520px;height:520px;background:radial-gradient(circle,#5b90ff,transparent 65%);top:-120px;left:-120px}
+.blob-2{width:420px;height:420px;background:radial-gradient(circle,#8b3b8f,transparent 65%);top:-80px;right:-80px;animation-delay:-6s}
+.blob-3{width:600px;height:600px;background:radial-gradient(circle,#3f52b7,transparent 65%);bottom:-220px;left:30%;animation-delay:-12s}
+@keyframes blobFloat{
+  0%,100%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(40px,-30px) scale(1.06)}
+  66%{transform:translate(-30px,30px) scale(.96)}
+}
+
+.hero-content{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 14px 7px 8px;
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(164,170,215,.3);
+  border-radius:var(--radius-full);
+  font-family:var(--font-head);font-weight:600;font-size:13px;
+  color:var(--indigo);letter-spacing:.02em;
+  margin-bottom:24px;
+  box-shadow:var(--shadow-sm);
+}
+.hero-eyebrow-dot{
+  width:22px;height:22px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--indigo));
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-size:13px;
+}
+.hero-eyebrow-dot .material-symbols-rounded{font-size:13px}
+
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(44px,6.8vw,82px);
+  line-height:1.02;
+  letter-spacing:-.02em;
+  color:var(--blue-900);
+  margin-bottom:24px;
+}
+.hero h1 em{
+  font-style:italic;
+  background:linear-gradient(135deg,var(--blue) 0%,var(--indigo) 50%,var(--tertiary) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{
+  font-size:19px;line-height:1.6;
+  color:var(--on-surface-muted);
+  max-width:540px;margin-bottom:36px;
+  font-weight:400;
+}
+.hero-cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:42px}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 28px;
+  background:linear-gradient(135deg,var(--blue) 0%,var(--indigo) 100%);
+  color:white;
+  border-radius:var(--radius-full);
+  font-family:var(--font-head);font-weight:700;font-size:15px;
+  box-shadow:var(--shadow-blue);
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s ease;
+  position:relative;overflow:hidden;
+}
+.btn-primary::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.18),transparent 60%);
+  pointer-events:none;
+}
+.btn-primary:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 18px 50px rgba(0,85,197,.4)}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 22px;
+  background:rgba(255,255,255,.85);
+  border:1.5px solid rgba(164,170,215,.4);
+  color:var(--on-surface);
+  border-radius:var(--radius-full);
+  font-family:var(--font-head);font-weight:600;font-size:14.5px;
+  backdrop-filter:blur(8px);
+  transition:all .2s ease;
+}
+.btn-secondary:hover{background:white;border-color:var(--blue-300);color:var(--blue);transform:translateY(-1px)}
+
+.hero-trust{
+  display:flex;align-items:center;gap:18px;
+  padding:14px 18px;
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(164,170,215,.25);
+  border-radius:var(--radius-lg);
+  backdrop-filter:blur(8px);
+  max-width:fit-content;
+}
+.trust-avatars{display:flex}
+.trust-avatar{
+  width:34px;height:34px;border-radius:50%;
+  border:2px solid white;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;
+  margin-left:-10px;
+}
+.trust-avatar:first-child{margin-left:0}
+.trust-avatar:nth-child(1){background:linear-gradient(135deg,#5b90ff,#0055c5)}
+.trust-avatar:nth-child(2){background:linear-gradient(135deg,#8b3b8f,#3f52b7)}
+.trust-avatar:nth-child(3){background:linear-gradient(135deg,#f4b942,#b87f1f)}
+.trust-avatar:nth-child(4){background:linear-gradient(135deg,#3f52b7,#040a2f);color:white;font-family:var(--font-head);font-weight:700;font-size:11px}
+.trust-text{font-size:13px;color:var(--on-surface-muted);line-height:1.4}
+.trust-text strong{color:var(--on-surface);font-family:var(--font-head);display:block;font-weight:700;font-size:14px}
+
+/* ═══════════════════ PHONE MOCK ═══════════════════ */
+.phone-stage{
+  position:relative;
+  display:flex;justify-content:center;align-items:center;
+  perspective:1400px;
+  min-height:620px;
+}
+.phone-glow{
+  position:absolute;width:520px;height:520px;
+  background:radial-gradient(circle,rgba(91,144,255,.5),transparent 60%);
+  filter:blur(60px);
+  z-index:-1;
+  animation:pulse 6s ease-in-out infinite;
+}
+@keyframes pulse{50%{opacity:.6;transform:scale(1.06)}}
+
+.phone{
+  position:relative;
+  width:300px;height:610px;
+  background:linear-gradient(165deg,#1a1f4d 0%,#040a2f 100%);
+  border-radius:46px;
+  padding:14px;
+  box-shadow:
+    0 50px 100px rgba(4,10,47,.4),
+    0 30px 60px rgba(0,85,197,.25),
+    inset 0 0 0 2px rgba(255,255,255,.08),
+    inset 0 2px 4px rgba(255,255,255,.15);
+  transform:rotateY(-12deg) rotateX(4deg);
+  transition:transform .8s cubic-bezier(.22,1,.36,1);
+  animation:phoneFloat 6s ease-in-out infinite;
+}
+@keyframes phoneFloat{50%{transform:rotateY(-12deg) rotateX(4deg) translateY(-12px)}}
+.phone:hover{transform:rotateY(-4deg) rotateX(2deg) scale(1.02)}
+.phone-screen{
+  width:100%;height:100%;
+  background:var(--surface);
+  border-radius:34px;
+  overflow:hidden;
+  position:relative;
+  display:flex;flex-direction:column;
+}
+.phone-notch{
+  position:absolute;top:8px;left:50%;transform:translateX(-50%);
+  width:88px;height:24px;background:#040a2f;border-radius:14px;z-index:10;
+}
+.phone-notch::after{
+  content:'';position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  width:8px;height:8px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#444 30%,#111 70%);
+}
+
+.phone-status{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 22px 4px;
+  font-family:var(--font-head);font-weight:700;font-size:11px;
+  color:var(--on-surface);
+}
+.phone-status-icons{display:flex;gap:4px;align-items:center}
+.phone-status-icons .material-symbols-rounded{font-size:13px}
+
+.phone-app-bar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 18px 10px;
+}
+.phone-app-logo{
+  font-family:var(--font-head);font-weight:800;font-size:16px;color:var(--blue);
+  letter-spacing:-.4px;
+}
+.phone-app-bar .material-symbols-rounded{color:var(--on-surface-muted);font-size:20px}
+
+.phone-content{flex:1;padding:8px 18px;overflow:hidden}
+.phone-progress{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.phone-progress-bar{flex:1;height:4px;background:var(--surface-mid);border-radius:99px;overflow:hidden}
+.phone-progress-fill{
+  height:100%;width:60%;
+  background:linear-gradient(90deg,var(--blue),var(--indigo));
+  border-radius:99px;
+}
+.phone-progress-num{font-family:var(--font-head);font-weight:700;font-size:11px;color:var(--indigo)}
+
+.ai-msg{
+  display:flex;gap:10px;margin-bottom:12px;
+  animation:slideIn .6s ease both;
+}
+.ai-avatar{
+  width:32px;height:32px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--indigo));
+  display:flex;align-items:center;justify-content:center;color:white;font-size:16px;
+  flex-shrink:0;
+  box-shadow:0 4px 12px rgba(0,85,197,.3);
+}
+.ai-bubble{
+  background:white;
+  border:1px solid rgba(164,170,215,.18);
+  border-radius:14px 14px 14px 4px;
+  padding:10px 12px;
+  font-size:11.5px;line-height:1.45;
+  color:var(--on-surface);
+  box-shadow:var(--shadow-sm);
+}
+.ai-bubble strong{color:var(--blue);font-weight:700}
+
+.phone-chips{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.phone-chip{
+  background:white;
+  border:1px solid rgba(164,170,215,.2);
+  border-radius:12px;
+  padding:10px 8px;
+  display:flex;flex-direction:column;align-items:center;gap:5px;
+  font-family:var(--font-head);font-weight:600;font-size:10px;color:var(--on-surface);
+  text-align:center;
+  box-shadow:var(--shadow-sm);
+  transition:all .2s ease;
+}
+.phone-chip.active{
+  background:linear-gradient(135deg,var(--blue),var(--indigo));
+  color:white;border-color:transparent;
+  box-shadow:0 6px 16px rgba(0,85,197,.35);
+}
+.phone-chip .material-symbols-rounded{font-size:18px}
+.phone-chip.active .material-symbols-rounded{color:white}
+
+.phone-hint{
+  display:flex;gap:8px;align-items:flex-start;
+  background:linear-gradient(135deg,rgba(91,144,255,.12),rgba(63,82,183,.08));
+  border:1px solid rgba(91,144,255,.2);
+  border-radius:12px;
+  padding:10px;
+  font-size:10.5px;line-height:1.45;color:var(--on-surface-muted);
+}
+.phone-hint .material-symbols-rounded{color:var(--gold);font-size:16px;flex-shrink:0}
+.phone-hint strong{color:var(--on-surface);display:block;margin-bottom:2px;font-family:var(--font-head)}
+
+.phone-nav{
+  display:flex;justify-content:space-around;
+  padding:10px 12px 14px;
+  border-top:1px solid rgba(164,170,215,.15);
+  background:rgba(247,245,255,.6);
+  backdrop-filter:blur(8px);
+}
+.phone-nav-item{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  font-family:var(--font-head);font-weight:600;font-size:9px;
+  color:var(--on-surface-soft);
+}
+.phone-nav-item .material-symbols-rounded{font-size:20px}
+.phone-nav-item.active{color:var(--blue)}
+
+@keyframes slideIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.floating-card{
+  position:absolute;
+  background:white;
+  border:1px solid rgba(164,170,215,.2);
+  border-radius:14px;
+  padding:12px 14px;
+  box-shadow:var(--shadow-lg);
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--font-head);font-weight:600;
+  z-index:5;
+  animation:cardFloat 5s ease-in-out infinite;
+}
+.floating-card.fc-1{top:80px;left:-30px;font-size:12px;color:var(--on-surface)}
+.floating-card.fc-1 .fc-icon{
+  width:32px;height:32px;border-radius:10px;
+  background:linear-gradient(135deg,#22c55e,#15803d);
+  display:flex;align-items:center;justify-content:center;color:white;
+}
+.floating-card.fc-2{bottom:120px;right:-40px;animation-delay:-2.5s;flex-direction:column;align-items:flex-start;gap:4px}
+.floating-card.fc-2 .fc-label{font-size:10px;color:var(--on-surface-soft);font-weight:500;letter-spacing:.05em;text-transform:uppercase}
+.floating-card.fc-2 .fc-val{font-family:var(--font-display);font-size:24px;color:var(--indigo)}
+.floating-card.fc-3{top:340px;right:-50px;animation-delay:-1s;font-size:12px;gap:8px}
+.floating-card.fc-3 .fc-icon{
+  width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),#d18a16);
+  display:flex;align-items:center;justify-content:center;color:white;font-size:14px;
+}
+@keyframes cardFloat{50%{transform:translateY(-10px)}}
+
+@media (max-width:980px){
+  .hero-content{grid-template-columns:1fr;gap:60px}
+  .phone-stage{min-height:680px}
+  .phone{transform:none;animation:phoneFloat2 6s ease-in-out infinite}
+  @keyframes phoneFloat2{50%{transform:translateY(-12px)}}
+  .floating-card.fc-1{left:-10px}
+  .floating-card.fc-2{right:-10px}
+  .floating-card.fc-3{right:-20px}
+}
+
+/* ═══════════════════ STATS ═══════════════════ */
+.stats{padding:80px 0;position:relative}
+.stats-inner{
+  background:linear-gradient(135deg,#040a2f 0%,#0a1a5c 50%,#1f2a7a 100%);
+  border-radius:var(--radius-2xl);
+  padding:60px 48px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:var(--shadow-xl);
+}
+.stats-inner::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 20% 30%,rgba(91,144,255,.3),transparent 40%),
+    radial-gradient(circle at 80% 70%,rgba(139,59,143,.25),transparent 45%);
+}
+.stats-grid{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
+}
+.stat{color:white}
+.stat-num{
+  font-family:var(--font-display);
+  font-size:clamp(38px,5vw,58px);
+  line-height:1;
+  background:linear-gradient(135deg,#fff 0%,#b8ceff 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:8px;
+}
+.stat-label{font-size:13px;color:rgba(255,255,255,.7);font-weight:500;line-height:1.5}
+.stat-source{font-size:11px;color:rgba(255,255,255,.4);margin-top:6px;font-style:italic}
+@media (max-width:780px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:28px}.stats-inner{padding:44px 28px}}
+
+/* ═══════════════════ SECTION HEADER ═══════════════════ */
+.section{padding:100px 0;position:relative}
+.section-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 14px;
+  background:var(--surface-mid);
+  border-radius:var(--radius-full);
+  font-family:var(--font-head);font-weight:700;font-size:12px;
+  color:var(--indigo);letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:18px;
+}
+.section-eyebrow .material-symbols-rounded{font-size:14px}
+.section-title{
+  font-family:var(--font-display);
+  font-size:clamp(34px,4.6vw,54px);
+  line-height:1.05;
+  letter-spacing:-.015em;
+  color:var(--blue-900);
+  max-width:780px;
+  margin-bottom:18px;
+}
+.section-sub{
+  font-size:17px;line-height:1.65;
+  color:var(--on-surface-muted);
+  max-width:680px;
+  margin-bottom:56px;
+}
+
+/* ═══════════════════ PROBLEMA ═══════════════════ */
+.problem-grid{
+  display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;
+}
+.problem-visual{
+  position:relative;
+  background:white;
+  border:1px solid rgba(164,170,215,.18);
+  border-radius:var(--radius-2xl);
+  padding:40px;
+  box-shadow:var(--shadow-lg);
+  overflow:hidden;
+}
+.problem-visual::before{
+  content:'';position:absolute;top:-40px;right:-40px;
+  width:200px;height:200px;
+  background:radial-gradient(circle,rgba(139,59,143,.15),transparent 70%);
+  border-radius:50%;
+}
+.problem-cloud{
+  position:relative;z-index:1;
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+}
+.problem-pill{
+  padding:8px 14px;
+  background:var(--surface-low);
+  border:1px solid rgba(164,170,215,.2);
+  border-radius:var(--radius-full);
+  font-family:var(--font-head);font-weight:600;font-size:13px;
+  color:var(--on-surface-muted);
+  transition:all .2s ease;
+}
+.problem-pill.highlight{
+  background:linear-gradient(135deg,var(--blue),var(--indigo));
+  color:white;border-color:transparent;
+  box-shadow:0 4px 14px rgba(0,85,197,.3);
+}
+.problem-pill.muted{font-size:11px;opacity:.55}
+
+.problem-stats-mini{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  margin-top:32px;padding-top:32px;
+  border-top:1px solid rgba(164,170,215,.2);
+}
+.problem-stat-mini{text-align:left}
+.problem-stat-mini .ps-num{
+  font-family:var(--font-display);
+  font-size:36px;line-height:1;
+  color:var(--blue);
+  margin-bottom:4px;
+}
+.problem-stat-mini .ps-label{font-size:12px;color:var(--on-surface-muted);line-height:1.4}
+
+.problem-text h3{
+  font-family:var(--font-display);
+  font-size:32px;
+  line-height:1.15;
+  color:var(--blue-900);
+  margin-bottom:18px;
+}
+.problem-text p{color:var(--on-surface-muted);margin-bottom:14px;font-size:15.5px}
+.problem-text p strong{color:var(--blue-900);font-weight:700}
+.problem-quote{
+  margin-top:24px;padding:20px 22px;
+  background:var(--surface-low);
+  border-left:4px solid var(--indigo);
+  border-radius:0 var(--radius-md) var(--radius-md) 0;
+  font-style:italic;color:var(--on-surface);
+  font-size:14.5px;line-height:1.6;
+}
+.problem-quote cite{
+  display:block;margin-top:8px;
+  font-family:var(--font-head);font-style:normal;font-weight:600;font-size:12px;
+  color:var(--indigo);
+}
+@media (max-width:880px){.problem-grid{grid-template-columns:1fr}}
+
+/* ═══════════════════ SOLUZIONE / FEATURES ═══════════════════ */
+.features-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.feature{
+  position:relative;
+  background:white;
+  border:1px solid rgba(164,170,215,.18);
+  border-radius:var(--radius-xl);
+  padding:32px;
+  box-shadow:var(--shadow-sm);
+  transition:all .35s cubic-bezier(.22,1,.36,1);
+  overflow:hidden;
+  isolation:isolate;
+}
+.feature::before{
+  content:'';position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(135deg,rgba(91,144,255,.08),transparent 60%);
+  opacity:0;transition:opacity .3s ease;
+}
+.feature:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:rgba(91,144,255,.4)}
+.feature:hover::before{opacity:1}
+.feature-icon{
+  width:56px;height:56px;border-radius:18px;
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-size:28px;
+  margin-bottom:22px;
+  position:relative;
+  box-shadow:var(--shadow-md);
+}
+.feature-icon::after{
+  content:'';position:absolute;inset:0;border-radius:18px;
+  background:linear-gradient(135deg,rgba(255,255,255,.25),transparent 60%);
+}
+.fi-blue{background:linear-gradient(135deg,#0055c5,#3f52b7)}
+.fi-indigo{background:linear-gradient(135deg,#3f52b7,#1f2a7a)}
+.fi-purple{background:linear-gradient(135deg,#8b3b8f,#5a2c5e)}
+.fi-gold{background:linear-gradient(135deg,#f4b942,#b87f1f)}
+.fi-teal{background:linear-gradient(135deg,#0ea5e9,#0369a1)}
+.fi-rose{background:linear-gradient(135deg,#e11d48,#9f1239)}
+.feature h3{
+  font-family:var(--font-head);
+  font-size:20px;font-weight:700;
+  color:var(--blue-900);
+  margin-bottom:10px;letter-spacing:-.01em;
+}
+.feature p{
+  color:var(--on-surface-muted);
+  font-size:14.5px;line-height:1.6;
+}
+.feature-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:18px;
+  padding:5px 12px;
+  background:var(--surface-low);
+  border-radius:var(--radius-full);
+  font-family:var(--font-head);font-weight:600;font-size:11px;
+  color:var(--indigo);letter-spacing:.05em;text-transform:uppercase;
+}
+.feature-tag .material-symbols-rounded{font-size:13px}
+@media (max-width:880px){.features-grid{grid-template-columns:1fr}}
+
+/* ═══════════════════ COME FUNZIONA ═══════════════════ */
+.flow{
+  background:linear-gradient(180deg,var(--surface) 0%,var(--surface-low) 100%);
+  border-radius:var(--radius-2xl);
+  padding:64px 48px;
+  position:relative;overflow:hidden;
+}
+.flow::before{
+  content:'';position:absolute;top:-100px;right:-100px;
+  width:340px;height:340px;
+  background:radial-gradient(circle,rgba(91,144,255,.18),transparent 70%);
+  border-radius:50%;
+}
+.flow-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  position:relative;z-index:1;
+}
+.flow-step{
+  position:relative;
+  background:white;
+  border:1px solid rgba(164,170,215,.2);
+  border-radius:var(--radius-xl);
+  padding:26px 22px;
+  box-shadow:var(--shadow-sm);
+  transition:all .3s ease;
+}
+.flow-step:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.flow-num{
+  position:absolute;top:-16px;left:22px;
+  width:36px;height:36px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--indigo));
+  color:white;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-size:18px;
+  box-shadow:0 6px 16px rgba(0,85,197,.35);
+}
+.flow-step .material-symbols-rounded.flow-icon{
+  font-size:30px;color:var(--blue);margin:8px 0 14px;display:block;
+}
+.flow-step h4{
+  font-family:var(--font-head);font-weight:700;font-size:16px;
+  color:var(--blue-900);margin-bottom:8px;
+}
+.flow-step p{font-size:13.5px;color:var(--on-surface-muted);line-height:1.55}
+@media (max-width:880px){.flow{padding:48px 24px}.flow-steps{grid-template-columns:1fr 1fr;gap:24px}}
+@media (max-width:540px){.flow-steps{grid-template-columns:1fr}}
+
+/* ═══════════════════ TECH ═══════════════════ */
+.tech-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+}
+.tech-stack{
+  background:linear-gradient(165deg,#040a2f 0%,#1f2a7a 100%);
+  border-radius:var(--radius-2xl);
+  padding:42px;
+  color:white;
+  position:relative;overflow:hidden;
+  box-shadow:var(--shadow-xl);
+}
+.tech-stack::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(91,144,255,.3),transparent 50%),
+    radial-gradient(circle at 20% 80%,rgba(139,59,143,.25),transparent 50%);
+}
+.tech-stack-inner{position:relative;z-index:1}
+.tech-stack-label{
+  font-family:var(--font-head);font-weight:700;font-size:11px;
+  color:rgba(255,255,255,.5);letter-spacing:.15em;text-transform:uppercase;
+  margin-bottom:20px;
+}
+.tech-stack h3{
+  font-family:var(--font-display);font-size:28px;line-height:1.15;
+  margin-bottom:24px;
+}
+.tech-list{display:flex;flex-direction:column;gap:14px}
+.tech-row{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 16px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius-md);
+  backdrop-filter:blur(8px);
+}
+.tech-row-icon{
+  width:36px;height:36px;border-radius:10px;
+  background:rgba(91,144,255,.18);
+  border:1px solid rgba(91,144,255,.3);
+  display:flex;align-items:center;justify-content:center;
+  color:#b8ceff;font-size:18px;flex-shrink:0;
+}
+.tech-row-text{flex:1}
+.tech-row-name{font-family:var(--font-head);font-weight:700;font-size:13px;color:white}
+.tech-row-desc{font-size:12px;color:rgba(255,255,255,.55);margin-top:2px}
+
+.tech-text h3{
+  font-family:var(--font-display);font-size:34px;line-height:1.15;
+  color:var(--blue-900);margin-bottom:18px;letter-spacing:-.01em;
+}
+.tech-text p{color:var(--on-surface-muted);font-size:15.5px;margin-bottom:14px;line-height:1.65}
+.tech-bullets{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.tech-bullet{display:flex;gap:14px;align-items:flex-start}
+.tech-bullet .material-symbols-rounded{
+  width:32px;height:32px;border-radius:10px;
+  background:linear-gradient(135deg,var(--blue),var(--indigo));
+  color:white;font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.tech-bullet div strong{display:block;font-family:var(--font-head);font-weight:700;color:var(--blue-900);margin-bottom:2px}
+.tech-bullet div span{color:var(--on-surface-muted);font-size:14px;line-height:1.55}
+@media (max-width:880px){.tech-grid{grid-template-columns:1fr;gap:40px}}
+
+/* ═══════════════════ TEAM ═══════════════════ */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.team-card{
+  background:white;
+  border:1px solid rgba(164,170,215,.18);
+  border-radius:var(--radius-xl);
+  padding:32px;
+  box-shadow:var(--shadow-sm);
+  text-align:center;
+  position:relative;overflow:hidden;
+  transition:all .3s ease;
+}
+.team-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:90px;
+  background:linear-gradient(135deg,var(--blue) 0%,var(--indigo) 100%);
+}
+.team-card.t-2::before{background:linear-gradient(135deg,var(--indigo) 0%,var(--tertiary) 100%)}
+.team-card.t-3::before{background:linear-gradient(135deg,var(--tertiary) 0%,var(--blue) 100%)}
+.team-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+
+.team-avatar{
+  position:relative;z-index:1;
+  width:96px;height:96px;
+  border-radius:50%;
+  background:white;
+  border:5px solid white;
+  margin:32px auto 18px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-size:36px;
+  color:white;
+  box-shadow:var(--shadow-md);
+  background:linear-gradient(135deg,var(--blue),var(--indigo));
+}
+.team-card.t-2 .team-avatar{background:linear-gradient(135deg,var(--indigo),var(--tertiary))}
+.team-card.t-3 .team-avatar{background:linear-gradient(135deg,var(--tertiary),var(--blue))}
+
+.team-name{
+  font-family:var(--font-head);font-weight:700;font-size:18px;
+  color:var(--blue-900);margin-bottom:4px;
+}
+.team-role{
+  font-family:var(--font-head);font-weight:600;font-size:12px;
+  color:var(--indigo);letter-spacing:.08em;text-transform:uppercase;
+  margin-bottom:14px;
+}
+.team-desc{color:var(--on-surface-muted);font-size:14px;line-height:1.55}
+.team-school{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:14px;
+  padding:5px 12px;
+  background:var(--surface-low);
+  border-radius:var(--radius-full);
+  font-size:11px;color:var(--on-surface-muted);font-family:var(--font-head);font-weight:600;
+}
+.team-school .material-symbols-rounded{font-size:13px;color:var(--blue)}
+
+.team-extra{
+  margin-top:32px;
+  background:white;
+  border:1px solid rgba(164,170,215,.18);
+  border-radius:var(--radius-xl);
+  padding:24px 28px;
+  display:flex;align-items:center;gap:18px;
+  box-shadow:var(--shadow-sm);
+}
+.team-extra-avatar{
+  width:54px;height:54px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),#d18a16);
+  color:white;display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-size:22px;flex-shrink:0;
+  box-shadow:0 6px 16px rgba(244,185,66,.4);
+}
+.team-extra-info{flex:1}
+.team-extra-name{font-family:var(--font-head);font-weight:700;color:var(--blue-900);font-size:15px}
+.team-extra-role{font-size:13px;color:var(--on-surface-muted);margin-top:2px}
+.team-extra-tag{
+  padding:6px 12px;background:var(--surface-mid);border-radius:var(--radius-full);
+  font-size:11px;color:var(--indigo);font-family:var(--font-head);font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;
+}
+@media (max-width:880px){.team-grid{grid-template-columns:1fr}.team-extra{flex-direction:column;text-align:center}}
+
+/* ═══════════════════ ROADMAP ═══════════════════ */
+.roadmap{
+  background:linear-gradient(180deg,#f7f5ff 0%,#ecefff 100%);
+  border-radius:var(--radius-2xl);
+  padding:60px 48px;
+  position:relative;
+}
+.roadmap-track{
+  position:relative;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
+  margin-top:30px;
+}
+.roadmap-track::before{
+  content:'';position:absolute;top:24px;left:5%;right:5%;height:3px;
+  background:linear-gradient(90deg,var(--blue) 0%,var(--indigo) 50%,var(--tertiary) 100%);
+  border-radius:99px;z-index:0;
+  opacity:.25;
+}
+.roadmap-step{position:relative;z-index:1;text-align:left}
+.roadmap-dot{
+  width:48px;height:48px;border-radius:50%;
+  background:white;
+  border:3px solid var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--blue);font-family:var(--font-display);font-size:18px;
+  box-shadow:var(--shadow-md);
+  margin-bottom:18px;
+}
+.roadmap-step.done .roadmap-dot{background:linear-gradient(135deg,var(--blue),var(--indigo));color:white;border-color:transparent}
+.roadmap-step.done .roadmap-dot .material-symbols-rounded{font-size:24px}
+.roadmap-step.active .roadmap-dot{
+  background:linear-gradient(135deg,var(--indigo),var(--tertiary));color:white;border-color:transparent;
+  box-shadow:0 0 0 8px rgba(63,82,183,.15);
+}
+.roadmap-quarter{
+  font-family:var(--font-head);font-weight:700;font-size:11px;
+  color:var(--indigo);letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:6px;
+}
+.roadmap-step h4{
+  font-family:var(--font-head);font-weight:700;font-size:16px;
+  color:var(--blue-900);margin-bottom:6px;
+}
+.roadmap-step p{font-size:13px;color:var(--on-surface-muted);line-height:1.55}
+@media (max-width:880px){.roadmap-track{grid-template-columns:1fr 1fr}.roadmap-track::before{display:none}.roadmap{padding:48px 28px}}
+
+/* ═══════════════════ CTA ═══════════════════ */
+.cta-section{padding:120px 0}
+.cta-card{
+  background:linear-gradient(135deg,#040a2f 0%,#0a1a5c 50%,#3f52b7 100%);
+  border-radius:var(--radius-2xl);
+  padding:80px 48px;
+  text-align:center;
+  position:relative;overflow:hidden;
+  box-shadow:var(--shadow-xl);
+}
+.cta-card::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 15% 30%,rgba(91,144,255,.4),transparent 45%),
+    radial-gradient(circle at 85% 70%,rgba(139,59,143,.35),transparent 50%);
+}
+.cta-card::after{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse at center,#000 30%,transparent 70%);
+}
+.cta-inner{position:relative;z-index:1}
+.cta-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 16px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:var(--radius-full);
+  color:white;font-family:var(--font-head);font-weight:600;font-size:12px;
+  letter-spacing:.08em;text-transform:uppercase;
+  margin-bottom:24px;
+  backdrop-filter:blur(12px);
+}
+.cta-eyebrow .material-symbols-rounded{font-size:14px;color:var(--gold)}
+.cta-card h2{
+  font-family:var(--font-display);
+  font-size:clamp(36px,5vw,56px);
+  line-height:1.05;color:white;
+  margin-bottom:20px;letter-spacing:-.015em;
+}
+.cta-card h2 em{
+  font-style:italic;
+  background:linear-gradient(135deg,#fff 0%,#b8ceff 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.cta-card p{
+  font-size:17px;color:rgba(255,255,255,.75);
+  max-width:580px;margin:0 auto 36px;line-height:1.6;
+}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-cta-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 30px;
+  background:white;color:var(--blue);
+  border-radius:var(--radius-full);
+  font-family:var(--font-head);font-weight:700;font-size:15px;
+  box-shadow:0 12px 30px rgba(0,0,0,.2);
+  transition:transform .2s ease;
+}
+.btn-cta-primary:hover{transform:translateY(-2px) scale(1.02)}
+.btn-cta-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 26px;
+  background:rgba(255,255,255,.08);
+  border:1.5px solid rgba(255,255,255,.25);
+  color:white;
+  border-radius:var(--radius-full);
+  font-family:var(--font-head);font-weight:600;font-size:14.5px;
+  backdrop-filter:blur(8px);
+  transition:all .2s ease;
+}
+.btn-cta-ghost:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.4)}
+
+/* ═══════════════════ FOOTER ═══════════════════ */
+.footer{
+  padding:50px 0 40px;
+  border-top:1px solid rgba(164,170,215,.18);
+}
+.footer-inner{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;
+}
+.footer-brand{
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--font-head);font-weight:800;color:var(--blue);font-size:18px;
+}
+.footer-info{font-size:13px;color:var(--on-surface-muted);line-height:1.6}
+.footer-info strong{color:var(--on-surface);font-family:var(--font-head)}
+.footer-links{display:flex;gap:18px;font-size:13px;color:var(--on-surface-muted)}
+.footer-links a{transition:color .2s ease}
+.footer-links a:hover{color:var(--blue)}
+.footer-bottom{
+  margin-top:32px;padding-top:24px;
+  border-top:1px solid rgba(164,170,215,.15);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+  font-size:12px;color:var(--on-surface-soft);
+}
+
+/* ═══════════════════ REVEAL ═══════════════════ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.08s}
+.reveal-delay-2{transition-delay:.16s}
+.reveal-delay-3{transition-delay:.24s}
+
+/* ═══════════════════ MERCATO ═══════════════════ */
+.market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
+.market-card{
+  background:white;border:1px solid rgba(164,170,215,.18);border-radius:var(--radius-xl);
+  padding:32px;box-shadow:var(--shadow-sm);transition:all .3s ease;
+  position:relative;overflow:hidden;
+}
+.market-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--indigo));
+}
+.market-card.mc-b2b::before{background:linear-gradient(90deg,var(--indigo),var(--tertiary))}
+.market-card.mc-b2g::before{background:linear-gradient(90deg,var(--tertiary),var(--gold))}
+.market-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.market-card-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 12px;border-radius:var(--radius-full);
+  background:var(--surface-mid);
+  font-family:var(--font-head);font-weight:700;font-size:11px;letter-spacing:.1em;
+  color:var(--indigo);margin-bottom:16px;
+}
+.market-card-num{font-family:var(--font-display);font-size:42px;color:var(--blue);line-height:1;margin-bottom:8px}
+.market-card.mc-b2b .market-card-num{color:var(--indigo)}
+.market-card.mc-b2g .market-card-num{color:var(--tertiary)}
+.market-card h4{font-family:var(--font-head);font-weight:700;font-size:17px;color:var(--blue-900);margin-bottom:8px}
+.market-card p{font-size:13.5px;color:var(--on-surface-muted);line-height:1.55}
+.market-table{
+  background:white;border:1px solid rgba(164,170,215,.18);border-radius:var(--radius-xl);
+  overflow:hidden;box-shadow:var(--shadow-sm);
+}
+.market-table-header{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  background:linear-gradient(135deg,var(--blue-900),var(--indigo-deep));
+  padding:16px 28px;
+  font-family:var(--font-head);font-weight:700;font-size:12px;
+  color:rgba(255,255,255,.7);letter-spacing:.1em;text-transform:uppercase;
+}
+.market-table-row{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  padding:16px 28px;
+  border-bottom:1px solid rgba(164,170,215,.12);
+  align-items:center;
+  transition:background .2s ease;
+}
+.market-table-row:last-child{border-bottom:none}
+.market-table-row:hover{background:var(--surface-low)}
+.market-table-row .cell-label{font-family:var(--font-head);font-weight:600;color:var(--on-surface);font-size:14px}
+.market-table-row .cell-val{font-family:var(--font-display);font-size:22px;color:var(--blue)}
+.market-table-row .cell-note{font-size:12px;color:var(--on-surface-muted)}
+@media (max-width:880px){.market-grid{grid-template-columns:1fr}.market-table-header,.market-table-row{grid-template-columns:1fr 1fr;gap:8px}}
+
+/* ═══════════════════ BUSINESS MODEL CANVAS ═══════════════════ */
+.bmc-wrapper{
+  background:linear-gradient(165deg,#040a2f 0%,#1f2a7a 100%);
+  border-radius:var(--radius-2xl);
+  padding:48px;
+  box-shadow:var(--shadow-xl);
+  position:relative;overflow:hidden;
+}
+.bmc-wrapper::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 20% 30%,rgba(91,144,255,.25),transparent 45%),
+    radial-gradient(circle at 80% 70%,rgba(139,59,143,.2),transparent 50%);
+}
+.bmc-grid{
+  position:relative;z-index:1;
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1.2fr;
+  grid-template-rows:auto auto auto;
+  gap:16px;
+}
+.bmc-cell{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-lg);
+  padding:22px;
+  backdrop-filter:blur(8px);
+  transition:background .2s ease;
+}
+.bmc-cell:hover{background:rgba(255,255,255,.1)}
+.bmc-cell.span-col{grid-column:1/-1}
+.bmc-cell.span-2{grid-column:span 2}
+.bmc-cell-label{
+  font-family:var(--font-head);font-weight:700;font-size:10px;
+  color:rgba(255,255,255,.45);letter-spacing:.15em;text-transform:uppercase;
+  margin-bottom:10px;display:flex;align-items:center;gap:6px;
+}
+.bmc-cell-label .material-symbols-rounded{font-size:14px;color:var(--blue-300)}
+.bmc-cell h4{font-family:var(--font-head);font-weight:700;font-size:14px;color:white;margin-bottom:10px}
+.bmc-cell ul{padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.bmc-cell ul li{
+  font-size:12.5px;color:rgba(255,255,255,.7);line-height:1.45;
+  padding-left:14px;position:relative;
+}
+.bmc-cell ul li::before{content:'→';position:absolute;left:0;color:var(--blue-400);font-weight:700}
+.bmc-vp{
+  background:linear-gradient(135deg,rgba(0,85,197,.35),rgba(63,82,183,.25));
+  border-color:rgba(91,144,255,.3);
+}
+.bmc-revenue{
+  background:linear-gradient(135deg,rgba(244,185,66,.15),rgba(180,127,31,.1));
+  border-color:rgba(244,185,66,.25);
+}
+.bmc-revenue .bmc-cell-label .material-symbols-rounded{color:var(--gold)}
+.bmc-cost{
+  background:linear-gradient(135deg,rgba(139,59,143,.2),rgba(90,44,94,.15));
+  border-color:rgba(139,59,143,.25);
+}
+.bmc-bottom-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:0}
+@media (max-width:880px){
+  .bmc-grid{grid-template-columns:1fr;gap:12px}
+  .bmc-cell.span-2,.bmc-cell.span-col{grid-column:auto}
+  .bmc-wrapper{padding:28px 22px}
+  .bmc-bottom-row{grid-template-columns:1fr}
+}
+
+/* ═══════════════════ FINANZIAMENTI ═══════════════════ */
+.funding-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.funding-card{
+  background:white;border:1px solid rgba(164,170,215,.18);border-radius:var(--radius-xl);
+  padding:28px 32px;box-shadow:var(--shadow-sm);
+  display:flex;gap:18px;align-items:flex-start;
+  transition:all .3s ease;
+}
+.funding-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:rgba(91,144,255,.3)}
+.funding-icon{
+  width:52px;height:52px;border-radius:16px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;color:white;
+  box-shadow:var(--shadow-md);
+}
+.fi-green{background:linear-gradient(135deg,#16a34a,#14532d)}
+.fi-sky{background:linear-gradient(135deg,#0ea5e9,#0369a1)}
+.fi-orange{background:linear-gradient(135deg,#ea580c,#9a3412)}
+.fi-red{background:linear-gradient(135deg,#dc2626,#7f1d1d)}
+.funding-body h4{font-family:var(--font-head);font-weight:700;font-size:16px;color:var(--blue-900);margin-bottom:6px}
+.funding-body p{font-size:13.5px;color:var(--on-surface-muted);line-height:1.55}
+.funding-tag{
+  display:inline-flex;align-items:center;gap:5px;margin-top:10px;
+  padding:4px 10px;border-radius:var(--radius-full);
+  font-family:var(--font-head);font-weight:700;font-size:11px;
+  background:var(--blue-50);color:var(--blue);
+}
+@media (max-width:760px){.funding-grid{grid-template-columns:1fr}}
+
+/* ═══════════════════ ROADMAP UPDATED ═══════════════════ */
+.roadmap-v2{display:flex;flex-direction:column;gap:0;position:relative}
+.roadmap-v2::before{
+  content:'';position:absolute;left:23px;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,var(--blue),var(--indigo),var(--tertiary),rgba(164,170,215,.3));
+  border-radius:99px;
+}
+.rm-item{
+  display:flex;gap:24px;align-items:flex-start;padding:0 0 40px 0;position:relative;
+}
+.rm-item:last-child{padding-bottom:0}
+.rm-dot{
+  width:48px;height:48px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-size:18px;
+  position:relative;z-index:1;
+}
+.rm-dot.done{background:linear-gradient(135deg,var(--blue),var(--indigo));color:white;box-shadow:0 6px 20px rgba(0,85,197,.4)}
+.rm-dot.active{background:linear-gradient(135deg,var(--indigo),var(--tertiary));color:white;box-shadow:0 0 0 8px rgba(63,82,183,.15),0 6px 20px rgba(63,82,183,.35)}
+.rm-dot.upcoming{background:white;border:3px solid rgba(164,170,215,.4);color:var(--on-surface-soft)}
+.rm-body{
+  flex:1;background:white;border:1px solid rgba(164,170,215,.18);border-radius:var(--radius-xl);
+  padding:24px 28px;box-shadow:var(--shadow-sm);
+}
+.rm-body.active-body{border-color:rgba(63,82,183,.35);box-shadow:0 0 0 3px rgba(63,82,183,.1),var(--shadow-md)}
+.rm-quarter{
+  font-family:var(--font-head);font-weight:700;font-size:11px;
+  color:var(--indigo);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;
+}
+.rm-body h4{font-family:var(--font-head);font-weight:700;font-size:18px;color:var(--blue-900);margin-bottom:10px}
+.rm-tasks{display:flex;flex-wrap:wrap;gap:8px}
+.rm-task{
+  display:inline-flex;align-items:center;gap:6px;padding:6px 12px;
+  border-radius:var(--radius-full);font-family:var(--font-head);font-weight:600;font-size:12px;
+  background:var(--surface-low);color:var(--on-surface-muted);
+}
+.rm-task .material-symbols-rounded{font-size:14px;color:var(--blue)}
+.rm-item.done-item .rm-task{background:var(--blue-50);color:var(--blue)}
+.rm-item.active-item .rm-task{background:rgba(63,82,183,.08);color:var(--indigo)}
+@media (max-width:640px){.rm-body{padding:18px 20px}.roadmap-v2::before{left:19px}}
+
+/* ═══════════════════ RESPONSIVE TWEAKS ═══════════════════ */
+@media (max-width:520px){
+  .hero{padding:130px 0 60px}
+  .container{padding:0 20px}
+  .stats-inner,.flow,.roadmap{padding:40px 22px}
+  .cta-card{padding:60px 24px}
+  .hero-cta-row{width:100%}
+  .btn-primary,.btn-secondary{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ NAV ═══════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">
+      <span class="nav-logo-mark"><span class="material-symbols-rounded fill" style="font-size:18px">school</span></span>
+      Next Step
+    </a>
+    <div class="nav-links">
+      <a href="#problema" class="nav-link">Problema</a>
+      <a href="#soluzione" class="nav-link">Soluzione</a>
+      <a href="#app" class="nav-link">L'App</a>
+      <a href="#mercato" class="nav-link">Mercato</a>
+      <a href="#business" class="nav-link">Business</a>
+      <a href="#team" class="nav-link">Team</a>
+    </div>
+    <a href="https://nextstepcomo.github.io" target="_blank" rel="noopener" class="nav-cta">
+      Prova la demo
+      <span class="material-symbols-rounded" style="font-size:16px">arrow_forward</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="container hero-content">
+    <div class="reveal">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"><span class="material-symbols-rounded fill">auto_awesome</span></span>
+        IdeaImpresa 2026 · Concorso "MENTI"
+      </div>
+      <h1>Il primo passo<br/>per il <em>tuo futuro</em>.</h1>
+      <p class="hero-sub">
+        Next Step è l'app italiana che, grazie all'intelligenza artificiale, guida studenti
+        di scuole medie e superiori nella scelta dell'indirizzo di studi più adatto alle loro passioni.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#cta" class="btn-primary">
+          Scopri come funziona
+          <span class="material-symbols-rounded" style="font-size:18px">arrow_forward</span>
+        </a>
+        <a href="https://nextstepcomo.github.io" target="_blank" rel="noopener" class="btn-secondary">
+          <span class="material-symbols-rounded" style="font-size:18px">play_circle</span>
+          Vedi la demo
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-avatars">
+          <div class="trust-avatar">🎓</div>
+          <div class="trust-avatar">🤖</div>
+          <div class="trust-avatar">🏛️</div>
+          <div class="trust-avatar">+4M</div>
+        </div>
+        <div class="trust-text">
+          <strong>4,1 milioni di studenti</strong>
+          potenziali utenti in Italia (medie + superiori)
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-stage reveal reveal-delay-2">
+      <div class="phone-glow"></div>
+
+      <div class="floating-card fc-1">
+        <div class="fc-icon"><span class="material-symbols-rounded fill" style="font-size:18px">verified</span></div>
+        <div>
+          <div style="color:var(--on-surface-soft);font-weight:500;font-size:10px;text-transform:uppercase;letter-spacing:.05em">Match perfetto</div>
+          <div>Informatica · 92%</div>
+        </div>
+      </div>
+
+      <div class="floating-card fc-2">
+        <div class="fc-label">Scuole vicine</div>
+        <div class="fc-val">12</div>
+      </div>
+
+      <div class="floating-card fc-3">
+        <div class="fc-icon"><span class="material-symbols-rounded fill" style="font-size:14px">smart_toy</span></div>
+        Mentor AI
+      </div>
+
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="phone-status">
+            <span>9:41</span>
+            <div class="phone-status-icons">
+              <span class="material-symbols-rounded">signal_cellular_alt</span>
+              <span class="material-symbols-rounded">wifi</span>
+              <span class="material-symbols-rounded">battery_full</span>
+            </div>
+          </div>
+          <div class="phone-app-bar">
+            <div class="phone-app-logo">Next Step</div>
+            <span class="material-symbols-rounded">menu</span>
+          </div>
+          <div class="phone-content">
+            <div class="phone-progress">
+              <span class="phone-progress-num">3/5</span>
+              <div class="phone-progress-bar"><div class="phone-progress-fill"></div></div>
+            </div>
+            <div class="ai-msg">
+              <div class="ai-avatar"><span class="material-symbols-rounded fill" style="font-size:18px">smart_toy</span></div>
+              <div class="ai-bubble">
+                Ciao! Cosa ti piace fare di più nel tempo libero?
+                <strong style="display:block;margin-top:4px">Scegli ciò che ti rappresenta.</strong>
+              </div>
+            </div>
+            <div class="phone-chips">
+              <button class="phone-chip active">
+                <span class="material-symbols-rounded fill">build</span>
+                Smontare cose
+              </button>
+              <button class="phone-chip">
+                <span class="material-symbols-rounded">edit_note</span>
+                Scrivere
+              </button>
+              <button class="phone-chip">
+                <span class="material-symbols-rounded">extension</span>
+                Enigmi
+              </button>
+              <button class="phone-chip">
+                <span class="material-symbols-rounded">volunteer_activism</span>
+                Aiutare
+              </button>
+            </div>
+            <div class="phone-hint">
+              <span class="material-symbols-rounded fill">lightbulb</span>
+              <div>
+                <strong>Lo sapevi?</strong>
+                Le tue passioni nel tempo libero sono il miglior indicatore del tuo futuro accademico.
+              </div>
+            </div>
+          </div>
+          <div class="phone-nav">
+            <div class="phone-nav-item active">
+              <span class="material-symbols-rounded fill">smart_toy</span>
+              Home
+            </div>
+            <div class="phone-nav-item">
+              <span class="material-symbols-rounded">school</span>
+              Tutor
+            </div>
+            <div class="phone-nav-item">
+              <span class="material-symbols-rounded">map</span>
+              Mappa
+            </div>
+            <div class="phone-nav-item">
+              <span class="material-symbols-rounded">person</span>
+              Profilo
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ STATS ═══════════════════ -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-inner reveal">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-num" data-count="60">60+</div>
+          <div class="stat-label">Indirizzi differenti tra licei, tecnici e professionali</div>
+          <div class="stat-source">scuole superiori italiane</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5.400+</div>
+          <div class="stat-label">Corsi di laurea attivi tra triennali, magistrali e ciclo unico</div>
+          <div class="stat-source">fonte: unipegaso.it</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4,1<span style="font-size:.45em;color:rgba(255,255,255,.7)">M</span></div>
+          <div class="stat-label">Studenti italiani delle scuole secondarie di I e II grado</div>
+          <div class="stat-source">dati 2024/2025</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">97<span style="font-size:.5em;color:rgba(255,255,255,.7)">%</span></div>
+          <div class="stat-label">Studenti che si dicono insicuri sulla scelta del proprio percorso</div>
+          <div class="stat-source">stima sul nostro target</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PROBLEMA ═══════════════════ -->
+<section class="section" id="problema">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">
+        <span class="material-symbols-rounded fill">help</span>
+        Il problema
+      </div>
+      <h2 class="section-title">Una scelta che <span class="gradient-text">cambia la vita</span>, fatta a 13 o 18 anni — spesso al buio.</h2>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-text reveal">
+        <h3>Troppe alternative, troppe poche risposte.</h3>
+        <p>
+          Ogni anno gli studenti di <strong>terza media</strong> e di <strong>quinta superiore</strong>
+          si trovano davanti a un bivio destinato a segnare il corso della loro vita scolastica
+          per i prossimi anni: la scelta della scuola.
+        </p>
+        <p>
+          In Italia esistono quasi <strong>60 indirizzi differenti</strong> tra licei, tecnici e
+          professionali, e per le università i corsi di laurea attivi superano i <strong>5.400</strong>.
+          Risulta davvero difficile scegliere — sia per chi non sa cosa lo appassiona,
+          sia per chi rischia di ignorare opzioni che non gli sono mai state proposte.
+        </p>
+        <div class="problem-quote">
+          "Esistono 14 aree accademiche principali che comprendono decine di ambiti di studio diversi,
+          con più di 5.400 corsi di laurea attivi. Le università italiane (67 statali + 11 telematiche
+          + 19 private) offrono percorsi in ogni disciplina."
+          <cite>— unipegaso.it</cite>
+        </div>
+      </div>
+
+      <div class="problem-visual reveal reveal-delay-2">
+        <div style="text-align:center;margin-bottom:18px;font-family:var(--font-head);font-weight:700;font-size:13px;color:var(--on-surface-muted);letter-spacing:.08em;text-transform:uppercase">
+          60+ indirizzi · 5.400+ corsi
+        </div>
+        <div class="problem-cloud">
+          <span class="problem-pill">Liceo Classico</span>
+          <span class="problem-pill highlight">Informatica</span>
+          <span class="problem-pill">Scientifico</span>
+          <span class="problem-pill">Linguistico</span>
+          <span class="problem-pill">Artistico</span>
+          <span class="problem-pill">Elettronica</span>
+          <span class="problem-pill">Chimica</span>
+          <span class="problem-pill highlight">Robotica</span>
+          <span class="problem-pill">Meccatronica</span>
+          <span class="problem-pill">Sociale</span>
+          <span class="problem-pill">Turismo</span>
+          <span class="problem-pill">Agrario</span>
+          <span class="problem-pill">Grafica</span>
+          <span class="problem-pill">Moda</span>
+          <span class="problem-pill highlight">Biotecnologie</span>
+          <span class="problem-pill">Costruzioni</span>
+          <span class="problem-pill">Nautico</span>
+          <span class="problem-pill">Aeronautico</span>
+          <span class="problem-pill">Musicale</span>
+          <span class="problem-pill">Coreutico</span>
+          <span class="problem-pill muted">+40 altri</span>
+        </div>
+        <div class="problem-stats-mini">
+          <div class="problem-stat-mini">
+            <div class="ps-num">1,5<span style="font-size:.55em">M</span></div>
+            <div class="ps-label">Studenti scuole<br/>secondarie I grado</div>
+          </div>
+          <div class="problem-stat-mini">
+            <div class="ps-num">2,6<span style="font-size:.55em">M</span></div>
+            <div class="ps-label">Studenti scuole<br/>secondarie II grado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SOLUZIONE ═══════════════════ -->
+<section class="section" id="soluzione" style="background:linear-gradient(180deg,transparent 0%,var(--surface-low) 50%,transparent 100%)">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" style="background:rgba(63,82,183,.12)">
+        <span class="material-symbols-rounded fill">lightbulb</span>
+        La nostra soluzione
+      </div>
+      <h2 class="section-title">Una sola app, <span class="gradient-text">tutte le risposte</span>.</h2>
+      <p class="section-sub">
+        Un modello di intelligenza artificiale unito a un dataset proprietario di tutte le scuole italiane,
+        per guidare lo studente verso una scelta consapevole — senza saltare da una piattaforma all'altra.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature reveal">
+        <div class="feature-icon fi-blue"><span class="material-symbols-rounded fill">smart_toy</span></div>
+        <h3>Mentor AI personalizzato</h3>
+        <p>
+          Un chatbot che impara i tuoi interessi al primo accesso e li ricorda ad ogni login,
+          rispondendo con un tono pensato per studenti delle medie e superiori.
+        </p>
+        <span class="feature-tag">
+          <span class="material-symbols-rounded fill">auto_awesome</span>
+          AI conversazionale
+        </span>
+      </div>
+
+      <div class="feature reveal reveal-delay-1">
+        <div class="feature-icon fi-indigo"><span class="material-symbols-rounded fill">quiz</span></div>
+        <h3>Questionario di orientamento</h3>
+        <p>
+          Inquadra interessi e passioni dello studente per individuare la scuola perfetta —
+          non obbligatorio, ma più rispondi più i suggerimenti diventano accurati.
+        </p>
+        <span class="feature-tag">
+          <span class="material-symbols-rounded fill">psychology</span>
+          Profilo attitudinale
+        </span>
+      </div>
+
+      <div class="feature reveal reveal-delay-2">
+        <div class="feature-icon fi-purple"><span class="material-symbols-rounded fill">map</span></div>
+        <h3>Mappa scuole d'Italia</h3>
+        <p>
+          Visione completa delle scuole del circondario e di tutto il territorio nazionale,
+          con filtri per indirizzo, distanza, mezzi di trasporto e accessibilità.
+        </p>
+        <span class="feature-tag">
+          <span class="material-symbols-rounded fill">near_me</span>
+          Geolocalizzato
+        </span>
+      </div>
+
+      <div class="feature reveal">
+        <div class="feature-icon fi-teal"><span class="material-symbols-rounded fill">school</span></div>
+        <h3>Scheda scuola completa</h3>
+        <p>
+          Programmi svolti, ore previste, laboratori disponibili, accessibilità dell'edificio
+          e date degli open day — tutte informazioni fornite direttamente dalle scuole.
+        </p>
+        <span class="feature-tag">
+          <span class="material-symbols-rounded fill">verified</span>
+          Dati verificati
+        </span>
+      </div>
+
+      <div class="feature reveal reveal-delay-1">
+        <div class="feature-icon fi-rose"><span class="material-symbols-rounded fill">favorite</span></div>
+        <h3>Profilo & preferiti</h3>
+        <p>
+          Salva le scuole che ti interessano, modifica i tuoi valori AI con slider personalizzati
+          e affina il "Match Score" che vedi nelle schede degli istituti.
+        </p>
+        <span class="feature-tag">
+          <span class="material-symbols-rounded fill">tune</span>
+          Match score AI
+        </span>
+      </div>
+
+      <div class="feature reveal reveal-delay-2">
+        <div class="feature-icon fi-gold"><span class="material-symbols-rounded fill">menu_book</span></div>
+        <h3>Tutor materie specifiche</h3>
+        <p>
+          Approfondisci con il Mentor AI le materie che ti interessano: Informatica, Matematica,
+          Scienze, Fisica, Inglese — per capire davvero se quel percorso fa per te.
+        </p>
+        <span class="feature-tag">
+          <span class="material-symbols-rounded fill">terminal</span>
+          5+ materie attive
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ COME FUNZIONA ═══════════════════ -->
+<section class="section" id="app">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">
+        <span class="material-symbols-rounded fill">route</span>
+        Come funziona
+      </div>
+      <h2 class="section-title">Quattro passi <span class="gradient-text">verso la tua scelta</span>.</h2>
+      <p class="section-sub">
+        Dal primo accesso alla scuola del cuore: un flusso pensato per essere intuitivo,
+        veloce e personale. Disponibile su Android, iOS e in versione web.
+      </p>
+    </div>
+
+    <div class="flow reveal reveal-delay-1">
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <span class="material-symbols-rounded fill flow-icon">login</span>
+          <h4>Accesso & onboarding</h4>
+          <p>Login rapido con Google, Apple o email. L'AI inizia subito a conoscerti.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <span class="material-symbols-rounded fill flow-icon">chat</span>
+          <h4>Chat con il Mentor AI</h4>
+          <p>Un breve questionario conversazionale individua i tuoi interessi e passioni.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <span class="material-symbols-rounded fill flow-icon">explore</span>
+          <h4>Esplora la mappa</h4>
+          <p>Scuole vicine e di tutta Italia, filtrate sui tuoi gusti. Salva i preferiti.</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <span class="material-symbols-rounded fill flow-icon">verified</span>
+          <h4>Trova il tuo match</h4>
+          <p>Match Score, programmi svolti, open day: tutto quel che serve per decidere.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TECNOLOGIA ═══════════════════ -->
+<section class="section" id="tech">
+  <div class="container">
+    <div class="tech-grid">
+      <div class="tech-text reveal">
+        <div class="section-eyebrow">
+          <span class="material-symbols-rounded fill">memory</span>
+          Tecnologia & architettura
+        </div>
+        <h3>Un'AI specifica, non generica.</h3>
+        <p>
+          Mentre i chatbot generalisti pescano da dati indistinti del web, Next Step alimenta il proprio
+          modello con materiale fornito direttamente dalle scuole — programmi svolti, orari, laboratori —
+          ottenendo risposte molto più accurate e meno soggette a confusioni.
+        </p>
+        <div class="tech-bullets">
+          <div class="tech-bullet">
+            <span class="material-symbols-rounded fill">database</span>
+            <div>
+              <strong>Dataset proprietario</strong>
+              <span>Informazioni verificate, raccolte direttamente dagli istituti scolastici italiani.</span>
+            </div>
+          </div>
+          <div class="tech-bullet">
+            <span class="material-symbols-rounded fill">handshake</span>
+            <div>
+              <strong>Partnership AI</strong>
+              <span>Collaborazione con aziende del settore per sfruttare al massimo la tecnologia LLM.</span>
+            </div>
+          </div>
+          <div class="tech-bullet">
+            <span class="material-symbols-rounded fill">devices</span>
+            <div>
+              <strong>Multipiattaforma</strong>
+              <span>Disponibile su Android, iOS e Web — la massima accessibilità possibile.</span>
+            </div>
+          </div>
+          <div class="tech-bullet">
+            <span class="material-symbols-rounded fill">shield</span>
+            <div>
+              <strong>Privacy & GDPR</strong>
+              <span>Trattamento dati conforme alla normativa europea per i minori e le famiglie.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-stack reveal reveal-delay-2">
+        <div class="tech-stack-inner">
+          <div class="tech-stack-label">Stack di riferimento</div>
+          <h3>Costruita per scalare con i nostri studenti.</h3>
+          <div class="tech-list">
+            <div class="tech-row">
+              <div class="tech-row-icon"><span class="material-symbols-rounded fill">phone_android</span></div>
+              <div class="tech-row-text">
+                <div class="tech-row-name">Front-end</div>
+                <div class="tech-row-desc">React Native · cross-platform iOS/Android/Web</div>
+              </div>
+            </div>
+            <div class="tech-row">
+              <div class="tech-row-icon"><span class="material-symbols-rounded fill">dns</span></div>
+              <div class="tech-row-text">
+                <div class="tech-row-name">Back-end</div>
+                <div class="tech-row-desc">Node.js · API REST per scuole, profilo e match</div>
+              </div>
+            </div>
+            <div class="tech-row">
+              <div class="tech-row-icon"><span class="material-symbols-rounded fill">storage</span></div>
+              <div class="tech-row-text">
+                <div class="tech-row-name">Database</div>
+                <div class="tech-row-desc">PostgreSQL + vector store per embedding scuole</div>
+              </div>
+            </div>
+            <div class="tech-row">
+              <div class="tech-row-icon"><span class="material-symbols-rounded fill">cloud</span></div>
+              <div class="tech-row-text">
+                <div class="tech-row-name">Cloud</div>
+                <div class="tech-row-desc">Infrastruttura scalabile pay-as-you-grow</div>
+              </div>
+            </div>
+            <div class="tech-row">
+              <div class="tech-row-icon"><span class="material-symbols-rounded fill">smart_toy</span></div>
+              <div class="tech-row-text">
+                <div class="tech-row-name">AI / LLM</div>
+                <div class="tech-row-desc">Modello fine-tuned sul dataset scolastico italiano</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TEAM ═══════════════════ -->
+<section class="section" id="team" style="background:linear-gradient(180deg,transparent 0%,var(--surface-low) 50%,transparent 100%)">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" style="background:rgba(139,59,143,.1);color:var(--tertiary)">
+        <span class="material-symbols-rounded fill">groups</span>
+        Il team
+      </div>
+      <h2 class="section-title">Tre studenti, <span class="gradient-text">una grande idea</span>.</h2>
+      <p class="section-sub">
+        Frequentiamo tutti e tre il quarto anno dell'Istituto Tecnico Informatico Jean Monnet di
+        Mariano Comense. Ci siamo uniti per risolvere un problema che abbiamo vissuto in prima
+        persona — e con noi tantissimi nostri amici e conoscenti.
+      </p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card t-1 reveal">
+        <div class="team-avatar">ML</div>
+        <div class="team-name">Manno Lorenzo</div>
+        <div class="team-role">Lead Developer App</div>
+        <div class="team-desc">
+          Sviluppatore principale dell'applicazione, dall'architettura tecnica
+          all'integrazione del modello AI.
+        </div>
+        <div class="team-school">
+          <span class="material-symbols-rounded">school</span>
+          ITI Jean Monnet · 4° anno
+        </div>
+      </div>
+
+      <div class="team-card t-2 reveal reveal-delay-1">
+        <div class="team-avatar">TD</div>
+        <div class="team-name">Tudor David Iulian</div>
+        <div class="team-role">Marketing & Content</div>
+        <div class="team-desc">
+          Sviluppatore principale della sezione marketing, content creation
+          e comunicazione del brand.
+        </div>
+        <div class="team-school">
+          <span class="material-symbols-rounded">school</span>
+          ITI Jean Monnet · 4° anno
+        </div>
+      </div>
+
+      <div class="team-card t-3 reveal reveal-delay-2">
+        <div class="team-avatar">SA</div>
+        <div class="team-name">Sambruni Alberto</div>
+        <div class="team-role">Presentation & Strategy</div>
+        <div class="team-desc">
+          Sviluppatore principale delle presentazioni e responsabile della
+          messa in pratica del contenuto del progetto.
+        </div>
+        <div class="team-school">
+          <span class="material-symbols-rounded">school</span>
+          ITI Jean Monnet · 4° anno
+        </div>
+      </div>
+    </div>
+
+    <div class="team-extra reveal">
+      <div class="team-extra-avatar">RR</div>
+      <div class="team-extra-info">
+        <div class="team-extra-name">Rebecca Rigamonti</div>
+        <div class="team-extra-role">Designer logo, testo e vettoriale — Liceo Amedeo Modigliani, indirizzo Grafica</div>
+      </div>
+      <div class="team-extra-tag">Advisor design</div>
+    </div>
+
+    <div class="team-extra reveal" style="margin-top:16px;background:linear-gradient(135deg,rgba(0,85,197,.06),rgba(63,82,183,.04));border-color:rgba(91,144,255,.2)">
+      <div class="team-extra-avatar" style="background:linear-gradient(135deg,var(--blue),var(--indigo))">GB</div>
+      <div class="team-extra-info">
+        <div class="team-extra-name">Prof. Giovanni Breviario</div>
+        <div class="team-extra-role">Docente di informatica — ITI Jean Monnet · Tutor tecnico e metodologico del progetto</div>
+      </div>
+      <div class="team-extra-tag" style="background:var(--blue-50);color:var(--blue)">Advisor tecnico</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ROADMAP ═══════════════════ -->
+<section class="section" id="roadmap">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">
+        <span class="material-symbols-rounded fill">timeline</span>
+        Roadmap
+      </div>
+      <h2 class="section-title">Da prototipo a piattaforma <span class="gradient-text">nazionale</span>.</h2>
+      <p class="section-sub">Quattro fasi per portare Next Step in ogni scuola d'Italia.</p>
+    </div>
+
+    <div class="roadmap-v2 reveal reveal-delay-1">
+
+      <div class="rm-item done-item">
+        <div class="rm-dot done"><span class="material-symbols-rounded fill" style="font-size:22px">check</span></div>
+        <div class="rm-body">
+          <div class="rm-quarter">Q1–Q2 2026 · Completata</div>
+          <h4>Fondamenta &amp; Prototipazione</h4>
+          <div class="rm-tasks">
+            <span class="rm-task"><span class="material-symbols-rounded fill">smartphone</span>Demo interattiva</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">design_services</span>Design UX/UI mobile-first</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">emoji_events</span>Presentazione IdeaImpresa "MENTI"</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">dataset</span>Setup dati "Scuola In Chiaro"</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rm-item active-item">
+        <div class="rm-dot active">2</div>
+        <div class="rm-body active-body">
+          <div class="rm-quarter">Q3–Q4 2026 · In corso</div>
+          <h4>Validazione &amp; Finanziamento</h4>
+          <div class="rm-tasks">
+            <span class="rm-task"><span class="material-symbols-rounded fill">science</span>Beta test Como/Lombardia</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">account_balance</span>Candidatura Smart&amp;Start Invitalia</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">hub</span>Networking ComoNExT</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">cloud</span>Google/AWS Startup Credits</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">policy</span>Legal check GDPR minori</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rm-item">
+        <div class="rm-dot upcoming">3</div>
+        <div class="rm-body">
+          <div class="rm-quarter">Q1 2027 · Pianificata</div>
+          <h4>Ottimizzazione &amp; Lancio Ufficiale</h4>
+          <div class="rm-tasks">
+            <span class="rm-task"><span class="material-symbols-rounded fill">smart_toy</span>AI avanzata sui feedback</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">campaign</span>Campagna TikTok &amp; Meta Ads</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">handshake</span>5–10 scuole pilota B2B</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">rocket_launch</span>Lancio App Store &amp; Google Play</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rm-item">
+        <div class="rm-dot upcoming">4</div>
+        <div class="rm-body">
+          <div class="rm-quarter">Q2–Q3 2027 · Pianificata</div>
+          <h4>Monetizzazione &amp; Espansione</h4>
+          <div class="rm-tasks">
+            <span class="rm-task"><span class="material-symbols-rounded fill">star</span>Lancio funzioni Premium</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">bar_chart</span>Data Analytics per istituzioni</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">school</span>Sezione Università completa</span>
+            <span class="rm-task"><span class="material-symbols-rounded fill">public</span>Copertura nazionale</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ MERCATO ═══════════════════ -->
+<section class="section" id="mercato" style="background:linear-gradient(180deg,transparent 0%,var(--surface-low) 50%,transparent 100%)">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">
+        <span class="material-symbols-rounded fill">bar_chart</span>
+        Mercato &amp; Opportunità
+      </div>
+      <h2 class="section-title">Un mercato da <span class="gradient-text">986.000 studenti</span> ogni anno.</h2>
+      <p class="section-sub">
+        NextStep opera all'intersezione tra EdTech e orientamento professionale, su tre segmenti distinti e complementari.
+      </p>
+    </div>
+
+    <div class="market-grid reveal reveal-delay-1">
+      <div class="market-card">
+        <div class="market-card-badge">B2C · Utenti Finali</div>
+        <div class="market-card-num">986K</div>
+        <h4>Studenti ogni anno</h4>
+        <p>511.244 studenti di terza media e 474.897 di quinta superiore affrontano ogni anno la scelta del percorso formativo. Le loro famiglie sono i decisori d'acquisto per i servizi Premium.</p>
+      </div>
+      <div class="market-card mc-b2b">
+        <div class="market-card-badge">B2B · Istituti</div>
+        <div class="market-card-num">12.432</div>
+        <h4>Scuole secondarie + università</h4>
+        <p>7.109 istituti di primo grado, 5.323 di secondo grado e 99 università necessitano di strumenti moderni per attrarre studenti profilati e ridurre i tassi di abbandono.</p>
+      </div>
+      <div class="market-card mc-b2g">
+        <div class="market-card-badge">B2G · Pubblica Amm.</div>
+        <div class="market-card-num">USR</div>
+        <h4>Uffici Scolastici Regionali</h4>
+        <p>Enti regionali interessati a dati aggregati per monitorare tendenze educative e combattere la dispersione scolastica a livello nazionale.</p>
+      </div>
+    </div>
+
+    <div class="market-table reveal">
+      <div class="market-table-header">
+        <div>Segmento</div>
+        <div>Dimensione</div>
+        <div>Note</div>
+      </div>
+      <div class="market-table-row">
+        <div class="cell-label">Studenti 3° media</div>
+        <div class="cell-val">511.244</div>
+        <div class="cell-note">Dati MIUR 2024/2025</div>
+      </div>
+      <div class="market-table-row">
+        <div class="cell-label">Studenti 5° superiore</div>
+        <div class="cell-val">474.897</div>
+        <div class="cell-note">Dati MIUR 2024/2025</div>
+      </div>
+      <div class="market-table-row">
+        <div class="cell-label">Istituti I° grado</div>
+        <div class="cell-val">7.109</div>
+        <div class="cell-note">Target B2B primario</div>
+      </div>
+      <div class="market-table-row">
+        <div class="cell-label">Istituti II° grado</div>
+        <div class="cell-val">5.323</div>
+        <div class="cell-note">Target B2B secondario</div>
+      </div>
+      <div class="market-table-row">
+        <div class="cell-label">Università</div>
+        <div class="cell-val">99</div>
+        <div class="cell-note">Fase 4 espansione</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ BUSINESS MODEL CANVAS ═══════════════════ -->
+<section class="section" id="business">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">
+        <span class="material-symbols-rounded fill">grid_view</span>
+        Business Model Canvas
+      </div>
+      <h2 class="section-title">Come <span class="gradient-text">creiamo valore</span>.</h2>
+      <p class="section-sub">Il modello di business che descrive come Next Step crea, distribuisce e cattura valore per studenti, scuole e istituzioni.</p>
+    </div>
+
+    <div class="bmc-wrapper reveal reveal-delay-1">
+      <div class="bmc-grid">
+
+        <!-- Row 1 -->
+        <div class="bmc-cell">
+          <div class="bmc-cell-label"><span class="material-symbols-rounded fill">handshake</span>Key Partners</div>
+          <ul>
+            <li>Istituti scolastici (programmi, orari, lab)</li>
+            <li>Università ed enti di formazione</li>
+            <li>Aziende tech/AI per LLM</li>
+            <li>Comuni e istituzioni locali</li>
+            <li>Partner dati geografici e trasporti</li>
+          </ul>
+        </div>
+
+        <div class="bmc-cell">
+          <div class="bmc-cell-label"><span class="material-symbols-rounded fill">build</span>Key Activities</div>
+          <ul>
+            <li>Sviluppo app Android, iOS, Web</li>
+            <li>Training &amp; affinamento LLM</li>
+            <li>Raccolta e gestione dataset</li>
+            <li>Marketing e promozione</li>
+          </ul>
+        </div>
+
+        <div class="bmc-cell bmc-vp" style="grid-row:span 2">
+          <div class="bmc-cell-label"><span class="material-symbols-rounded fill">stars</span>Value Propositions</div>
+          <h4 style="color:white;margin-bottom:8px">Per gli studenti</h4>
+          <ul style="margin-bottom:16px">
+            <li>Guida consapevole via AI con dati oggettivi</li>
+            <li>Match score personalizzato</li>
+            <li>Mappa scuole con filtri geografici</li>
+            <li>Chat contestuale per ogni materia</li>
+          </ul>
+          <h4 style="color:white;margin-bottom:8px">Per le scuole</h4>
+          <ul>
+            <li>Maggiore visibilità online</li>
+            <li>Studenti profilati e motivati</li>
+            <li>Dashboard dati di interesse</li>
+          </ul>
+        </div>
+
+        <div class="bmc-cell">
+          <div class="bmc-cell-label"><span class="material-symbols-rounded fill">favorite</span>Customer Relations</div>
+          <ul>
+            <li>Chatbot AI personalizzato</li>
+            <li>Profilo utente con preferenze</li>
+            <li>Recensioni verificate utenti</li>
+            <li>Gamification achievements</li>
+          </ul>
+        </div>
+
+        <div class="bmc-cell">
+          <div class="bmc-cell-label"><span class="material-symbols-rounded fill">groups</span>Customer Segments</div>
+          <ul>
+            <li>Studenti 3° media (~511K/anno)</li>
+            <li>Studenti 5° superiore (~475K/anno)</li>
+            <li>Famiglie e genitori</li>
+            <li>Scuole e università (B2B)</li>
+            <li>Enti pubblici (B2G)</li>
+          </ul>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="bmc-cell">
+          <div class="bmc-cell-label"><span class="material-symbols-rounded fill">memory</span>Key Resources</div>
+          <ul>
+            <li>Modello LLM fine-tuned</li>
+            <li>Dataset proprietario scuole italiane</li>
+            <li>Piattaforma tech multipiattaforma</li>
+            <li>Team sviluppo e gestione</li>
+          </ul>
+        </div>
+
+        <div class="bmc-cell">
+          <div class="bmc-cell-label"><span class="material-symbols-rounded fill">alt_route</span>Channels</div>
+          <ul>
+            <li>App Store &amp; Google Play</li>
+            <li>Sito web ufficiale</li>
+            <li>Social media e content marketing</li>
+            <li>Partnership dirette scuole/università</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom row -->
+      <div class="bmc-bottom-row" style="margin-top:16px;position:relative;z-index:1">
+        <div class="bmc-cell bmc-cost">
+          <div class="bmc-cell-label"><span class="material-symbols-rounded fill">payments</span>Cost Structure</div>
+          <ul style="display:grid;grid-template-columns:1fr 1fr;gap:4px 24px">
+            <li>Sviluppo software e manutenzione</li>
+            <li>Infrastruttura cloud e dataset</li>
+            <li>Token e API modelli AI</li>
+            <li>Marketing e acquisizione utenti</li>
+          </ul>
+        </div>
+        <div class="bmc-cell bmc-revenue">
+          <div class="bmc-cell-label"><span class="material-symbols-rounded fill">trending_up</span>Revenue Streams</div>
+          <ul style="display:grid;grid-template-columns:1fr 1fr;gap:4px 24px">
+            <li>Freemium / abbonamenti funzioni avanzate</li>
+            <li>Pubblicità istituti privati &amp; università</li>
+            <li>Lead generation e commissioni</li>
+            <li>Data analytics per enti regionali</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FINANZIAMENTI ═══════════════════ -->
+<section class="section" id="finanziamenti" style="background:linear-gradient(180deg,transparent 0%,var(--surface-low) 50%,transparent 100%)">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow" style="background:rgba(244,185,66,.12);color:#92620a">
+        <span class="material-symbols-rounded fill">account_balance</span>
+        Finanziamenti &amp; Agevolazioni
+      </div>
+      <h2 class="section-title">Le risorse per <span class="gradient-text">crescere</span>.</h2>
+      <p class="section-sub">Strumenti pubblici e privati a cui Next Step intende accedere per finanziare lo sviluppo e l'infrastruttura.</p>
+    </div>
+
+    <div class="funding-grid reveal reveal-delay-1">
+
+      <div class="funding-card">
+        <div class="funding-icon fi-green"><span class="material-symbols-rounded fill">rocket_launch</span></div>
+        <div class="funding-body">
+          <h4>Smart&amp;Start Italia</h4>
+          <p>Finanzia dall'80 al 90% delle spese ammissibili tra 100.000 e 1.500.000€ a tasso zero, con sportello aperto in modo continuativo su Invitalia senza scadenze fisse.</p>
+          <span class="funding-tag"><span class="material-symbols-rounded fill">euro</span>Fino a 1,5M€ · Tasso zero</span>
+        </div>
+      </div>
+
+      <div class="funding-card">
+        <div class="funding-icon fi-sky"><span class="material-symbols-rounded fill">precision_manufacturing</span></div>
+        <div class="funding-body">
+          <h4>Nuova Sabatini</h4>
+          <p>Agevolazione che facilita l'accesso al credito per le PMI per l'acquisto di attrezzature, beni strumentali, hardware, software e tecnologie digitali.</p>
+          <span class="funding-tag"><span class="material-symbols-rounded fill">devices</span>Beni tech &amp; digitali</span>
+        </div>
+      </div>
+
+      <div class="funding-card">
+        <div class="funding-icon fi-orange"><span class="material-symbols-rounded fill">school</span></div>
+        <div class="funding-body">
+          <h4>Missione 4 PNRR</h4>
+          <p>Focalizzata su "Istruzione e Ricerca" con l'obiettivo di colmare le carenze del sistema educativo, potenziare la ricerca e favorire il trasferimento tecnologico verso le imprese.</p>
+          <span class="funding-tag"><span class="material-symbols-rounded fill">euro_symbol</span>Istruzione &amp; EdTech</span>
+        </div>
+      </div>
+
+      <div class="funding-card">
+        <div class="funding-icon" style="background:linear-gradient(135deg,#4285F4,#0F9D58)"><span class="material-symbols-rounded fill">cloud</span></div>
+        <div class="funding-body">
+          <h4>Google Cloud + AWS Activate</h4>
+          <p>Crediti gratuiti per startup sull'infrastruttura cloud Google e Amazon Web Services, con supporto tecnico, formazione specialistica e percorsi di crescita dedicati.</p>
+          <span class="funding-tag"><span class="material-symbols-rounded fill">savings</span>Crediti cloud gratuiti</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CTA ═══════════════════ -->
+<section class="cta-section" id="cta">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-inner">
+        <div class="cta-eyebrow">
+          <span class="material-symbols-rounded fill">rocket_launch</span>
+          Pronto al primo passo?
+        </div>
+        <h2>Aiutaci a costruire <em>il futuro dell'orientamento</em> scolastico in Italia.</h2>
+        <p>
+          Cerchiamo scuole partner, mentor del settore tech e investitori che credano,
+          come noi, che ogni studente meriti di scegliere il proprio percorso con tutti
+          gli strumenti possibili.
+        </p>
+        <div class="cta-actions">
+          <a href="mailto:nextstepcomo@gmail.com" class="btn-cta-primary">
+            <span class="material-symbols-rounded">mail</span>
+            Contattaci ora
+          </a>
+          <a href="https://nextstepcomo.github.io" target="_blank" rel="noopener" class="btn-cta-ghost">
+            <span class="material-symbols-rounded">play_circle</span>
+            Vai alla demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <span class="nav-logo-mark"><span class="material-symbols-rounded fill" style="font-size:18px">school</span></span>
+          Next Step
+        </div>
+        <div class="footer-info" style="margin-top:10px">
+          <strong>Il primo passo per il tuo futuro</strong>
+          Sede: Mariano Comense (CO) · Settore: Istruzione
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#problema">Problema</a>
+        <a href="#soluzione">Soluzione</a>
+        <a href="#app">L'App</a>
+        <a href="#mercato">Mercato</a>
+        <a href="#business">Business Model</a>
+        <a href="#finanziamenti">Finanziamenti</a>
+        <a href="#team">Team</a>
+        <a href="mailto:nextstepcomo@gmail.com">Contatti</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Next Step · Progetto IdeaImpresa "MENTI"</div>
+      <div>nextstepcomo@gmail.com</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const id = a.getAttribute('href');
+    if (id.length > 1) {
+      const el = document.querySelector(id);
+      if (el) {
+        e.preventDefault();
+        const top = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }
+  });
+});
+
+const phone = document.querySelector('.phone');
+if (phone && window.matchMedia('(min-width: 980px)').matches) {
+  const stage = document.querySelector('.phone-stage');
+  stage.addEventListener('mousemove', (e) => {
+    const r = stage.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    phone.style.transform = `rotateY(${-12 + x * 14}deg) rotateX(${4 - y * 10}deg) translateZ(0)`;
+  });
+  stage.addEventListener('mouseleave', () => {
+    phone.style.transform = '';
+  });
+}
+</script>
+
+</body>
+</html>
